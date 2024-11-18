@@ -1,0 +1,38 @@
+import 'package:alperefesahin_dev/core/constants/colors.dart';
+import 'package:alperefesahin_dev/features/about/widgets/greetings/greetings_section.dart';
+import 'package:alperefesahin_dev/features/about/widgets/open_source/open_source_section.dart';
+import 'package:alperefesahin_dev/features/about/widgets/speaking/speaking_section.dart';
+import 'package:alperefesahin_dev/features/about/widgets/writing/writing_section.dart';
+import 'package:flutter/material.dart';
+
+class AboutPage extends StatelessWidget {
+  const AboutPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isMobile = screenWidth < 1020;
+    final horizontalPadding = isMobile ? 20.0 : 120.0;
+    const double maxScreenWidth = 1280;
+
+    return Scaffold(
+      backgroundColor: white,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: maxScreenWidth),
+            child: Column(
+              children: [
+                GreetingsSection(isMobile: isMobile),
+                WritingSection(isMobile: isMobile),
+                OpenSourceSection(isMobile: isMobile),
+                SpeakingSection(isMobile: isMobile),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
