@@ -2,10 +2,11 @@ import 'package:alperefesahin_dev/core/constants/colors.dart';
 import 'package:alperefesahin_dev/core/design_system/custom_button.dart';
 import 'package:alperefesahin_dev/core/design_system/custom_divider.dart';
 import 'package:alperefesahin_dev/core/design_system/custom_text.dart';
+import 'package:alperefesahin_dev/core/mixins/launch_mixin.dart';
 import 'package:alperefesahin_dev/features/about/widgets/writing/medium_card.dart';
 import 'package:flutter/material.dart';
 
-class WritingSection extends StatelessWidget {
+class WritingSection extends StatelessWidget with LaunchMixin {
   const WritingSection({super.key, required this.isMobile});
 
   final bool isMobile;
@@ -44,11 +45,19 @@ class WritingSection extends StatelessWidget {
                 category: "PERSPECTIVE",
                 date: "Nov 1, 2024 ",
                 title: "LeetCode Challenge",
-                onTap: () {},
+                onTap: () => launchUrlInWeb(
+                  isWebsite: true,
+                  websitePath:
+                      'https://medium.com/@alperefesahin/45-days-of-leetcode-what-did-i-learn-from-that-challenge-1024deab5636',
+                ),
               ),
               const SizedBox(height: 48),
               MediumCard(
-                onTap: () {},
+                onTap: () => launchUrlInWeb(
+                  isWebsite: true,
+                  websitePath:
+                      'https://medium.com/codex/riverpod-statenotifier-freezed-ddd-in-flutter-fetching-data-from-the-api-ba232c7d1144',
+                ),
                 isMobile: isMobile,
                 imageWidget: const ArticleImage(
                   assetPath: "assets/medium2.jpeg",
@@ -59,7 +68,11 @@ class WritingSection extends StatelessWidget {
               ),
               const SizedBox(height: 60),
               MediumCard(
-                onTap: () {},
+                onTap: () => launchUrlInWeb(
+                  isWebsite: true,
+                  websitePath:
+                      'https://medium.com/@alperefesahin/bloc-pattern-for-login-bloc-login-in-flutter-551fd05beb99',
+                ),
                 isMobile: isMobile,
                 imageWidget: const ArticleImage(
                   assetPath: "assets/medium3.jpeg",
@@ -72,7 +85,13 @@ class WritingSection extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 36),
-        CustomButton(text: "See more articles", onPressed: () {}),
+        CustomButton(
+          text: "See more articles",
+          onPressed: () => launchUrlInWeb(
+            isWebsite: true,
+            websitePath: 'https://medium.com/@alperefesahin/',
+          ),
+        ),
         const CustomDivider(),
       ],
     );
