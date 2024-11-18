@@ -8,6 +8,7 @@ class MediumCard extends StatelessWidget {
   final String date;
   final String title;
   final bool isMobile;
+  final VoidCallback onTap;
 
   const MediumCard({
     super.key,
@@ -16,68 +17,69 @@ class MediumCard extends StatelessWidget {
     required this.date,
     required this.title,
     required this.isMobile,
+    required this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: isMobile ? null : 360,
-      height: 550,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            width: isMobile ? null : 360,
-            height: 360,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
-              gradient: const LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [transitionWhite, white],
-              ),
+    final size = MediaQuery.of(context).size;
+
+    return InkWell(
+      highlightColor: transparent,
+      splashColor: transparent,
+      hoverColor: transparent,
+      onTap: onTap,
+      child: SizedBox(
+        width: isMobile ? null : size.width / 4.250,
+        height: 475,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              width: isMobile ? null : 360,
+              height: 360,
+              child: Center(child: imageWidget),
             ),
-            child: Center(child: imageWidget),
-          ),
-          const SizedBox(height: 24),
-          Row(
-            children: [
-              CustomText(
-                text: category,
-                color: blackWithOpacity87,
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
-              const SizedBox(width: 12),
-              Container(
-                width: 4,
-                height: 4,
-                decoration: const BoxDecoration(
+            const SizedBox(height: 24),
+            Row(
+              children: [
+                CustomText(
+                  text: category,
                   color: blackWithOpacity87,
-                  shape: BoxShape.circle,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
                 ),
-              ),
-              const SizedBox(width: 12),
-              CustomText(
-                text: date,
-                color: blackWithOpacity87,
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
-            ],
-          ),
-          Container(
-            width: 360,
-            padding: const EdgeInsets.only(top: 12, bottom: 24),
-            child: CustomText(
-              text: title,
-              fontSize: 24,
-              fontWeight: FontWeight.w800,
-              height: 1.3,
-              color: black,
+                const SizedBox(width: 12),
+                Container(
+                  width: 4,
+                  height: 4,
+                  decoration: const BoxDecoration(
+                    color: blackWithOpacity87,
+                    shape: BoxShape.circle,
+                  ),
+                ),
+                const SizedBox(width: 12),
+                CustomText(
+                  text: date,
+                  color: blackWithOpacity87,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                ),
+              ],
             ),
-          ),
-        ],
+            Container(
+              width: 360,
+              padding: const EdgeInsets.symmetric(vertical: 12),
+              child: CustomText(
+                text: title,
+                fontSize: 24,
+                fontWeight: FontWeight.w800,
+                height: 1.2,
+                color: black,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
