@@ -7,7 +7,7 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'x\'s Website',
+      title: 'Alper Efe Şahin',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,

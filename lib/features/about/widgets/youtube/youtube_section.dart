@@ -1,10 +1,11 @@
 import 'package:alperefesahin_dev/core/constants/colors.dart';
 import 'package:alperefesahin_dev/core/design_system/custom_divider.dart';
 import 'package:alperefesahin_dev/core/design_system/custom_text.dart';
+import 'package:alperefesahin_dev/features/about/widgets/youtube/youtube_videos.dart';
 import 'package:flutter/material.dart';
 
-class SpeakingSection extends StatelessWidget {
-  const SpeakingSection({super.key, required this.isMobile});
+class YoutubeSection extends StatelessWidget {
+  const YoutubeSection({super.key, required this.isMobile});
 
   final bool isMobile;
 
@@ -14,20 +15,22 @@ class SpeakingSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const CustomText(
-          text: "Speaking",
-          fontSize: 32,
+          text: "YouTube",
+          fontSize: 48,
           height: 1.2,
           fontWeight: FontWeight.w800,
         ),
         Container(
-          width: isMobile ? null : 560,
-          padding: const EdgeInsets.only(top: 16, bottom: 60),
+          width: 550,
+          padding: const EdgeInsets.symmetric(vertical: 24),
           child: const CustomText(
             text:
-                "I've been priveleged to speak at a number of events around the globe. From cozy meetups to large international conferences, I speak about the topics that interest me, sharing my knowledge with others",
+                "I share my knowledge and experiences through YouTube videos, focusing on Flutter development, clean architecture, and best practices.",
             color: blackWithOpacity87,
           ),
         ),
+        YoutubeVideos(isMobile: isMobile),
+        const SizedBox(height: 48),
         Center(
           child: ElevatedButton(
             onPressed: () {},
@@ -39,7 +42,7 @@ class SpeakingSection extends StatelessWidget {
               ),
             ),
             child: const CustomText(
-              text: 'View more on GitHub',
+              text: 'Visit YouTube Channel',
               color: white,
               fontSize: 20,
               fontWeight: FontWeight.w500,

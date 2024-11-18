@@ -36,152 +36,61 @@ class WritingSection extends StatelessWidget {
             children: [
               MediumCard(
                 isMobile: isMobile,
-                imageWidget: const _BandageImage(),
+                imageWidget: const ArticleImage(
+                  assetPath: 'assets/images/bandage.png',
+                ),
                 category: 'ENGINEERING',
                 date: '07/05/2024',
                 title: 'Why Patching Globals Is Harmful',
               ),
               MediumCard(
                 isMobile: isMobile,
-                imageWidget: const _RemixImage(),
+                imageWidget: const ArticleImage(
+                  assetPath: 'assets/images/remix.png',
+                ),
                 category: 'ENGINEERING',
                 date: '10/05/2023',
                 title: 'My Struggle With Remix',
               ),
               MediumCard(
                 isMobile: isMobile,
-                imageWidget: const _ThrottleImage(),
+                imageWidget: const ArticleImage(
+                  assetPath: 'assets/images/throttle.png',
+                ),
                 category: 'ENGINEERING',
-                date: '23/12/2019',
-                title: 'Debounce vs Throttle: Definitive Visual Guide',
+                date: '15/04/2023',
+                title: 'Throttle vs Debounce',
               ),
             ],
           ),
         ),
-        Center(
-          child: ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-              backgroundColor: black,
-              padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 16),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(24),
-              ),
-            ),
-            child: const CustomText(
-              text: 'See more posts',
-              color: white,
-              fontSize: 20,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-        ),
+        const SizedBox(height: 48),
         const CustomDivider(),
       ],
     );
   }
 }
 
-class _BandageImage extends StatelessWidget {
-  const _BandageImage();
+class ArticleImage extends StatelessWidget {
+  final String assetPath;
 
-  @override
-  Widget build(BuildContext context) {
-    return Transform.rotate(
-      angle: -0.2,
-      child: Container(
-        width: 120,
-        height: 60,
-        decoration: BoxDecoration(
-          color: const Color(0xFFFFE4BC),
-          borderRadius: BorderRadius.circular(8),
-          boxShadow: [
-            BoxShadow(
-              color: const Color(0xFFFFE4BC).withOpacity(0.5),
-              blurRadius: 20,
-              offset: const Offset(0, 10),
-            ),
-          ],
-        ),
-        child: const Center(
-          child: Text(
-            '🩹',
-            style: TextStyle(fontSize: 24),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _RemixImage extends StatelessWidget {
-  const _RemixImage();
+  const ArticleImage({
+    super.key,
+    required this.assetPath,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 120,
-      height: 120,
+      width: double.infinity,
+      height: 200,
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.1),
-            blurRadius: 20,
-            offset: const Offset(0, 10),
-          ),
-        ],
-      ),
-      child: const Center(
-        child: Text(
-          'R',
-          style: TextStyle(
-            fontSize: 64,
-            fontWeight: FontWeight.bold,
-            color: Color(0xFF0A0A0A),
-          ),
+        borderRadius: BorderRadius.circular(8),
+        image: DecorationImage(
+          image: AssetImage(assetPath),
+          fit: BoxFit.cover,
         ),
       ),
-    );
-  }
-}
-
-class _ThrottleImage extends StatelessWidget {
-  const _ThrottleImage();
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Container(
-          width: 40,
-          height: 40,
-          decoration: BoxDecoration(
-            color: Colors.white.withOpacity(0.5),
-            shape: BoxShape.circle,
-          ),
-        ),
-        const SizedBox(height: 8),
-        Container(
-          width: 40,
-          height: 40,
-          decoration: BoxDecoration(
-            color: Colors.white.withOpacity(0.8),
-            shape: BoxShape.circle,
-          ),
-        ),
-        const SizedBox(height: 8),
-        Container(
-          width: 40,
-          height: 40,
-          decoration: const BoxDecoration(
-            color: Color(0xFF0A0A0A),
-            shape: BoxShape.circle,
-          ),
-        ),
-      ],
     );
   }
 }

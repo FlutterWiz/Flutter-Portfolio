@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 const Color white = Colors.white;
 const Color blackWithOpacity87 = Colors.black87;
+const Color transparent = Colors.transparent;
 
 const Color black = Color.fromRGBO(31, 41, 55, 1);
 const Color customOrange = Color.fromRGBO(241, 68, 68, 1);
