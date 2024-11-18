@@ -1,8 +1,10 @@
 import 'package:alperefesahin_dev/core/constants/colors.dart';
+import 'package:alperefesahin_dev/core/design_system/footer/footer_section.dart';
 import 'package:alperefesahin_dev/features/about/widgets/greetings/greetings_section.dart';
 import 'package:alperefesahin_dev/features/about/widgets/open_source/open_source_section.dart';
 import 'package:alperefesahin_dev/features/about/widgets/youtube/youtube_section.dart';
 import 'package:alperefesahin_dev/features/about/widgets/writing/writing_section.dart';
+import 'package:alperefesahin_dev/features/about/widgets/stay_in_touch/stay_in_touch_section.dart';
 import 'package:flutter/material.dart';
 
 class AboutPage extends StatelessWidget {
@@ -28,6 +30,10 @@ class AboutPage extends StatelessWidget {
                 WritingSection(isMobile: isMobile),
                 OpenSourceSection(isMobile: isMobile),
                 YoutubeSection(isMobile: isMobile),
+                const SizedBox(height: 48),
+                StayInTouchSection(isMobile: isMobile),
+                const SizedBox(height: 48),
+                FooterSection(isMobile: isMobile),
               ],
             ),
           ),

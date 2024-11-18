@@ -64,7 +64,24 @@ class WritingSection extends StatelessWidget {
             ],
           ),
         ),
-        const SizedBox(height: 48),
+        Center(
+          child: ElevatedButton(
+            onPressed: () {},
+            style: ElevatedButton.styleFrom(
+              backgroundColor: black,
+              padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 16),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(24),
+              ),
+            ),
+            child: const CustomText(
+              text: 'See more posts',
+              color: white,
+              fontSize: 20,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ),
         const CustomDivider(),
       ],
     );

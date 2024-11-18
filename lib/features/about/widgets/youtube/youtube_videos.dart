@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:alperefesahin_dev/features/about/widgets/youtube/youtube_video_card.dart';
+import 'package:alperefesahin_dev/features/about/widgets/youtube/youtube_content.dart';
 
 class YoutubeVideos extends StatelessWidget {
   final bool isMobile;
@@ -25,10 +26,10 @@ class YoutubeVideos extends StatelessWidget {
           ),
           const SizedBox(height: 24),
           YoutubeVideoCard(
-            title: 'Flutter Clean Architecture',
-            uploadDate: 'March 2024',
-            description: 'A comprehensive guide to implementing clean architecture in Flutter applications.',
-            thumbnailUrl: 'YOUR_THUMBNAIL_URL',
+            title: YoutubeContent.recentVideo.title,
+            uploadDate: YoutubeContent.recentVideo.uploadDate,
+            description: YoutubeContent.recentVideo.description,
+            thumbnailUrl: YoutubeContent.recentVideo.thumbnailUrl,
             onWatch: () {},
             isMobile: true,
           ),
@@ -42,22 +43,18 @@ class YoutubeVideos extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 24),
-          YoutubeVideoCard(
-            title: 'State Management in Flutter',
-            uploadDate: 'February 2024',
-            description: 'Deep dive into different state management solutions in Flutter.',
-            onWatch: () {},
-            isSmallCard: true,
-            isMobile: true,
-          ),
-          const SizedBox(height: 24),
-          YoutubeVideoCard(
-            title: 'Flutter Web Development',
-            uploadDate: 'January 2024',
-            description: 'Building responsive web applications with Flutter.',
-            onWatch: () {},
-            isSmallCard: true,
-            isMobile: true,
+          ...YoutubeContent.pastVideos.map(
+            (video) => Padding(
+              padding: const EdgeInsets.only(bottom: 24),
+              child: YoutubeVideoCard(
+                title: video.title,
+                uploadDate: video.uploadDate,
+                description: video.description,
+                onWatch: () {},
+                isSmallCard: true,
+                isMobile: true,
+              ),
+            ),
           ),
         ],
       );
@@ -69,10 +66,10 @@ class YoutubeVideos extends StatelessWidget {
         Expanded(
           flex: 2,
           child: YoutubeVideoCard(
-            title: 'Flutter Clean Architecture',
-            uploadDate: 'March 2024',
-            description: 'A comprehensive guide to implementing clean architecture in Flutter applications.',
-            thumbnailUrl: 'YOUR_THUMBNAIL_URL',
+            title: YoutubeContent.recentVideo.title,
+            uploadDate: YoutubeContent.recentVideo.uploadDate,
+            description: YoutubeContent.recentVideo.description,
+            thumbnailUrl: YoutubeContent.recentVideo.thumbnailUrl,
             onWatch: () {},
             isMobile: false,
           ),
@@ -92,22 +89,18 @@ class YoutubeVideos extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 24),
-              YoutubeVideoCard(
-                title: 'State Management in Flutter',
-                uploadDate: 'February 2024',
-                description: 'Deep dive into different state management solutions in Flutter.',
-                onWatch: () {},
-                isSmallCard: true,
-                isMobile: false,
-              ),
-              const SizedBox(height: 24),
-              YoutubeVideoCard(
-                title: 'Flutter Web Development',
-                uploadDate: 'January 2024',
-                description: 'Building responsive web applications with Flutter.',
-                onWatch: () {},
-                isSmallCard: true,
-                isMobile: false,
+              ...YoutubeContent.pastVideos.map(
+                (video) => Padding(
+                  padding: const EdgeInsets.only(bottom: 24),
+                  child: YoutubeVideoCard(
+                    title: video.title,
+                    uploadDate: video.uploadDate,
+                    description: video.description,
+                    onWatch: () {},
+                    isSmallCard: true,
+                    isMobile: false,
+                  ),
+                ),
               ),
             ],
           ),
