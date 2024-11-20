@@ -16,26 +16,27 @@ class OtherProjects extends StatelessWidget {
         children: [
           OtherProjectContainer(
             isMobile: isMobile,
-            title: "Flutter Web Portfolio",
+            title: "Phone Auth Cubit",
             description:
-                "A modern, responsive portfolio website built with Flutter Web",
+                "Cross-platform SMS authentication app using Cubit state management.",
           ),
           OtherProjectContainer(
             isMobile: isMobile,
-            title: "Weather App",
+            title: "Social Dating App with Riverpod & DDD",
             description:
-                "Real-time weather forecasting app with beautiful UI/UX",
+                "Social dating app built with Riverpod, Freezed, and DDD principles.",
           ),
           OtherProjectContainer(
             isMobile: isMobile,
-            title: "Task Manager",
-            description: "Clean architecture based task management application",
+            title: "Text-to-Image Generator",
+            description:
+                "Generate images from text prompts using an advanced AI model.",
           ),
           OtherProjectContainer(
             isMobile: isMobile,
-            title: "E-Commerce App",
+            title: "Flutter Firebase DDD with BLoC",
             description:
-                "Full-featured e-commerce application with state management",
+                "Updated DDD series app with Firebase integration and BLoC state.",
           ),
         ],
       ),

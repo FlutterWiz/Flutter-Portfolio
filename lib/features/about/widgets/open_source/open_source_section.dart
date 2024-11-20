@@ -1,11 +1,12 @@
 import 'package:alperefesahin_dev/core/constants/colors.dart';
 import 'package:alperefesahin_dev/core/design_system/custom_divider.dart';
 import 'package:alperefesahin_dev/core/design_system/custom_text.dart';
+import 'package:alperefesahin_dev/core/mixins/launch_mixin.dart';
 import 'package:alperefesahin_dev/features/about/widgets/open_source/featured_projects.dart';
 import 'package:alperefesahin_dev/features/about/widgets/open_source/other_projects.dart';
 import 'package:flutter/material.dart';
 
-class OpenSourceSection extends StatelessWidget {
+class OpenSourceSection extends StatelessWidget with LaunchMixin {
   const OpenSourceSection({super.key, required this.isMobile});
 
   final bool isMobile;
@@ -34,7 +35,10 @@ class OpenSourceSection extends StatelessWidget {
         OtherProjects(isMobile: isMobile),
         Center(
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () => launchUrlInWeb(
+              isWebsite: true,
+              websitePath: "https://github.com/alperefesahin",
+            ),
             style: ElevatedButton.styleFrom(
               backgroundColor: black,
               padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 16),

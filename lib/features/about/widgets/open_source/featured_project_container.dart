@@ -15,6 +15,7 @@ class FeaturedProjectContainer extends StatelessWidget {
     required this.title,
     required this.description,
     required this.textColor,
+    required this.onPressed,
   });
 
   final bool isMobile;
@@ -25,13 +26,14 @@ class FeaturedProjectContainer extends StatelessWidget {
   final String imagePath;
   final String title;
   final String description;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: isMobile ? null : 550,
-      height: 300,
-      padding: const EdgeInsets.all(48),
+      width: isMobile ? null : 375,
+      height: isMobile ? 300 : 225,
+      padding: EdgeInsets.all(isMobile ? 48 : 36),
       margin: const EdgeInsets.only(bottom: 48),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
@@ -45,17 +47,18 @@ class FeaturedProjectContainer extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _ProjectImage(
+            isMobile: isMobile,
             imagePath: imagePath,
             shadowColor: shadowColor,
           ),
           const SizedBox(width: 24),
-          Expanded(
-            child: _ProjectContent(
-              title: title,
-              description: description,
-              textColor: textColor,
-              isSponsored: isSponsored,
-            ),
+          _ProjectContent(
+            isMobile: isMobile,
+            title: title,
+            description: description,
+            textColor: textColor,
+            isSponsored: isSponsored,
+            onPressed: onPressed,
           ),
         ],
       ),
@@ -67,16 +70,19 @@ class _ProjectImage extends StatelessWidget {
   const _ProjectImage({
     required this.imagePath,
     required this.shadowColor,
+    required this.isMobile,
   });
 
   final String imagePath;
   final Color shadowColor;
-
+  final bool isMobile;
   @override
   Widget build(BuildContext context) {
+    final double imageSize = isMobile ? 50 : 36;
+
     return Container(
-      width: 50,
-      height: 50,
+      width: imageSize,
+      height: imageSize,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
         color: black,
@@ -104,36 +110,51 @@ class _ProjectContent extends StatelessWidget {
     required this.description,
     required this.textColor,
     required this.isSponsored,
+    required this.onPressed,
+    required this.isMobile,
   });
 
   final String title;
   final String description;
   final Color textColor;
   final bool isSponsored;
+  final bool isMobile;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        CustomText(
-          text: title,
-          fontSize: 24,
-          height: 1.2,
-          fontWeight: FontWeight.w800,
-        ),
-        Container(
-          padding: const EdgeInsets.symmetric(vertical: 24),
-          child: CustomText(
-            text: description,
-            color: textColor,
-            height: 1.6,
+    return Expanded(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(
+            child: CustomText(
+              text: title,
+              fontSize: isMobile ? 24 : 20,
+              height: 1.2,
+              fontWeight: FontWeight.w800,
+            ),
           ),
-        ),
-        _ProjectActions(
-          isSponsored: isSponsored,
-        ),
-      ],
+          Padding(
+            padding: isMobile
+                ? const EdgeInsets.only(bottom: 20)
+                : const EdgeInsets.symmetric(vertical: 24),
+            child: CustomText(
+              text: description,
+              color: textColor,
+              height: 1.6,
+              fontSize: isMobile ? 20 : 16,
+            ),
+          ),
+          Expanded(
+            child: _ProjectActions(
+              isMobile: isMobile,
+              isSponsored: isSponsored,
+              onPressed: onPressed,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -141,35 +162,39 @@ class _ProjectContent extends StatelessWidget {
 class _ProjectActions extends StatelessWidget {
   const _ProjectActions({
     required this.isSponsored,
+    required this.onPressed,
+    required this.isMobile,
   });
 
+  final bool isMobile;
   final bool isSponsored;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         IconButton(
-          onPressed: () {},
+          onPressed: onPressed,
           style: IconButton.styleFrom(
             backgroundColor: black,
-            padding: const EdgeInsets.symmetric(horizontal: 32),
+            padding: EdgeInsets.symmetric(horizontal: isMobile ? 32 : 16),
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(24),
+              borderRadius: BorderRadius.circular(isMobile ? 24 : 16),
             ),
           ),
-          icon: const Row(
+          icon: Row(
             children: [
               FaIcon(
                 FontAwesomeIcons.github,
                 color: white,
-                size: 18,
+                size: isMobile ? 18 : 12,
               ),
-              SizedBox(width: 8),
+              const SizedBox(width: 8),
               CustomText(
                 text: 'GitHub',
                 color: white,
-                fontSize: 20,
+                fontSize: isMobile ? 20 : 16,
                 fontWeight: FontWeight.w500,
               ),
             ],
@@ -181,7 +206,7 @@ class _ProjectActions extends StatelessWidget {
             child: Text(
               "Sponsored!",
               style: GoogleFonts.robotoCondensed(
-                fontSize: 20,
+                fontSize: isMobile ? 20 : 16,
                 decoration: TextDecoration.underline,
                 decorationColor: black,
                 decorationThickness: 1.5,

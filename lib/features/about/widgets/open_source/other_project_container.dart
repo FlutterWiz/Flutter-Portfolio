@@ -19,7 +19,7 @@ class OtherProjectContainer extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return Container(
       width: isMobile ? double.infinity : size.width / 6,
-      height: 250,
+      height: 300,
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),

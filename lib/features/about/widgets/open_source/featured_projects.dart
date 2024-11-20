@@ -1,8 +1,9 @@
 import 'package:alperefesahin_dev/core/constants/colors.dart';
+import 'package:alperefesahin_dev/core/mixins/launch_mixin.dart';
 import 'package:alperefesahin_dev/features/about/widgets/open_source/featured_project_container.dart';
 import 'package:flutter/material.dart';
 
-class FeaturedProjects extends StatelessWidget {
+class FeaturedProjects extends StatelessWidget with LaunchMixin {
   const FeaturedProjects({super.key, required this.isMobile});
 
   final bool isMobile;
@@ -13,9 +14,14 @@ class FeaturedProjects extends StatelessWidget {
       width: double.infinity,
       child: Wrap(
         spacing: 0,
-        alignment: WrapAlignment.spaceBetween,
+        alignment: WrapAlignment.spaceAround,
         children: [
           FeaturedProjectContainer(
+            onPressed: () => launchUrlInWeb(
+              isWebsite: true,
+              websitePath:
+                  "https://github.com/alperefesahin/flutter_social_chat",
+            ),
             isMobile: isMobile,
             gradientColors: const [streamLightBlue, white],
             shadowColor: streamDarkBlue,
@@ -27,6 +33,11 @@ class FeaturedProjects extends StatelessWidget {
             isSponsored: true,
           ),
           FeaturedProjectContainer(
+            onPressed: () => launchUrlInWeb(
+              isWebsite: true,
+              websitePath:
+                  "https://github.com/alperefesahin/Credit-Card-Fraud-Detection",
+            ),
             isMobile: isMobile,
             isSponsored: false,
             gradientColors: const [aiLightOrange, white],

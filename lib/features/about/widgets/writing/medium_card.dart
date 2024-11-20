@@ -30,14 +30,14 @@ class MediumCard extends StatelessWidget {
       hoverColor: transparent,
       onTap: onTap,
       child: SizedBox(
-        width: isMobile ? null : size.width / 4.250,
-        height: 475,
+        width: isMobile ? null : size.width / 4.8,
+        height: 412,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              width: isMobile ? null : 360,
-              height: 360,
+              width: isMobile ? null : 300,
+              height: 300,
               child: Center(child: imageWidget),
             ),
             const SizedBox(height: 24),
