@@ -13,11 +13,14 @@ class WritingSection extends StatelessWidget with LaunchMixin {
 
   @override
   Widget build(BuildContext context) {
+    const writingTitle = 'Writing';
+    const writingTitleDescription =
+        'On Medium, I share my journey as a Flutter developer, tackling topics like state management, architecture, and challenges. In addition to writing for my personal profile, I contribute to well-known publications like CodeX and Towards Dev, helping others through my experiences and insights.';
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const CustomText(
-          text: "Writing",
+          text: writingTitle,
           height: 1.2,
           fontWeight: FontWeight.w800,
           fontSize: 32,
@@ -26,8 +29,7 @@ class WritingSection extends StatelessWidget with LaunchMixin {
           width: isMobile ? null : 560,
           padding: const EdgeInsets.only(top: 16, bottom: 60),
           child: const CustomText(
-            text:
-                'I created this website to be a personal space where I could write about the things I would like to read myself. I draw topics from my experiences and my struggles so we could learn together.',
+            text: writingTitleDescription,
             color: blackWithOpacity87,
           ),
         ),

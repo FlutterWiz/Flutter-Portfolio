@@ -1,17 +1,42 @@
+import 'package:alperefesahin_dev/core/mixins/launch_mixin.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class SocialIconsRow extends StatelessWidget {
+class SocialIconsRow extends StatelessWidget with LaunchMixin {
   const SocialIconsRow({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        SocialIcons(onPressed: () {}, icon: FontAwesomeIcons.linkedin),
-        SocialIcons(onPressed: () {}, icon: FontAwesomeIcons.youtube),
-        SocialIcons(onPressed: () {}, icon: FontAwesomeIcons.medium),
-        SocialIcons(onPressed: () {}, icon: FontAwesomeIcons.xTwitter),
+        SocialIcons(
+          onPressed: () => launchUrlInWeb(
+            isWebsite: true,
+            websitePath: "https://linkedin.com/in/alperefesahin/",
+          ),
+          icon: FontAwesomeIcons.linkedin,
+        ),
+        SocialIcons(
+          onPressed: () => launchUrlInWeb(
+            isWebsite: true,
+            websitePath: "https://youtube.com/@alperefesahin",
+          ),
+          icon: FontAwesomeIcons.youtube,
+        ),
+        SocialIcons(
+          onPressed: () => launchUrlInWeb(
+            isWebsite: true,
+            websitePath: "https://medium.com/@alperefesahin",
+          ),
+          icon: FontAwesomeIcons.medium,
+        ),
+        SocialIcons(
+          onPressed: () => launchUrlInWeb(
+            isWebsite: true,
+            websitePath: "https://x.com/alperefesahin",
+          ),
+          icon: FontAwesomeIcons.xTwitter,
+        ),
       ],
     );
   }

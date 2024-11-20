@@ -13,11 +13,15 @@ class OpenSourceSection extends StatelessWidget with LaunchMixin {
 
   @override
   Widget build(BuildContext context) {
+    const openSourceTitle = "Open Source";
+    const openSourceDescription =
+        "Open source is a fundamental part of my engineering journey. It's how I learn, grow, and contribute back to the community. I feel wonderful to have influenced others with my projects. Feel free to explore some of them on my GitHub!";
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const CustomText(
-          text: "Open source",
+          text: openSourceTitle,
           fontSize: 32,
           height: 1.2,
           fontWeight: FontWeight.w800,
@@ -26,8 +30,7 @@ class OpenSourceSection extends StatelessWidget with LaunchMixin {
           width: isMobile ? null : 560,
           padding: const EdgeInsets.only(top: 16, bottom: 60),
           child: const CustomText(
-            text:
-                "Open source plays a tremendous part in my engineering journey. This is my primary way of learning and I'm truly humbled to have influenced so many people with my projects. Here are just a few of them.",
+            text: openSourceDescription,
             color: blackWithOpacity87,
           ),
         ),

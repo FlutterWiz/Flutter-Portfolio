@@ -13,10 +13,17 @@ class GreetingsSection extends StatelessWidget {
   Widget build(BuildContext context) {
     const howStartedTitle = "How it started";
     const howStartedDescription =
-        '''I was born in 1994 in a small town in eastern Ukraine. Unable to decide whom I wanted to be more—an astronaut or a drummer—I've slowly found myself in the grasp of graphic design. But the main reason I began learning it was so I would have a nice visual presentation for the "awesome" HTML sites I was building at the time.\n\nI graduated from a medical university and moved to the Czech Republic to pursue a doctor's career. But life had different plans for me, and so it led me down the path of software engineering so I could affect the lives of thousands of other developers through the projects I would build.''';
+        '''I was born in 2001 in Turkey and discovered my passion for software engineering at the age of 14. My first attempt was creating a forum called forumtim.com using Simple Machines Forum (SMF). Though it didn’t succeed, I didn’t give up. 
+
+When I started university in the Mathematics department, I dedicated myself to improving in software development. I began my journey with Python, like many others, and later transitioned to web development, which led to an internship at Jotform. In 2020, I discovered Flutter, a rising framework at the time, and decided to specialize as a Flutter developer. 
+
+Since then, I've worked with several companies, written Medium articles, recorded YouTube videos, and created open-source projects to contribute to the developer community.''';
+
     const howItsGoingTitle = "How it's going";
     const howItsGoingDescription =
-        '''Over the past decade I've been working as a software engineer in digital agencies, large corporations, and startups of various stages of acquisition. I've learned and taught, broken and fixed, but most importantly, had a chance to meet so many wonderful people along the way.\n\nNow, I've joined EpicWeb to teach the world about automated testing!''';
+        '''Today, I balance my time between Flutter development, which has become my primary focus thanks to years of dedication, and exploring machine learning, a passion sparked by my Mathematics department thesis.
+
+In my free time, I work on open-source projects, write articles, and share knowledge with others through YouTube videos. I’m committed to continuous learning, combining the worlds of mobile development and AI to create impactful projects and grow as a software engineer.''';
 
     return Column(
       children: [

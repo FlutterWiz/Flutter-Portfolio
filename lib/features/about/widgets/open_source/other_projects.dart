@@ -24,7 +24,7 @@ class OtherProjects extends StatelessWidget {
             isMobile: isMobile,
             title: "Social Dating App with Riverpod & DDD",
             description:
-                "Social dating app built with Riverpod, Freezed, and DDD principles.",
+                "Social dating app with Riverpod, Freezed, and DDD principles.",
           ),
           OtherProjectContainer(
             isMobile: isMobile,
