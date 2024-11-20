@@ -201,15 +201,17 @@ class _ProjectActions extends StatelessWidget {
           ),
         ),
         if (isSponsored)
-          Padding(
-            padding: const EdgeInsets.only(left: 12),
-            child: Text(
-              "Sponsored!",
-              style: GoogleFonts.robotoCondensed(
-                fontSize: isMobile ? 20 : 16,
-                decoration: TextDecoration.underline,
-                decorationColor: black,
-                decorationThickness: 1.5,
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.only(left: 12),
+              child: Text(
+                "Sponsored!",
+                style: GoogleFonts.robotoCondensed(
+                  fontSize: isMobile ? 20 : 16,
+                  decoration: TextDecoration.underline,
+                  decorationColor: black,
+                  decorationThickness: 1.5,
+                ),
               ),
             ),
           ),
