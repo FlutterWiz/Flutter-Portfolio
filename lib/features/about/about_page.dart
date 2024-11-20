@@ -29,11 +29,10 @@ class AboutPage extends StatelessWidget {
                 GreetingsSection(isMobile: isMobile),
                 WritingSection(isMobile: isMobile),
                 OpenSourceSection(isMobile: isMobile),
-                /*    YoutubeSection(isMobile: isMobile),
-                const SizedBox(height: 48),
+                YoutubeSection(isMobile: isMobile),
                 StayInTouchSection(isMobile: isMobile),
                 const SizedBox(height: 48),
-                FooterSection(isMobile: isMobile), */
+                FooterSection(isMobile: isMobile),
               ],
             ),
           ),
