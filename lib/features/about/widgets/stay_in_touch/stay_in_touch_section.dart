@@ -1,7 +1,10 @@
 import 'package:alperefesahin_dev/core/constants/colors.dart';
+import 'package:alperefesahin_dev/core/design_system/custom_text.dart';
+import 'package:alperefesahin_dev/core/mixins/launch_mixin.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class StayInTouchSection extends StatelessWidget {
+class StayInTouchSection extends StatelessWidget with LaunchMixin {
   final bool isMobile;
 
   const StayInTouchSection({
@@ -13,40 +16,40 @@ class StayInTouchSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(32),
+      margin: const EdgeInsets.only(top: 120),
       decoration: BoxDecoration(
         color: lightBlue,
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(12),
       ),
       child: isMobile
           ? Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  'Stay in touch',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF1F2937),
-                  ),
+                const CustomText(
+                  text: 'Stay in touch',
+                  fontSize: 32,
+                  fontWeight: FontWeight.w800,
                 ),
-                const SizedBox(height: 8),
-                const Text(
-                  'Never miss a single post or a project announcement I make. Follow me on Twitter to stay in touch, ask a question, or just discuss different engineering topics together.',
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Color(0xFF4B5563),
-                  ),
+                const SizedBox(height: 12),
+                const CustomText(
+                  text:
+                      'Never miss a single post or a project announcement I make. Follow me on Twitter to stay in touch, ask a question, or just discuss different engineering topics together.',
+                  fontSize: 20,
+                  color: blackWithOpacity87,
                 ),
                 const SizedBox(height: 24),
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: null,
+                    onPressed: () => launchUrlInWeb(
+                      isWebsite: true,
+                      websitePath: 'https://x.com/alperefesahin',
+                    ),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF111827),
+                      backgroundColor: black,
                       padding: const EdgeInsets.symmetric(
                         horizontal: 24,
-                        vertical: 12,
+                        vertical: 16,
                       ),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(24),
@@ -55,14 +58,15 @@ class StayInTouchSection extends StatelessWidget {
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(Icons.close, size: 18, color: Colors.white),
+                        FaIcon(
+                          FontAwesomeIcons.xTwitter,
+                          size: 18,
+                          color: white,
+                        ),
                         SizedBox(width: 8),
-                        Text(
-                          'Follow me',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
+                        CustomText(
+                          text: 'Follow me',
+                          color: white,
                         ),
                       ],
                     ),
@@ -73,37 +77,37 @@ class StayInTouchSection extends StatelessWidget {
           : Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Expanded(
+                const Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        'Stay in touch',
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFF1F2937),
-                        ),
+                      CustomText(
+                        text: 'Stay in touch',
+                        fontSize: 32,
+                        fontWeight: FontWeight.w800,
                       ),
-                      const SizedBox(height: 8),
-                      const Text(
-                        'Never miss a single post or a project announcement I make. Follow me on Twitter to stay in touch, ask a question, or just discuss different engineering topics together.',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Color(0xFF4B5563),
-                        ),
+                      SizedBox(height: 12),
+                      CustomText(
+                        text:
+                            'Never miss a single post or a project announcement I make. Follow me on Twitter to stay in touch, ask a question, or just discuss different engineering topics together.',
+                        fontSize: 20,
+                        color: blackWithOpacity87,
                       ),
+                      SizedBox(height: 24),
                     ],
                   ),
                 ),
                 const SizedBox(width: 24),
                 ElevatedButton(
-                  onPressed: null,
+                  onPressed: () => launchUrlInWeb(
+                    isWebsite: true,
+                    websitePath: 'https://x.com/alperefesahin',
+                  ),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF111827),
+                    backgroundColor: black,
                     padding: const EdgeInsets.symmetric(
-                      horizontal: 24,
-                      vertical: 12,
+                      horizontal: 100,
+                      vertical: 16,
                     ),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(24),
@@ -112,14 +116,15 @@ class StayInTouchSection extends StatelessWidget {
                   child: const Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Icon(Icons.close, size: 18, color: Colors.white),
+                      FaIcon(
+                        FontAwesomeIcons.xTwitter,
+                        size: 18,
+                        color: white,
+                      ),
                       SizedBox(width: 8),
-                      Text(
-                        'Follow me',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w500,
-                        ),
+                      CustomText(
+                        text: 'Follow me',
+                        color: white,
                       ),
                     ],
                   ),

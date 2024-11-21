@@ -34,7 +34,7 @@ class YoutubeSection extends StatelessWidget with LaunchMixin {
           ),
         ),
         YoutubeVideos(isMobile: isMobile),
-        const SizedBox(height: 48),
+        const SizedBox(height: 60),
         CustomButton(
           text: "Visit YouTube Channel",
           onPressed: () => launchUrlInWeb(

@@ -1,4 +1,5 @@
 import 'package:alperefesahin_dev/core/constants/colors.dart';
+import 'package:alperefesahin_dev/core/design_system/custom_divider.dart';
 import 'package:alperefesahin_dev/core/design_system/footer/footer_section.dart';
 import 'package:alperefesahin_dev/features/about/widgets/greetings/greetings_section.dart';
 import 'package:alperefesahin_dev/features/about/widgets/open_source/open_source_section.dart';
@@ -20,22 +21,36 @@ class AboutPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: white,
       body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: maxScreenWidth),
-            child: Column(
-              children: [
-                GreetingsSection(isMobile: isMobile),
-                WritingSection(isMobile: isMobile),
-                OpenSourceSection(isMobile: isMobile),
-                YoutubeSection(isMobile: isMobile),
-                StayInTouchSection(isMobile: isMobile),
-                const SizedBox(height: 48),
-                FooterSection(isMobile: isMobile),
-              ],
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: maxScreenWidth),
+                child: Column(
+                  children: [
+                    GreetingsSection(isMobile: isMobile),
+                    WritingSection(isMobile: isMobile),
+                    OpenSourceSection(isMobile: isMobile),
+                    YoutubeSection(isMobile: isMobile),
+                    StayInTouchSection(isMobile: isMobile),
+                  ],
+                ),
+              ),
             ),
-          ),
+            Column(
+              children: [
+                const CustomDivider(),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(maxWidth: maxScreenWidth),
+                    child: FooterSection(isMobile: isMobile),
+                  ),
+                ),
+              ],
+            )
+          ],
         ),
       ),
     );
