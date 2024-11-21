@@ -33,7 +33,7 @@ class StayInTouchSection extends StatelessWidget with LaunchMixin {
                 const SizedBox(height: 12),
                 const CustomText(
                   text:
-                      'Never miss a single post or a project announcement I make. Follow me on Twitter to stay in touch, ask a question, or just discuss different engineering topics together.',
+                      "Don't miss out on my latest posts and projects! Hit me up on Twitter to stay connected, ask questions, or just chat about anything!",
                   fontSize: 20,
                   color: blackWithOpacity87,
                 ),
@@ -89,7 +89,7 @@ class StayInTouchSection extends StatelessWidget with LaunchMixin {
                       SizedBox(height: 12),
                       CustomText(
                         text:
-                            'Never miss a single post or a project announcement I make. Follow me on Twitter to stay in touch, ask a question, or just discuss different engineering topics together.',
+                            "Don't miss out on my latest posts and projects! Hit me up on Twitter to stay connected, ask questions, or just chat about anything!",
                         fontSize: 20,
                         color: blackWithOpacity87,
                       ),
