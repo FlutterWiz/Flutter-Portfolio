@@ -1,11 +1,11 @@
 import 'package:alperefesahin_dev/core/constants/colors.dart';
+import 'package:alperefesahin_dev/core/design_system/custom_text.dart';
 import 'package:flutter/material.dart';
 
 class YoutubeVideoCard extends StatelessWidget {
   final String title;
-  final String uploadDate;
+  final String date;
   final String description;
-  final String? thumbnailUrl;
   final VoidCallback onWatch;
   final bool isSmallCard;
   final bool isMobile;
@@ -13,9 +13,8 @@ class YoutubeVideoCard extends StatelessWidget {
   const YoutubeVideoCard({
     super.key,
     required this.title,
-    required this.uploadDate,
+    required this.date,
     required this.description,
-    this.thumbnailUrl,
     required this.onWatch,
     this.isSmallCard = false,
     this.isMobile = false,
@@ -29,29 +28,22 @@ class YoutubeVideoCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              title,
-              style: const TextStyle(
+            CustomText(
+              text: title,
+              fontWeight: FontWeight.w800,
+            ),
+            CustomText(
+              text: date,
+              color: grey,
+              fontSize: 16,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16),
+              child: CustomText(
+                text: description,
                 fontSize: 20,
-                fontWeight: FontWeight.w600,
               ),
             ),
-            const SizedBox(height: 8),
-            Text(
-              uploadDate,
-              style: TextStyle(
-                color: Colors.grey[600],
-                fontSize: 14,
-              ),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              description,
-              style: const TextStyle(
-                fontSize: 16,
-              ),
-            ),
-            const SizedBox(height: 16),
             TextButton(
               onPressed: onWatch,
               style: TextButton.styleFrom(
@@ -59,27 +51,25 @@ class YoutubeVideoCard extends StatelessWidget {
                   horizontal: 16,
                   vertical: 8,
                 ),
-                backgroundColor: Colors.grey[100],
+                backgroundColor: lightBlue,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
               ),
-              child: Row(
+              child: const Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Icon(
                     Icons.play_circle_outline,
-                    color: Colors.grey[800],
+                    color: black,
                     size: 20,
                   ),
-                  const SizedBox(width: 8),
-                  Text(
-                    'Watch',
-                    style: TextStyle(
-                      color: Colors.grey[800],
-                      fontWeight: FontWeight.w500,
-                      fontSize: 14,
-                    ),
+                  SizedBox(width: 4),
+                  CustomText(
+                    text: 'Watch',
+                    color: black,
+                    fontWeight: FontWeight.w800,
+                    fontSize: 14,
                   ),
                 ],
               ),
@@ -96,94 +86,84 @@ class YoutubeVideoCard extends StatelessWidget {
       onTap: onWatch,
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.grey[100],
+          color: lightBlue,
           borderRadius: BorderRadius.circular(16),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            if (thumbnailUrl != null)
-              ClipRRect(
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(16),
-                  topRight: Radius.circular(16),
-                ),
-                child: Stack(
-                  children: [
-                    Image.network(
-                      thumbnailUrl!,
-                      width: double.infinity,
-                      height: isMobile ? 200 : 300,
-                      fit: BoxFit.cover,
+            ClipRRect(
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(16),
+                topRight: Radius.circular(16),
+              ),
+              child: Stack(
+                children: [
+                  Image.asset(
+                    'assets/youtube_podcast.jpg',
+                    width: double.infinity,
+                    height: 400,
+                    fit: BoxFit.cover,
+                  ),
+                  Container(
+                    width: double.infinity,
+                    height: 400,
+                    decoration: BoxDecoration(
+                      color: black.withOpacity(0.5),
                     ),
-                    Container(
-                      width: double.infinity,
-                      height: isMobile ? 200 : 300,
-                      decoration: BoxDecoration(
-                        color: Colors.black.withOpacity(0.4),
-                      ),
-                    ),
-                    Positioned.fill(
-                      child: Center(
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 16,
-                            vertical: 8,
-                          ),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Icon(
-                                Icons.play_circle_outline,
-                                color: Colors.grey[800],
-                              ),
-                              const SizedBox(width: 8),
-                              Text(
-                                'Watch',
-                                style: TextStyle(
-                                  color: Colors.grey[800],
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
+                  ),
+                  Positioned.fill(
+                    child: Center(
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 16,
+                          vertical: 8,
+                        ),
+                        decoration: BoxDecoration(
+                          color: white,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: const Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              Icons.play_circle_outline,
+                              color: black,
+                              size: 20,
+                            ),
+                            SizedBox(width: 4),
+                            CustomText(
+                              text: 'Watch',
+                              color: black,
+                              fontWeight: FontWeight.w800,
+                              fontSize: 14,
+                            ),
+                          ],
                         ),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
+            ),
             Padding(
-              padding: const EdgeInsets.all(24),
+              padding: const EdgeInsets.all(32),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    title,
-                    style: const TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  CustomText(
+                    text: title,
+                    fontSize: 24,
+                    fontWeight: FontWeight.w800,
                   ),
                   const SizedBox(height: 8),
-                  Text(
-                    uploadDate,
-                    style: TextStyle(
-                      color: Colors.grey[600],
-                      fontSize: 16,
-                    ),
+                  CustomText(
+                    text: date,
+                    color: grey,
+                    fontSize: 18,
                   ),
                   const SizedBox(height: 12),
-                  Text(
-                    description,
-                    style: const TextStyle(
-                      fontSize: 16,
-                    ),
-                  ),
+                  CustomText(text: description),
                 ],
               ),
             ),

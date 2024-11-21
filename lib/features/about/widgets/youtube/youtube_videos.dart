@@ -1,111 +1,128 @@
-import 'package:flutter/material.dart';
+import 'package:alperefesahin_dev/core/design_system/custom_divider.dart';
+import 'package:alperefesahin_dev/core/design_system/custom_text.dart';
+import 'package:alperefesahin_dev/core/mixins/launch_mixin.dart';
 import 'package:alperefesahin_dev/features/about/widgets/youtube/youtube_video_card.dart';
-import 'package:alperefesahin_dev/features/about/widgets/youtube/youtube_content.dart';
+import 'package:flutter/material.dart';
 
-class YoutubeVideos extends StatelessWidget {
-  final bool isMobile;
-
+class YoutubeVideos extends StatelessWidget with LaunchMixin {
   const YoutubeVideos({
     super.key,
     required this.isMobile,
   });
 
+  final bool isMobile;
+
   @override
   Widget build(BuildContext context) {
-    if (isMobile) {
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            'RECENT VIDEOS',
-            style: TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 1.2,
-            ),
-          ),
-          const SizedBox(height: 24),
-          YoutubeVideoCard(
-            title: YoutubeContent.recentVideo.title,
-            uploadDate: YoutubeContent.recentVideo.uploadDate,
-            description: YoutubeContent.recentVideo.description,
-            thumbnailUrl: YoutubeContent.recentVideo.thumbnailUrl,
-            onWatch: () {},
-            isMobile: true,
-          ),
-          const SizedBox(height: 32),
-          const Text(
-            'PAST VIDEOS',
-            style: TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 1.2,
-            ),
-          ),
-          const SizedBox(height: 24),
-          ...YoutubeContent.pastVideos.map(
-            (video) => Padding(
-              padding: const EdgeInsets.only(bottom: 24),
-              child: YoutubeVideoCard(
-                title: video.title,
-                uploadDate: video.uploadDate,
-                description: video.description,
-                onWatch: () {},
-                isSmallCard: true,
-                isMobile: true,
-              ),
-            ),
-          ),
-        ],
-      );
-    }
-
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Expanded(
-          flex: 2,
-          child: YoutubeVideoCard(
-            title: YoutubeContent.recentVideo.title,
-            uploadDate: YoutubeContent.recentVideo.uploadDate,
-            description: YoutubeContent.recentVideo.description,
-            thumbnailUrl: YoutubeContent.recentVideo.thumbnailUrl,
-            onWatch: () {},
-            isMobile: false,
-          ),
-        ),
-        const SizedBox(width: 48),
-        Expanded(
-          flex: 1,
-          child: Column(
+    return isMobile
+        ? Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'PAST VIDEOS',
-                style: TextStyle(
+              YoutubeVideoCard(
+                title: 'Flutter Sohbetleri - TR Podcast',
+                date: 'March 12, 2023',
+                description:
+                    "Chatting about the journeys of Flutter devs in Turkey—starting with me, in this first episode!",
+                onWatch: () => launchUrlInWeb(
+                  isWebsite: true,
+                  websitePath: "https://www.youtube.com/watch?v=NGrTJfQfOGA",
+                ),
+                isMobile: isMobile,
+              ),
+              const Padding(
+                padding: EdgeInsets.only(top: 60, bottom: 24),
+                child: CustomText(
+                  text: 'PAST VIDEOS',
                   fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1.2,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
-              const SizedBox(height: 24),
-              ...YoutubeContent.pastVideos.map(
-                (video) => Padding(
-                  padding: const EdgeInsets.only(bottom: 24),
-                  child: YoutubeVideoCard(
-                    title: video.title,
-                    uploadDate: video.uploadDate,
-                    description: video.description,
-                    onWatch: () {},
-                    isSmallCard: true,
-                    isMobile: false,
+              YoutubeVideoCard(
+                title: "Flutter Social Chat Tutorial",
+                date: "Jan 23, 2023",
+                description:
+                    'Learn to build a Flutter social chat app step by step in this tutorial series!',
+                onWatch: () => launchUrlInWeb(
+                  isWebsite: true,
+                  websitePath:
+                      "https://www.youtube.com/watch?v=r9MtCK33J78&list=PL3PvZdDvJcMIixstKkuvLWQleqJ1VhLrf",
+                ),
+                isSmallCard: true,
+                isMobile: isMobile,
+              ),
+              const CustomDivider(verticalPadding: 32),
+              YoutubeVideoCard(
+                title: "Dialingo Translation App Tutorial",
+                date: 'Jul 4, 2024',
+                description: "AI Implementation with Gemini and Flutter",
+                onWatch: () => launchUrlInWeb(
+                  isWebsite: true,
+                  websitePath: "https://www.youtube.com/watch?v=heSqh0koVYE",
+                ),
+                isSmallCard: true,
+                isMobile: isMobile,
+              ),
+            ],
+          )
+        : Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Expanded(
+                flex: 2,
+                child: YoutubeVideoCard(
+                  title: 'Flutter Sohbetleri - TR Podcast',
+                  date: 'March 12, 2023',
+                  description:
+                      "Chatting about the journeys of Flutter devs in Turkey—starting with me, in this first episode!",
+                  onWatch: () => launchUrlInWeb(
+                    isWebsite: true,
+                    websitePath: "https://www.youtube.com/watch?v=NGrTJfQfOGA",
                   ),
+                  isMobile: isMobile,
+                ),
+              ),
+              const SizedBox(width: 48),
+              Expanded(
+                flex: 1,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const CustomText(
+                      text: 'PAST VIDEOS',
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    const SizedBox(height: 24),
+                    YoutubeVideoCard(
+                      title: "Flutter Social Chat Tutorial",
+                      date: "Jan 23, 2023",
+                      description:
+                          'Learn to build a Flutter social chat app step by step in this tutorial series!',
+                      onWatch: () => launchUrlInWeb(
+                        isWebsite: true,
+                        websitePath:
+                            "https://www.youtube.com/watch?v=r9MtCK33J78&list=PL3PvZdDvJcMIixstKkuvLWQleqJ1VhLrf",
+                      ),
+                      isSmallCard: true,
+                      isMobile: isMobile,
+                    ),
+                    const CustomDivider(verticalPadding: 32),
+                    YoutubeVideoCard(
+                      title: "Dialingo Translation App Tutorial",
+                      date: 'Jul 4, 2024',
+                      description: "AI Implementation with Gemini and Flutter",
+                      onWatch: () => launchUrlInWeb(
+                        isWebsite: true,
+                        websitePath:
+                            "https://www.youtube.com/watch?v=heSqh0koVYE",
+                      ),
+                      isSmallCard: true,
+                      isMobile: isMobile,
+                    ),
+                  ],
                 ),
               ),
             ],
-          ),
-        ),
-      ],
-    );
+          );
   }
 }

@@ -1,55 +1,47 @@
 import 'package:alperefesahin_dev/core/constants/colors.dart';
-import 'package:alperefesahin_dev/core/design_system/custom_divider.dart';
+import 'package:alperefesahin_dev/core/design_system/custom_button.dart';
 import 'package:alperefesahin_dev/core/design_system/custom_text.dart';
+import 'package:alperefesahin_dev/core/mixins/launch_mixin.dart';
 import 'package:alperefesahin_dev/features/about/widgets/youtube/youtube_videos.dart';
 import 'package:flutter/material.dart';
 
-class YoutubeSection extends StatelessWidget {
+class YoutubeSection extends StatelessWidget with LaunchMixin {
   const YoutubeSection({super.key, required this.isMobile});
 
   final bool isMobile;
 
   @override
   Widget build(BuildContext context) {
+    const youtubeTitle = "YouTube";
+    const youtubeDescription =
+        "I share my experiences and insights on Flutter development, focusing on state management, clean architecture, and open-source projects. My videos also cover practical coding challenges and tips, providing a deeper look into the development process.";
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const CustomText(
-          text: "YouTube",
-          fontSize: 48,
+          text: youtubeTitle,
+          fontSize: 32,
           height: 1.2,
           fontWeight: FontWeight.w800,
         ),
         Container(
-          width: 550,
-          padding: const EdgeInsets.symmetric(vertical: 24),
+          width: isMobile ? null : 560,
+          padding: const EdgeInsets.only(top: 16, bottom: 60),
           child: const CustomText(
-            text:
-                "I share my knowledge and experiences through YouTube videos, focusing on Flutter development, clean architecture, and best practices.",
+            text: youtubeDescription,
             color: blackWithOpacity87,
           ),
         ),
         YoutubeVideos(isMobile: isMobile),
         const SizedBox(height: 48),
-        Center(
-          child: ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-              backgroundColor: black,
-              padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 16),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(24),
-              ),
-            ),
-            child: const CustomText(
-              text: 'Visit YouTube Channel',
-              color: white,
-              fontSize: 20,
-              fontWeight: FontWeight.w500,
-            ),
+        CustomButton(
+          text: "Visit YouTube Channel",
+          onPressed: () => launchUrlInWeb(
+            isWebsite: true,
+            websitePath: 'https://youtube.com/@alperefesahin/',
           ),
         ),
-        const CustomDivider(),
       ],
     );
   }

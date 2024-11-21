@@ -1,3 +1,4 @@
+import 'package:alperefesahin_dev/core/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class StayInTouchSection extends StatelessWidget {
@@ -11,9 +12,9 @@ class StayInTouchSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(24),
+      padding: const EdgeInsets.all(32),
       decoration: BoxDecoration(
-        color: const Color(0xFFF3F4F6),
+        color: lightBlue,
         borderRadius: BorderRadius.circular(8),
       ),
       child: isMobile
