@@ -21,8 +21,9 @@ class SocialFooter extends StatelessWidget with LaunchMixin {
         final socialLink = entry.value;
 
         return Padding(
-          padding:
-              EdgeInsets.only(top: socialName == socialMap.keys.first ? 0 : 8),
+          padding: EdgeInsets.only(
+            top: socialName == socialMap.keys.first ? 0 : 8,
+          ),
           child: InkWell(
             highlightColor: transparent,
             splashColor: transparent,
