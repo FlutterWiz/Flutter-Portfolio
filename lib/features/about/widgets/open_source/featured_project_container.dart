@@ -1,5 +1,6 @@
 import 'package:alperefesahin_dev/core/constants/colors.dart';
 import 'package:alperefesahin_dev/core/design_system/custom_text.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -87,7 +88,7 @@ class _ProjectImage extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
         color: black,
         image: DecorationImage(
-          image: AssetImage(imagePath),
+          image: CachedNetworkImageProvider(imagePath),
           filterQuality: FilterQuality.high,
           fit: BoxFit.fill,
         ),

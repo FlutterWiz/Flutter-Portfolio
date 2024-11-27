@@ -4,6 +4,7 @@ import 'package:alperefesahin_dev/core/design_system/custom_divider.dart';
 import 'package:alperefesahin_dev/core/design_system/custom_text.dart';
 import 'package:alperefesahin_dev/core/mixins/launch_mixin.dart';
 import 'package:alperefesahin_dev/features/about/widgets/writing/medium_card.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class WritingSection extends StatelessWidget with LaunchMixin {
@@ -114,7 +115,7 @@ class ArticleImage extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
         image: DecorationImage(
-          image: AssetImage(assetPath),
+          image: CachedNetworkImageProvider(assetPath),
           fit: BoxFit.cover,
         ),
       ),
