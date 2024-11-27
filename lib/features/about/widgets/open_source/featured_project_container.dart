@@ -127,13 +127,11 @@ class _ProjectContent extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Expanded(
-            child: CustomText(
-              text: title,
-              fontSize: isMobile ? 24 : 20,
-              height: 1.2,
-              fontWeight: FontWeight.w800,
-            ),
+          CustomText(
+            text: title,
+            fontSize: isMobile ? 24 : 20,
+            height: 1.2,
+            fontWeight: FontWeight.w800,
           ),
           Padding(
             padding: isMobile
@@ -146,12 +144,10 @@ class _ProjectContent extends StatelessWidget {
               fontSize: isMobile ? 20 : 16,
             ),
           ),
-          Expanded(
-            child: _ProjectActions(
-              isMobile: isMobile,
-              isSponsored: isSponsored,
-              onPressed: onPressed,
-            ),
+          _ProjectActions(
+            isMobile: isMobile,
+            isSponsored: isSponsored,
+            onPressed: onPressed,
           ),
         ],
       ),
@@ -172,7 +168,8 @@ class _ProjectActions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Wrap(
+      crossAxisAlignment: WrapCrossAlignment.center,
       children: [
         IconButton(
           onPressed: onPressed,
@@ -184,6 +181,7 @@ class _ProjectActions extends StatelessWidget {
             ),
           ),
           icon: Row(
+            mainAxisSize: MainAxisSize.min,
             children: [
               FaIcon(
                 FontAwesomeIcons.github,
@@ -191,28 +189,26 @@ class _ProjectActions extends StatelessWidget {
                 size: isMobile ? 18 : 12,
               ),
               const SizedBox(width: 8),
-              CustomText(
-                text: 'GitHub',
-                color: white,
-                fontSize: isMobile ? 20 : 16,
-                fontWeight: FontWeight.w500,
+              Flexible(
+                child: CustomText(
+                  text: 'GitHub',
+                  color: white,
+                  fontSize: isMobile ? 20 : 16,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             ],
           ),
         ),
+        if (isSponsored) const SizedBox(width: 12),
         if (isSponsored)
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.only(left: 12),
-              child: Text(
-                "Sponsored!",
-                style: GoogleFonts.robotoCondensed(
-                  fontSize: isMobile ? 20 : 16,
-                  decoration: TextDecoration.underline,
-                  decorationColor: black,
-                  decorationThickness: 1.5,
-                ),
-              ),
+          Text(
+            "Sponsored!",
+            style: GoogleFonts.robotoCondensed(
+              fontSize: isMobile ? 20 : 16,
+              decoration: TextDecoration.underline,
+              decorationColor: black,
+              decorationThickness: 1.5,
             ),
           ),
       ],
