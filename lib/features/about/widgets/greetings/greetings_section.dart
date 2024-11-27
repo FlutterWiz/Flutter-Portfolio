@@ -27,7 +27,7 @@ In my free time, I work on open-source projects, write articles, and share knowl
 
     return Column(
       children: [
-        const SizedBox(height: 80),
+        const SizedBox(height: 100),
         // Header Section with Social Icons
         if (isMobile) ...[
           const GreetingsText(),
