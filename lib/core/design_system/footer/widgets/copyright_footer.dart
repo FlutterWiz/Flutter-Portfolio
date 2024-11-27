@@ -18,7 +18,7 @@ class CopyrightFooter extends StatelessWidget with LaunchMixin {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomText(
-            text: '© ${DateTime.now().year} Alper Efe Şahin.',
+            text: '© ${DateTime.now().year} Alper Efe Şahin | via Flutter',
             color: grey,
             fontSize: 16,
             fontWeight: FontWeight.w600,
