@@ -32,7 +32,7 @@ class FeaturedProjectContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: isMobile ? null : 375,
-      height: isMobile ? 300 : 250,
+      height: isMobile ? 325 : 285,
       padding: EdgeInsets.all(isMobile ? 48 : 36),
       margin: const EdgeInsets.only(bottom: 48),
       decoration: BoxDecoration(
@@ -201,7 +201,7 @@ class _ProjectActions extends StatelessWidget {
         if (isSponsored) const SizedBox(width: 12),
         if (isSponsored)
           Text(
-            "Sponsored!",
+            "Sponsored by GetStream!",
             style: GoogleFonts.robotoCondensed(
               fontSize: isMobile ? 20 : 16,
               decoration: TextDecoration.underline,
