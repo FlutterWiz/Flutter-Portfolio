@@ -32,7 +32,7 @@ class FeaturedProjectContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: isMobile ? null : 375,
-      height: isMobile ? 300 : 225,
+      height: isMobile ? 300 : 250,
       padding: EdgeInsets.all(isMobile ? 48 : 36),
       margin: const EdgeInsets.only(bottom: 48),
       decoration: BoxDecoration(
@@ -189,13 +189,11 @@ class _ProjectActions extends StatelessWidget {
                 size: isMobile ? 18 : 12,
               ),
               const SizedBox(width: 8),
-              Flexible(
-                child: CustomText(
-                  text: 'GitHub',
-                  color: white,
-                  fontSize: isMobile ? 20 : 16,
-                  fontWeight: FontWeight.w500,
-                ),
+              CustomText(
+                text: 'GitHub',
+                color: white,
+                fontSize: isMobile ? 20 : 16,
+                fontWeight: FontWeight.w500,
               ),
             ],
           ),

@@ -1,11 +1,11 @@
 {
-    "name": "alperefesahin_dev",
-    "short_name": "alperefesahin_dev",
+    "name": "alperefesahin",
+    "short_name": "alperefesahin",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "A sleek, modern personal portfolio showcasing Alper Efe Sahin’s journey, projects, and ideas.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
