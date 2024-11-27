@@ -8,7 +8,6 @@ import 'package:alperefesahin_dev/features/about/widgets/open_source/open_source
 import 'package:alperefesahin_dev/features/about/widgets/youtube/youtube_section.dart';
 import 'package:alperefesahin_dev/features/about/widgets/writing/writing_section.dart';
 import 'package:alperefesahin_dev/features/about/widgets/stay_in_touch/stay_in_touch_section.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -70,7 +69,7 @@ class AboutPage extends StatelessWidget with LaunchMixin {
               color: black,
               borderRadius: BorderRadius.circular(8),
               image: const DecorationImage(
-                image: CachedNetworkImageProvider("assets/efe.jpeg"),
+                image: AssetImage("assets/efe.jpg"),
                 filterQuality: FilterQuality.high,
                 fit: BoxFit.fill,
               ),

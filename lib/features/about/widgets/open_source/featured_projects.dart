@@ -25,7 +25,7 @@ class FeaturedProjects extends StatelessWidget with LaunchMixin {
             isMobile: isMobile,
             gradientColors: const [streamLightBlue, white],
             shadowColor: streamDarkBlue,
-            imagePath: "assets/stream.jpeg",
+            imagePath: "assets/stream.jpg",
             title: "Flutter Social Chat",
             description:
                 "Hybrid, Functional, and Designed Chat App: Flutter Social Chat",
@@ -42,7 +42,7 @@ class FeaturedProjects extends StatelessWidget with LaunchMixin {
             isSponsored: false,
             gradientColors: const [aiLightOrange, white],
             shadowColor: aiDarkOrange,
-            imagePath: "assets/ai.png",
+            imagePath: "assets/ai.jpg",
             title: "Credit Card Fraud Detection",
             description: "Detect Credit Card Frauds with Machine Learning",
             textColor: aiDarkOrangeText,

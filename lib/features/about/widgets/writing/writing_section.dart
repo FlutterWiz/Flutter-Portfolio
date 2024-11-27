@@ -4,7 +4,6 @@ import 'package:alperefesahin_dev/core/design_system/custom_divider.dart';
 import 'package:alperefesahin_dev/core/design_system/custom_text.dart';
 import 'package:alperefesahin_dev/core/mixins/launch_mixin.dart';
 import 'package:alperefesahin_dev/features/about/widgets/writing/medium_card.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class WritingSection extends StatelessWidget with LaunchMixin {
@@ -43,7 +42,7 @@ class WritingSection extends StatelessWidget with LaunchMixin {
               MediumCard(
                 isMobile: isMobile,
                 imageWidget: const ArticleImage(
-                  assetPath: "assets/medium1.jpeg",
+                  assetPath: "assets/medium1.jpg",
                 ),
                 category: "PERSPECTIVE",
                 date: "Nov 1, 2024 ",
@@ -63,7 +62,7 @@ class WritingSection extends StatelessWidget with LaunchMixin {
                 ),
                 isMobile: isMobile,
                 imageWidget: const ArticleImage(
-                  assetPath: "assets/medium2.jpeg",
+                  assetPath: "assets/medium2.jpg",
                 ),
                 category: "ENGINEERING",
                 date: "Jun 18, 2022",
@@ -78,7 +77,7 @@ class WritingSection extends StatelessWidget with LaunchMixin {
                 ),
                 isMobile: isMobile,
                 imageWidget: const ArticleImage(
-                  assetPath: "assets/medium3.jpeg",
+                  assetPath: "assets/medium3.jpg",
                 ),
                 category: "ENGINEERING",
                 date: "Oct 14, 2021",
@@ -115,7 +114,7 @@ class ArticleImage extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
         image: DecorationImage(
-          image: CachedNetworkImageProvider(assetPath),
+          image: AssetImage(assetPath),
           fit: BoxFit.cover,
         ),
       ),
