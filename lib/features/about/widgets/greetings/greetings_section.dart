@@ -21,9 +21,10 @@ Since then, I've worked with several companies, written Medium articles, recorde
 
     const howItsGoingTitle = "How it's going";
     const howItsGoingDescription =
-        '''Today, I balance my time between Flutter development, which has become my primary focus thanks to years of dedication, and exploring machine learning, a passion sparked by my Mathematics department thesis.
-
-In my free time, I work on open-source projects, write articles, and share knowledge with others through YouTube videos. I’m committed to continuous learning, combining the worlds of mobile development and AI to create impactful projects and grow as a software engineer.''';
+        '''I am a Cross-Platform App Developer with several years of experience in Flutter, collaborating with companies to build intuitive and efficient mobile apps using clean coding practices.
+        
+While specializing in Flutter, I am currently expanding my skills in React Native to further enhance my versatility as a developer. I'm eager to take on challenging projects that push the boundaries of mobile app development.
+Check out my open-source projects and articles on software engineering and cross-platform app development.''';
 
     return Column(
       children: [

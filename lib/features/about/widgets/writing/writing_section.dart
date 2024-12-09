@@ -15,7 +15,7 @@ class WritingSection extends StatelessWidget with LaunchMixin {
   Widget build(BuildContext context) {
     const writingTitle = 'Writing';
     const writingTitleDescription =
-        'On Medium, I share my journey as a Flutter developer, tackling topics like state management, architecture, and challenges. In addition to writing for my personal profile, I contribute to well-known publications like CodeX and Towards Dev, helping others through my experiences and insights.';
+        'On Medium, I share my journey as a Cross-Platform App developer, tackling topics like state management, architecture, and challenges. In addition to writing for my personal profile, I contribute to well-known publications like CodeX and Towards Dev, helping others through my experiences and insights.';
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
