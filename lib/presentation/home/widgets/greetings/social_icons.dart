@@ -2,7 +2,7 @@ import 'package:alperefesahin_dev/core/mixins/launch_mixin.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class SocialIconsRow extends StatelessWidget with LaunchMixin {
+class SocialIconsRow extends StatelessWidget {
   const SocialIconsRow({super.key});
 
   @override

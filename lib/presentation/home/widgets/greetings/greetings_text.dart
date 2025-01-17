@@ -8,22 +8,26 @@ class GreetingsText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const double fontSize = 52;
+    const double fontHeight = 1.1;
+    const FontWeight fontWeight = FontWeight.w800;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Row(
           children: [
-            CustomText(
+            _BlackTextBold(
               text: 'Hi! ',
-              fontSize: 52,
-              fontWeight: FontWeight.w800,
-              height: 1.1,
+              fontHeight: fontHeight,
+              fontWeight: fontWeight,
+              fontSize: fontSize,
             ),
-            CustomText(
+            _BlackTextBold(
               text: 'My name is',
-              fontSize: 52,
-              fontWeight: FontWeight.w800,
-              height: 1.1,
+              fontHeight: fontHeight,
+              fontWeight: fontWeight,
+              fontSize: fontSize,
             ),
           ],
         ),
@@ -32,18 +36,18 @@ class GreetingsText extends StatelessWidget {
             text: 'Alper Efe ',
             style: GoogleFonts.robotoCondensed(
               color: customOrange,
-              fontWeight: FontWeight.w800,
-              fontSize: 52,
-              height: 1.1,
+              fontWeight: fontWeight,
+              fontSize: fontSize,
+              height: fontHeight,
             ),
             children: [
               TextSpan(
                 text: 'and I am a\nsoftware engineer.',
                 style: GoogleFonts.robotoCondensed(
-                  fontWeight: FontWeight.w800,
+                  fontWeight: fontWeight,
                   color: black,
-                  fontSize: 52,
-                  height: 1.1,
+                  fontSize: fontSize,
+                  height: fontHeight,
                 ),
               ),
             ],
@@ -51,5 +55,24 @@ class GreetingsText extends StatelessWidget {
         ),
       ],
     );
+  }
+}
+
+class _BlackTextBold extends StatelessWidget {
+  const _BlackTextBold({
+    required this.text,
+    required this.fontSize,
+    required this.fontHeight,
+    required this.fontWeight,
+  });
+
+  final String text;
+  final double fontSize;
+  final double fontHeight;
+  final FontWeight fontWeight;
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomText(text: text, fontSize: fontSize, fontWeight: fontWeight, height: fontHeight);
   }
 }

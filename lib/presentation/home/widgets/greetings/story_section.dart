@@ -16,37 +16,38 @@ class StorySection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const double fontSize = 32;
+    const double fontHeight = 1.1;
+    const FontWeight fontWeight = FontWeight.w800;
+
+    const List<double> gradientStops = [0.7, 1.0];
+    final Decoration? boxDecoration = hasGradient
+        ? BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            gradient: const LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [transitionWhite, white],
+              stops: gradientStops,
+            ),
+          )
+        : null;
+
     return Container(
       padding: hasGradient ? const EdgeInsets.all(32) : EdgeInsets.zero,
-      decoration: hasGradient
-          ? BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
-              gradient: const LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  transitionWhite,
-                  white,
-                ],
-                stops: [0.7, 1.0],
-              ),
-            )
-          : null,
+      decoration: boxDecoration,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        spacing: 24,
         children: [
           CustomText(
             text: title,
-            fontSize: 32,
-            fontWeight: FontWeight.w800,
-            height: 1.2,
+            fontSize: fontSize,
+            fontWeight: fontWeight,
+            height: fontHeight,
             color: black,
           ),
-          const SizedBox(height: 24),
-          CustomText(
-            text: description,
-            color: blackWithOpacity87,
-          ),
+          CustomText(text: description, color: blackWithOpacity87),
         ],
       ),
     );
