@@ -1,7 +1,7 @@
 import 'package:alperefesahin_dev/core/design_system/custom_divider.dart';
-import 'package:alperefesahin_dev/presentation/home/widgets/greetings/greetings_text.dart';
-import 'package:alperefesahin_dev/presentation/home/widgets/greetings/social_icons.dart';
-import 'package:alperefesahin_dev/presentation/home/widgets/greetings/story_section.dart';
+import 'package:alperefesahin_dev/presentation/home/widgets/about/greetings_text.dart';
+import 'package:alperefesahin_dev/presentation/home/widgets/about/social_icons_row.dart';
+import 'package:alperefesahin_dev/presentation/home/widgets/about/personal_story_block.dart';
 import 'package:flutter/material.dart';
 
 class GreetingsSection extends StatelessWidget {
@@ -49,12 +49,12 @@ Check out my open-source projects and articles on software engineering and cross
 
         // Story Sections
         if (isMobile) ...[
-          const StorySection(
+          const PersonalStoryBlock(
             title: howStartedTitle,
             description: howStartedDescription,
           ),
           const SizedBox(height: 80),
-          const StorySection(
+          const PersonalStoryBlock(
             title: howItsGoingTitle,
             description: howItsGoingDescription,
             hasGradient: true,
@@ -66,7 +66,7 @@ Check out my open-source projects and articles on software engineering and cross
               Expanded(
                 child: Padding(
                   padding: EdgeInsets.only(top: 32),
-                  child: StorySection(
+                  child: PersonalStoryBlock(
                     title: howStartedTitle,
                     description: howStartedDescription,
                   ),
@@ -74,7 +74,7 @@ Check out my open-source projects and articles on software engineering and cross
               ),
               SizedBox(width: 32),
               Expanded(
-                child: StorySection(
+                child: PersonalStoryBlock(
                   title: howItsGoingTitle,
                   description: howItsGoingDescription,
                   hasGradient: true,

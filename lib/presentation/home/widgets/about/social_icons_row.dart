@@ -2,26 +2,26 @@ import 'package:alperefesahin_dev/core/mixins/launch_mixin.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class SocialIconsRow extends StatelessWidget with LaunchMixin {
+class SocialIconsRow extends StatelessWidget {
   const SocialIconsRow({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const Row(
       children: [
-        SocialIcons(
+        _SocialIcons(
           websitePath: "https://linkedin.com/in/alperefesahin/",
           icon: FontAwesomeIcons.linkedin,
         ),
-        SocialIcons(
+        _SocialIcons(
           websitePath: "https://youtube.com/@alperefesahin",
           icon: FontAwesomeIcons.youtube,
         ),
-        SocialIcons(
+        _SocialIcons(
           websitePath: "https://medium.com/@alperefesahin",
           icon: FontAwesomeIcons.medium,
         ),
-        SocialIcons(
+        _SocialIcons(
           websitePath: "https://x.com/alperefesahin",
           icon: FontAwesomeIcons.xTwitter,
         ),
@@ -30,11 +30,11 @@ class SocialIconsRow extends StatelessWidget with LaunchMixin {
   }
 }
 
-class SocialIcons extends StatelessWidget with LaunchMixin {
+class _SocialIcons extends StatelessWidget with LaunchMixin {
   final String websitePath;
   final IconData icon;
 
-  const SocialIcons({super.key, required this.websitePath, required this.icon});
+  const _SocialIcons({required this.websitePath, required this.icon});
 
   @override
   Widget build(BuildContext context) {
