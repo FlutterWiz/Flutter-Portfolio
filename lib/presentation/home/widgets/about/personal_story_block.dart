@@ -2,12 +2,12 @@ import 'package:alperefesahin_dev/core/constants/colors.dart';
 import 'package:alperefesahin_dev/core/design_system/custom_text.dart';
 import 'package:flutter/material.dart';
 
-class StorySection extends StatelessWidget {
+class PersonalStoryBlock extends StatelessWidget {
   final String title;
   final String description;
   final bool hasGradient;
 
-  const StorySection({
+  const PersonalStoryBlock({
     super.key,
     required this.title,
     required this.description,
@@ -18,6 +18,7 @@ class StorySection extends StatelessWidget {
   Widget build(BuildContext context) {
     const double fontSize = 32;
     const double fontHeight = 1.1;
+    const double spacing = 24;
     const FontWeight fontWeight = FontWeight.w800;
 
     const List<double> gradientStops = [0.7, 1.0];
@@ -38,7 +39,7 @@ class StorySection extends StatelessWidget {
       decoration: boxDecoration,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        spacing: 24,
+        spacing: spacing,
         children: [
           CustomText(
             text: title,
