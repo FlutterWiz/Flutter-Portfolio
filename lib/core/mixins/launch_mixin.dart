@@ -11,20 +11,17 @@ mixin LaunchMixin {
 
   Future<void> launchEmail({
     required String emailAddress,
-    String? emailSubject,
-    String? emailBody,
+    required String emailSubject,
+    required String emailBody,
   }) async {
-    const constantSubject = 'About Portfolio Website...';
-    const constantBody = 'Hello...';
-
     try {
       final Uri emailLaunchUri = Uri(
         scheme: 'mailto',
         path: emailAddress,
         query: _encodeQueryParameters(
           {
-            'subject': emailSubject ?? constantSubject,
-            'body': emailBody ?? constantBody,
+            'subject': emailSubject,
+            'body': emailBody,
           },
         ),
       );
