@@ -28,10 +28,7 @@ class SocialFooter extends StatelessWidget with LaunchMixin {
             highlightColor: transparent,
             splashColor: transparent,
             hoverColor: transparent,
-            onTap: () => launchUrlInWeb(
-              isWebsite: true,
-              websitePath: socialLink,
-            ),
+            onTap: () => launchWebsite(websitePath: socialLink),
             child: CustomText(
               text: socialName,
               color: grey,

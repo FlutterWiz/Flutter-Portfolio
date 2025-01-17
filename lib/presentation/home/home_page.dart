@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget with LaunchMixin {
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
     final bool isMobile = screenWidth < 1020;
-    
+
     final double horizontalPadding = isMobile ? 20.0 : 120.0;
     const double maxScreenWidth = 1280;
     final double leadingWidth = isMobile ? 70 : 170;
@@ -30,7 +30,7 @@ class HomePage extends StatelessWidget with LaunchMixin {
     final Color shadowColor = grey.withValues(alpha: 0.0);
     const Color inkWellPropsColor = transparent;
 
-    const String email = "contact@alperefesahin.dev";
+    const String emailAddress = "contact@alperefesahin.dev";
     const String emailSubject = "Contact";
     const String emailBody = "Hello, I would like to get in touch with you.";
     const String miniAppBarImagePath = "assets/efe.jpg";
@@ -51,9 +51,8 @@ class HomePage extends StatelessWidget with LaunchMixin {
               highlightColor: inkWellPropsColor,
               splashColor: inkWellPropsColor,
               hoverColor: inkWellPropsColor,
-              onTap: () => launchUrlInWeb(
-                isEmail: true,
-                emailPath: email,
+              onTap: () => launchEmail(
+                emailAddress: emailAddress,
                 emailSubject: emailSubject,
                 emailBody: emailBody,
               ),
@@ -63,7 +62,7 @@ class HomePage extends StatelessWidget with LaunchMixin {
                 children: [
                   FaIcon(FontAwesomeIcons.solidEnvelope, size: 14),
                   SizedBox(width: 8),
-                  CustomText(text: email, fontSize: 16, fontWeight: FontWeight.w600),
+                  CustomText(text: emailAddress, fontSize: 16, fontWeight: FontWeight.w600),
                 ],
               ),
             ),

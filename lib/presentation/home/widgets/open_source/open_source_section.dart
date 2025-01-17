@@ -38,10 +38,7 @@ class OpenSourceSection extends StatelessWidget with LaunchMixin {
         OtherProjects(isMobile: isMobile),
         Center(
           child: ElevatedButton(
-            onPressed: () => launchUrlInWeb(
-              isWebsite: true,
-              websitePath: "https://github.com/alperefesahin",
-            ),
+            onPressed: () => launchWebsite(websitePath: "https://github.com/alperefesahin"),
             style: ElevatedButton.styleFrom(
               backgroundColor: black,
               padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 16),

@@ -17,26 +17,21 @@ class FeaturedProjects extends StatelessWidget with LaunchMixin {
         alignment: WrapAlignment.spaceAround,
         children: [
           FeaturedProjectContainer(
-            onPressed: () => launchUrlInWeb(
-              isWebsite: true,
-              websitePath:
-                  "https://github.com/alperefesahin/flutter_social_chat",
+            onPressed: () => launchWebsite(
+              websitePath: "https://github.com/alperefesahin/flutter_social_chat",
             ),
             isMobile: isMobile,
             gradientColors: const [streamLightBlue, white],
             shadowColor: streamDarkBlue,
             imagePath: "assets/stream.jpg",
             title: "Flutter Social Chat",
-            description:
-                "Hybrid, Functional, and Designed Chat App: Flutter Social Chat",
+            description: "Hybrid, Functional, and Designed Chat App: Flutter Social Chat",
             textColor: streamDarkBlueText,
             isSponsored: true,
           ),
           FeaturedProjectContainer(
-            onPressed: () => launchUrlInWeb(
-              isWebsite: true,
-              websitePath:
-                  "https://github.com/alperefesahin/Credit-Card-Fraud-Detection",
+            onPressed: () => launchWebsite(
+              websitePath: "https://github.com/alperefesahin/Credit-Card-Fraud-Detection",
             ),
             isMobile: isMobile,
             isSponsored: false,
