@@ -18,8 +18,7 @@ class CopyrightFooter extends StatelessWidget with LaunchMixin {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomText(
-            text:
-                '© ${DateTime.now().year} Alper Efe Şahin\nMade with Love and Flutter',
+            text: '© ${DateTime.now().year} Alper Efe Şahin\nMade with Love and Flutter',
             color: grey,
             fontSize: 16,
             fontWeight: FontWeight.w600,
@@ -34,10 +33,8 @@ class CopyrightFooter extends StatelessWidget with LaunchMixin {
               children: [
                 TextSpan(
                   recognizer: TapGestureRecognizer()
-                    ..onTap = () => launchUrlInWeb(
-                          isWebsite: true,
-                          websitePath:
-                              'https://creativecommons.org/licenses/by-nc/4.0/deed.en',
+                    ..onTap = () => launchWebsite(
+                          websitePath: 'https://creativecommons.org/licenses/by-nc/4.0/deed.en',
                         ),
                   text: 'CC BY-NC license',
                   style: GoogleFonts.robotoCondensed(
@@ -66,10 +63,7 @@ class CopyrightFooter extends StatelessWidget with LaunchMixin {
               children: [
                 TextSpan(
                   recognizer: TapGestureRecognizer()
-                    ..onTap = () => launchUrlInWeb(
-                          isWebsite: true,
-                          websitePath: 'https://kettanaito.com',
-                        ),
+                    ..onTap = () => launchWebsite(websitePath: 'https://kettanaito.com'),
                   text: 'Artem',
                   style: GoogleFonts.robotoCondensed(
                     decoration: TextDecoration.underline,

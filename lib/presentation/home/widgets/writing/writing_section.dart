@@ -47,16 +47,14 @@ class WritingSection extends StatelessWidget with LaunchMixin {
                 category: "PERSPECTIVE",
                 date: "Nov 1, 2024 ",
                 title: "LeetCode Challenge",
-                onTap: () => launchUrlInWeb(
-                  isWebsite: true,
+                onTap: () => launchWebsite(
                   websitePath:
                       'https://medium.com/@alperefesahin/45-days-of-leetcode-what-did-i-learn-from-that-challenge-1024deab5636',
                 ),
               ),
               const SizedBox(height: 48),
               MediumCard(
-                onTap: () => launchUrlInWeb(
-                  isWebsite: true,
+                onTap: () => launchWebsite(
                   websitePath:
                       'https://medium.com/codex/riverpod-statenotifier-freezed-ddd-in-flutter-fetching-data-from-the-api-ba232c7d1144',
                 ),
@@ -70,8 +68,7 @@ class WritingSection extends StatelessWidget with LaunchMixin {
               ),
               const SizedBox(height: 60),
               MediumCard(
-                onTap: () => launchUrlInWeb(
-                  isWebsite: true,
+                onTap: () => launchWebsite(
                   websitePath:
                       'https://medium.com/@alperefesahin/bloc-pattern-for-login-bloc-login-in-flutter-551fd05beb99',
                 ),
@@ -89,10 +86,7 @@ class WritingSection extends StatelessWidget with LaunchMixin {
         const SizedBox(height: 36),
         CustomButton(
           text: "See more articles",
-          onPressed: () => launchUrlInWeb(
-            isWebsite: true,
-            websitePath: 'https://medium.com/@alperefesahin/',
-          ),
+          onPressed: () => launchWebsite(websitePath: 'https://medium.com/@alperefesahin/'),
         ),
         const CustomDivider(),
       ],

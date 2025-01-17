@@ -7,34 +7,22 @@ class SocialIconsRow extends StatelessWidget with LaunchMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       children: [
         SocialIcons(
-          onPressed: () => launchUrlInWeb(
-            isWebsite: true,
-            websitePath: "https://linkedin.com/in/alperefesahin/",
-          ),
+          websitePath: "https://linkedin.com/in/alperefesahin/",
           icon: FontAwesomeIcons.linkedin,
         ),
         SocialIcons(
-          onPressed: () => launchUrlInWeb(
-            isWebsite: true,
-            websitePath: "https://youtube.com/@alperefesahin",
-          ),
+          websitePath: "https://youtube.com/@alperefesahin",
           icon: FontAwesomeIcons.youtube,
         ),
         SocialIcons(
-          onPressed: () => launchUrlInWeb(
-            isWebsite: true,
-            websitePath: "https://medium.com/@alperefesahin",
-          ),
+          websitePath: "https://medium.com/@alperefesahin",
           icon: FontAwesomeIcons.medium,
         ),
         SocialIcons(
-          onPressed: () => launchUrlInWeb(
-            isWebsite: true,
-            websitePath: "https://x.com/alperefesahin",
-          ),
+          websitePath: "https://x.com/alperefesahin",
           icon: FontAwesomeIcons.xTwitter,
         ),
       ],
@@ -42,20 +30,22 @@ class SocialIconsRow extends StatelessWidget with LaunchMixin {
   }
 }
 
-class SocialIcons extends StatelessWidget {
-  final Function() onPressed;
+class SocialIcons extends StatelessWidget with LaunchMixin {
+  final String websitePath;
   final IconData icon;
 
-  const SocialIcons({super.key, required this.onPressed, required this.icon});
+  const SocialIcons({super.key, required this.websitePath, required this.icon});
 
   @override
   Widget build(BuildContext context) {
+    const double iconSize = 36;
+
     return Padding(
       padding: const EdgeInsets.only(right: 28),
       child: IconButton(
-        onPressed: onPressed,
+        onPressed: () => launchWebsite(websitePath: websitePath),
         icon: FaIcon(icon),
-        iconSize: 36,
+        iconSize: iconSize,
       ),
     );
   }

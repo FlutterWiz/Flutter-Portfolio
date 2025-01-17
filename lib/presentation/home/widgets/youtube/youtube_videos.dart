@@ -23,8 +23,7 @@ class YoutubeVideos extends StatelessWidget with LaunchMixin {
                 date: 'March 12, 2023',
                 description:
                     "Chatting about the journeys of Flutter devs in Turkey—starting with me, in this first episode!",
-                onWatch: () => launchUrlInWeb(
-                  isWebsite: true,
+                onWatch: () => launchWebsite(
                   websitePath: "https://www.youtube.com/watch?v=NGrTJfQfOGA",
                 ),
                 isMobile: isMobile,
@@ -42,8 +41,7 @@ class YoutubeVideos extends StatelessWidget with LaunchMixin {
                 date: "Jan 23, 2023",
                 description:
                     'Learn to build a Flutter social chat app step by step in this tutorial series!',
-                onWatch: () => launchUrlInWeb(
-                  isWebsite: true,
+                onWatch: () => launchWebsite(
                   websitePath:
                       "https://www.youtube.com/watch?v=r9MtCK33J78&list=PL3PvZdDvJcMIixstKkuvLWQleqJ1VhLrf",
                 ),
@@ -55,8 +53,7 @@ class YoutubeVideos extends StatelessWidget with LaunchMixin {
                 title: "Dialingo Translation App Tutorial",
                 date: 'Jul 4, 2024',
                 description: "AI Implementation with Gemini and Flutter",
-                onWatch: () => launchUrlInWeb(
-                  isWebsite: true,
+                onWatch: () => launchWebsite(
                   websitePath: "https://www.youtube.com/watch?v=heSqh0koVYE",
                 ),
                 isSmallCard: true,
@@ -74,8 +71,7 @@ class YoutubeVideos extends StatelessWidget with LaunchMixin {
                   date: 'March 12, 2023',
                   description:
                       "Chatting about the journeys of Flutter devs in Turkey—starting with me, in this first episode!",
-                  onWatch: () => launchUrlInWeb(
-                    isWebsite: true,
+                  onWatch: () => launchWebsite(
                     websitePath: "https://www.youtube.com/watch?v=NGrTJfQfOGA",
                   ),
                   isMobile: isMobile,
@@ -98,8 +94,7 @@ class YoutubeVideos extends StatelessWidget with LaunchMixin {
                       date: "Jan 23, 2023",
                       description:
                           'Learn to build a Flutter social chat app step by step in this tutorial series!',
-                      onWatch: () => launchUrlInWeb(
-                        isWebsite: true,
+                      onWatch: () => launchWebsite(
                         websitePath:
                             "https://www.youtube.com/watch?v=r9MtCK33J78&list=PL3PvZdDvJcMIixstKkuvLWQleqJ1VhLrf",
                       ),
@@ -111,10 +106,8 @@ class YoutubeVideos extends StatelessWidget with LaunchMixin {
                       title: "Dialingo Translation App Tutorial",
                       date: 'Jul 4, 2024',
                       description: "AI Implementation with Gemini and Flutter",
-                      onWatch: () => launchUrlInWeb(
-                        isWebsite: true,
-                        websitePath:
-                            "https://www.youtube.com/watch?v=heSqh0koVYE",
+                      onWatch: () => launchWebsite(
+                        websitePath: "https://www.youtube.com/watch?v=heSqh0koVYE",
                       ),
                       isSmallCard: true,
                       isMobile: isMobile,

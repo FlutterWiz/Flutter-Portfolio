@@ -37,10 +37,7 @@ class YoutubeSection extends StatelessWidget with LaunchMixin {
         const SizedBox(height: 60),
         CustomButton(
           text: "Visit YouTube Channel",
-          onPressed: () => launchUrlInWeb(
-            isWebsite: true,
-            websitePath: 'https://youtube.com/@alperefesahin/',
-          ),
+          onPressed: () => launchWebsite(websitePath: 'https://youtube.com/@alperefesahin/'),
         ),
       ],
     );

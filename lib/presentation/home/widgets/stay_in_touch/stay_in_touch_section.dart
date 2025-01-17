@@ -41,10 +41,7 @@ class StayInTouchSection extends StatelessWidget with LaunchMixin {
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () => launchUrlInWeb(
-                      isWebsite: true,
-                      websitePath: 'https://x.com/alperefesahin',
-                    ),
+                    onPressed: () => launchWebsite(websitePath: 'https://x.com/alperefesahin'),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: black,
                       padding: const EdgeInsets.symmetric(
@@ -99,10 +96,7 @@ class StayInTouchSection extends StatelessWidget with LaunchMixin {
                 ),
                 const SizedBox(width: 24),
                 ElevatedButton(
-                  onPressed: () => launchUrlInWeb(
-                    isWebsite: true,
-                    websitePath: 'https://x.com/alperefesahin',
-                  ),
+                  onPressed: () => launchWebsite(websitePath: 'https://x.com/alperefesahin'),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: black,
                     padding: const EdgeInsets.symmetric(
