@@ -2,8 +2,8 @@ import 'package:alperefesahin_dev/core/constants/colors.dart';
 import 'package:alperefesahin_dev/core/design_system/custom_divider.dart';
 import 'package:alperefesahin_dev/core/design_system/custom_text.dart';
 import 'package:alperefesahin_dev/core/mixins/launch_mixin.dart';
-import 'package:alperefesahin_dev/features/about/widgets/open_source/featured_projects.dart';
-import 'package:alperefesahin_dev/features/about/widgets/open_source/other_projects.dart';
+import 'package:alperefesahin_dev/presentation/home/widgets/open_source/featured_projects.dart';
+import 'package:alperefesahin_dev/presentation/home/widgets/open_source/other_projects.dart';
 import 'package:flutter/material.dart';
 
 class OpenSourceSection extends StatelessWidget with LaunchMixin {

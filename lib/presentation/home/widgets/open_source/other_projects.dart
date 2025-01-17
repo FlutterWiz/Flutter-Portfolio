@@ -1,4 +1,4 @@
-import 'package:alperefesahin_dev/features/about/widgets/open_source/other_project_container.dart';
+import 'package:alperefesahin_dev/presentation/home/widgets/open_source/other_project_container.dart';
 import 'package:flutter/material.dart';
 
 class OtherProjects extends StatelessWidget {

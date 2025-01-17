@@ -1,5 +1,5 @@
 import 'package:alperefesahin_dev/core/constants/colors.dart';
-import 'package:alperefesahin_dev/features/about/about_page.dart';
+import 'package:alperefesahin_dev/presentation/home/home_page.dart';
 import 'package:flutter/material.dart';
 
 class AppWidget extends StatelessWidget {
@@ -14,7 +14,7 @@ class AppWidget extends StatelessWidget {
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(seedColor: blue),
       ),
-      home: const AboutPage(),
+      home: const HomePage(),
     );
   }
 }

@@ -3,7 +3,7 @@ import 'package:alperefesahin_dev/core/design_system/custom_button.dart';
 import 'package:alperefesahin_dev/core/design_system/custom_divider.dart';
 import 'package:alperefesahin_dev/core/design_system/custom_text.dart';
 import 'package:alperefesahin_dev/core/mixins/launch_mixin.dart';
-import 'package:alperefesahin_dev/features/about/widgets/writing/medium_card.dart';
+import 'package:alperefesahin_dev/presentation/home/widgets/writing/medium_card.dart';
 import 'package:flutter/material.dart';
 
 class WritingSection extends StatelessWidget with LaunchMixin {

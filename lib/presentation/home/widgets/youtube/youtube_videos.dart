@@ -1,7 +1,7 @@
 import 'package:alperefesahin_dev/core/design_system/custom_divider.dart';
 import 'package:alperefesahin_dev/core/design_system/custom_text.dart';
 import 'package:alperefesahin_dev/core/mixins/launch_mixin.dart';
-import 'package:alperefesahin_dev/features/about/widgets/youtube/youtube_video_card.dart';
+import 'package:alperefesahin_dev/presentation/home/widgets/youtube/youtube_video_card.dart';
 import 'package:flutter/material.dart';
 
 class YoutubeVideos extends StatelessWidget with LaunchMixin {

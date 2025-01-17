@@ -1,6 +1,6 @@
 import 'package:alperefesahin_dev/core/constants/colors.dart';
 import 'package:alperefesahin_dev/core/mixins/launch_mixin.dart';
-import 'package:alperefesahin_dev/features/about/widgets/open_source/featured_project_container.dart';
+import 'package:alperefesahin_dev/presentation/home/widgets/open_source/featured_project_container.dart';
 import 'package:flutter/material.dart';
 
 class FeaturedProjects extends StatelessWidget with LaunchMixin {

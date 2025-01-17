@@ -3,45 +3,59 @@ import 'package:alperefesahin_dev/core/design_system/custom_divider.dart';
 import 'package:alperefesahin_dev/core/design_system/custom_text.dart';
 import 'package:alperefesahin_dev/core/design_system/footer/footer_section.dart';
 import 'package:alperefesahin_dev/core/mixins/launch_mixin.dart';
-import 'package:alperefesahin_dev/features/about/widgets/greetings/greetings_section.dart';
-import 'package:alperefesahin_dev/features/about/widgets/open_source/open_source_section.dart';
-import 'package:alperefesahin_dev/features/about/widgets/youtube/youtube_section.dart';
-import 'package:alperefesahin_dev/features/about/widgets/writing/writing_section.dart';
-import 'package:alperefesahin_dev/features/about/widgets/stay_in_touch/stay_in_touch_section.dart';
+import 'package:alperefesahin_dev/presentation/home/widgets/greetings/greetings_section.dart';
+import 'package:alperefesahin_dev/presentation/home/widgets/open_source/open_source_section.dart';
+import 'package:alperefesahin_dev/presentation/home/widgets/youtube/youtube_section.dart';
+import 'package:alperefesahin_dev/presentation/home/widgets/writing/writing_section.dart';
+import 'package:alperefesahin_dev/presentation/home/widgets/stay_in_touch/stay_in_touch_section.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class AboutPage extends StatelessWidget with LaunchMixin {
-  const AboutPage({super.key});
+class HomePage extends StatelessWidget with LaunchMixin {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final isMobile = screenWidth < 1020;
-    final horizontalPadding = isMobile ? 20.0 : 120.0;
+    final double screenWidth = MediaQuery.of(context).size.width;
+    final bool isMobile = screenWidth < 1020;
+    
+    final double horizontalPadding = isMobile ? 20.0 : 120.0;
     const double maxScreenWidth = 1280;
+    final double leadingWidth = isMobile ? 70 : 170;
+    const double toolbarHeight = 80;
+    const double elevation = 0.5;
+    const double scrolledUnderElevation = 0.5;
+    const double miniAppBarImageSquareSize = 48;
+
+    final Color shadowColor = grey.withValues(alpha: 0.0);
+    const Color inkWellPropsColor = transparent;
+
+    const String email = "contact@alperefesahin.dev";
+    const String emailSubject = "Contact";
+    const String emailBody = "Hello, I would like to get in touch with you.";
+    const String miniAppBarImagePath = "assets/efe.jpg";
 
     return Scaffold(
       backgroundColor: white,
       appBar: AppBar(
-        leadingWidth: isMobile ? 70 : 170,
-        toolbarHeight: 80,
-        elevation: 0.5,
-        scrolledUnderElevation: 0.5,
-        shadowColor: grey.withOpacity(0.5),
+        leadingWidth: leadingWidth,
+        toolbarHeight: toolbarHeight,
+        elevation: elevation,
+        scrolledUnderElevation: scrolledUnderElevation,
+        shadowColor: shadowColor,
         backgroundColor: appBarBackgroundColor,
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 20),
             child: InkWell(
-              highlightColor: transparent,
-              splashColor: transparent,
-              hoverColor: transparent,
+              highlightColor: inkWellPropsColor,
+              splashColor: inkWellPropsColor,
+              hoverColor: inkWellPropsColor,
               onTap: () => launchUrlInWeb(
                 isEmail: true,
-                emailPath: "contact@alperefesahin.dev",
-                emailSubject: "Contact",
-                emailBody: "Hello, I would like to get in touch with you.",
+                emailPath: email,
+                emailSubject: emailSubject,
+                emailBody: emailBody,
               ),
               child: const Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -49,27 +63,22 @@ class AboutPage extends StatelessWidget with LaunchMixin {
                 children: [
                   FaIcon(FontAwesomeIcons.solidEnvelope, size: 14),
                   SizedBox(width: 8),
-                  CustomText(
-                    text: "contact@alperefesahin.dev",
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                  ),
+                  CustomText(text: email, fontSize: 16, fontWeight: FontWeight.w600),
                 ],
               ),
             ),
           ),
         ],
         leading: Padding(
-          padding:
-              EdgeInsets.only(left: isMobile ? 20 : 120, top: 16, bottom: 16),
+          padding: EdgeInsets.only(left: isMobile ? 20 : 120, top: 16, bottom: 16),
           child: Container(
-            width: 48,
-            height: 48,
+            width: miniAppBarImageSquareSize,
+            height: miniAppBarImageSquareSize,
             decoration: BoxDecoration(
               color: black,
               borderRadius: BorderRadius.circular(8),
               image: const DecorationImage(
-                image: AssetImage("assets/efe.jpg"),
+                image: AssetImage(miniAppBarImagePath),
                 filterQuality: FilterQuality.high,
                 fit: BoxFit.fill,
               ),

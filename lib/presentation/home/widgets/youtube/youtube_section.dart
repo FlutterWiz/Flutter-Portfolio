@@ -2,7 +2,7 @@ import 'package:alperefesahin_dev/core/constants/colors.dart';
 import 'package:alperefesahin_dev/core/design_system/custom_button.dart';
 import 'package:alperefesahin_dev/core/design_system/custom_text.dart';
 import 'package:alperefesahin_dev/core/mixins/launch_mixin.dart';
-import 'package:alperefesahin_dev/features/about/widgets/youtube/youtube_videos.dart';
+import 'package:alperefesahin_dev/presentation/home/widgets/youtube/youtube_videos.dart';
 import 'package:flutter/material.dart';
 
 class YoutubeSection extends StatelessWidget with LaunchMixin {
