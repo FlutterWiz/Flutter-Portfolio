@@ -1,38 +1,142 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
+<html lang="en">
+  <head>
+    <base href="$FLUTTER_BASE_HREF" />
 
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
+    <meta charset="UTF-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta
+      name="description"
+      content="A sleek, modern personal portfolio showcasing Alper Efe Sahin's journey, projects, and ideas."
+    />
 
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+    <!-- iOS meta tags & icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="alperefesahin" />
 
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
-  <base href="$FLUTTER_BASE_HREF">
+    <title>alperefesahin</title>
+    <link rel="manifest" href="manifest.json" />
+  </head>
 
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A sleek, modern personal portfolio showcasing Alper Efe Sahin’s journey, projects, and ideas.">
+  <style>
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+    }
 
-  <!-- iOS meta tags & icons -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="alperefesahin_dev">
-  <!-- <link rel="apple-touch-icon" href="icons/Icon-192.png"> -->
+    .container {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      overflow: hidden;
+    }
 
-  <!-- Favicon -->
-  <!-- Favicon  <link rel="icon" type="image/png" href="favicon.png"/> -->
+    .indicator {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 15px;
+      object-fit: cover;
+      border-radius: 16%;
+      border: 1px solid #46494b;
+    }
 
-  <title>alperefesahin_dev</title>
-  <link rel="manifest" href="manifest.json">
-</head>
-<body>
-  <script src="flutter_bootstrap.js" async></script>
-</body>
+    .progress-bar {
+      width: 300px;
+      background-color: #f3f3f3;
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progress-bar-fill {
+      height: 10px;
+      background-color: #46494b;
+      width: 0%;
+      transition: width 0.2s ease-in-out;
+    }
+
+    .progress-text {
+      position: absolute;
+      top: -25px;
+      font-size: 14px;
+      text-align: center;
+      width: 100%;
+      color: #46494b;
+    }
+  </style>
+
+  <body>
+    <div id="loading_indicator" class="container">
+      <img class="indicator" src="assets/efe.jpg" alt="Loading image" />
+      <div class="progress-bar">
+        <span class="progress-text" id="progressText">Loading: 0%</span>
+        <div class="progress-bar-fill" id="progressBar"></div>
+      </div>
+    </div>
+
+    <!-- Flutter App Bootstrap -->
+    <script src="flutter_bootstrap.js" async></script>
+
+    <script>
+      const assets = [
+        "assets/efe.jpg",
+        "assets/medium1.jpg",
+        "assets/medium2.jpg",
+        "assets/medium3.jpg",
+        "assets/stream.jpg",
+        "assets/website_icon.jpg",
+        "assets/youtube_podcast.jpg",
+      ];
+
+      let totalTasks = assets.length;
+      let completedTasks = 0;
+
+      // Function to update the progress bar
+      function updateProgress() {
+        const progress = Math.round((completedTasks / totalTasks) * 100);
+        document.getElementById("progressBar").style.width = `${progress}%`;
+        document.getElementById(
+          "progressText"
+        ).textContent = `Loading: ${progress}%`;
+      }
+
+      // Function to load all assets
+      function loadAssets() {
+        return new Promise((resolve) => {
+          let loadedAssets = 0;
+
+          // Iterate over assets to load them
+          assets.forEach((asset) => {
+            const img = new Image();
+            img.src = asset;
+            img.onload = img.onerror = () => {
+              loadedAssets++;
+              completedTasks++;
+              updateProgress();
+              if (loadedAssets === assets.length) resolve();
+            };
+          });
+        });
+      }
+
+      // Start loading assets and remove loading screen when done
+      window.onload = function () {
+        loadAssets()
+          .then(() => {
+            updateProgress();
+            setTimeout(() => {
+              document.getElementById("loading_indicator").remove();
+            }, 500); // Remove the loading indicator after everything is loaded
+          })
+          .catch((error) => console.error("Error during loading:", error));
+      };
+    </script>
+  </body>
 </html>
