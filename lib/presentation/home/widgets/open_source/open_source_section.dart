@@ -26,7 +26,7 @@ class OpenSourceSection extends StatelessWidget with LaunchMixin {
         const CustomText(
           text: openSourceTitle,
           fontSize: 32,
-          height: 1.1,
+          height: 1.2,
           fontWeight: FontWeight.w800,
         ),
         Container(
@@ -46,12 +46,7 @@ class OpenSourceSection extends StatelessWidget with LaunchMixin {
                 borderRadius: BorderRadius.circular(24),
               ),
             ),
-            child: const CustomText(
-              text: viewMoreOnGithubText,
-              color: white,
-              fontSize: 20,
-              fontWeight: FontWeight.w500,
-            ),
+            child: const CustomText(text: viewMoreOnGithubText, color: white),
           ),
         ),
         const CustomDivider(),

@@ -9,7 +9,7 @@ class GreetingsText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const double fontSize = 52;
-    const double fontHeight = 1.1;
+    const double fontHeight = 1.2;
     const FontWeight fontWeight = FontWeight.w800;
 
     return Column(

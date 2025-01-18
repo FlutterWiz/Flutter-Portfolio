@@ -1,6 +1,7 @@
 class FeaturedProjectActionsModel {
   final bool isMobile;
   final bool isSponsored;
+  
   final String websitePath;
 
   FeaturedProjectActionsModel({

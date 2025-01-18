@@ -54,7 +54,7 @@ class WritingSection extends StatelessWidget with LaunchMixin {
       children: [
         const CustomText(
           text: writingTitle,
-          height: 1.1,
+          height: 1.2,
           fontWeight: FontWeight.w800,
           fontSize: 32,
         ),

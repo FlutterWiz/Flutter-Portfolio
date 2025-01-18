@@ -34,6 +34,7 @@ class UnfeaturedProjectContainer extends StatelessWidget {
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        spacing: 16,
         children: [
           CustomText(
             text: title,
@@ -41,7 +42,6 @@ class UnfeaturedProjectContainer extends StatelessWidget {
             height: 1.2,
             fontWeight: FontWeight.w800,
           ),
-          const SizedBox(height: 16),
           CustomText(
             text: description,
             fontSize: isMobile ? 20 : 16,

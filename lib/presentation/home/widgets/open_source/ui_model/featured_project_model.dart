@@ -3,6 +3,7 @@ import 'dart:ui';
 class FeaturedProjectModel {
   final Color shadowColor;
   final Color textColor;
+  
   final List<Color> gradientColors;
 
   final String imagePath;

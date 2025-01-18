@@ -23,15 +23,15 @@ class FeaturedProjects extends StatelessWidget {
         isSponsored: true,
       ),
       FeaturedProjectModel(
-        websitePath: "https://github.com/alperefesahin/Credit-Card-Fraud-Detection",
+        websitePath: "https://github.com/alperefesahin/alperefesahin_dev",
         isMobile: isMobile,
         isSponsored: false,
-        gradientColors: const [aiLightOrange, white],
-        shadowColor: aiDarkOrange,
-        imagePath: "assets/ai.jpg",
-        title: "Credit Card Fraud Detection",
-        description: "Detect Credit Card Frauds with Machine Learning",
-        textColor: aiDarkOrangeText,
+        gradientColors: const [websiteLightOrange, white],
+        shadowColor: websiteDarkOrange,
+        imagePath: "assets/website_icon.jpg",
+        title: "Flutter Personal Website",
+        description: "This Website is an open source project too",
+        textColor: websiteDarkOrangeText,
       )
     ];
 

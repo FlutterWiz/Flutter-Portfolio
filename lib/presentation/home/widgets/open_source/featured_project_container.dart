@@ -88,7 +88,7 @@ class _FeaturedProjectImage extends StatelessWidget {
       height: imageSize,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
-        color: black,
+        color: appBarBackgroundColor,
         image: DecorationImage(
           image: AssetImage(imagePath),
           filterQuality: FilterQuality.high,
@@ -169,6 +169,7 @@ class _FeaturedProjectActions extends StatelessWidget with LaunchMixin {
 
     final String websitePath = featuredProjectActionsModel.websitePath;
     const String sponsorText = "Sponsored by GetStream!";
+    const String githubText = 'GitHub';
 
     return Wrap(
       crossAxisAlignment: WrapCrossAlignment.center,
@@ -192,7 +193,7 @@ class _FeaturedProjectActions extends StatelessWidget with LaunchMixin {
               ),
               const SizedBox(width: 8),
               CustomText(
-                text: 'GitHub',
+                text: githubText,
                 color: white,
                 fontSize: isMobile ? 20 : 16,
                 fontWeight: FontWeight.w500,

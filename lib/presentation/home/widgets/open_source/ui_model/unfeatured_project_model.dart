@@ -1,5 +1,6 @@
 class UnfeaturedProjectModel {
   final bool isMobile;
+  
   final String title;
   final String description;
 
