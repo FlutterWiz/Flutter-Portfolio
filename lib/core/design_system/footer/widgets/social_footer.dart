@@ -17,23 +17,17 @@ class SocialFooter extends StatelessWidget with LaunchMixin {
 
     return Column(
       children: socialMap.entries.map((entry) {
-        final socialName = entry.key;
-        final socialLink = entry.value;
+        final String socialName = entry.key;
+        final String socialLink = entry.value;
 
         return Padding(
-          padding: EdgeInsets.only(
-            top: socialName == socialMap.keys.first ? 0 : 8,
-          ),
+          padding: EdgeInsets.only(top: socialName == socialMap.keys.first ? 0 : 8),
           child: InkWell(
             highlightColor: transparent,
             splashColor: transparent,
             hoverColor: transparent,
             onTap: () => launchWebsite(websitePath: socialLink),
-            child: CustomText(
-              text: socialName,
-              color: grey,
-              fontSize: 16,
-            ),
+            child: CustomText(text: socialName, color: grey, fontSize: 16),
           ),
         );
       }).toList(),

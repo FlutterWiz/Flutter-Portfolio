@@ -10,33 +10,34 @@ class CopyrightFooter extends StatelessWidget with LaunchMixin {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    final Size size = MediaQuery.of(context).size;
+
+    final double copyrightBoxWidth = size.width / 2;
+
+    final String copyrightText =
+        "© ${DateTime.now().year} Alper Efe Şahin\nMade with Love and Flutter";
+    const String contentDistributedText = "All content of this website is distributed under the ";
+    const String licenseText = "CC BY-NC license";
+    const String uiInspiredText = "UI inspired by ";
+    const String artemNameText = "Artem";
+    const String licenseWebsitePath = "https://creativecommons.org/licenses/by-nc/4.0/deed.en";
+    const String inspiredWebsitePath = "https://kettanaito.com";
 
     return SizedBox(
-      width: size.width / 2,
+      width: copyrightBoxWidth,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CustomText(
-            text: '© ${DateTime.now().year} Alper Efe Şahin\nMade with Love and Flutter',
-            color: grey,
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
-          ),
+          CustomText(text: copyrightText, color: grey, fontSize: 16, fontWeight: FontWeight.w600),
           RichText(
             text: TextSpan(
-              text: 'All content of this website is distributed under the ',
-              style: GoogleFonts.robotoCondensed(
-                color: grey,
-                fontSize: 16,
-              ),
+              text: contentDistributedText,
+              style: GoogleFonts.robotoCondensed(color: grey, fontSize: 16),
               children: [
                 TextSpan(
                   recognizer: TapGestureRecognizer()
-                    ..onTap = () => launchWebsite(
-                          websitePath: 'https://creativecommons.org/licenses/by-nc/4.0/deed.en',
-                        ),
-                  text: 'CC BY-NC license',
+                    ..onTap = () => launchWebsite(websitePath: licenseWebsitePath),
+                  text: licenseText,
                   style: GoogleFonts.robotoCondensed(
                     decoration: TextDecoration.underline,
                     color: black,
@@ -55,16 +56,13 @@ class CopyrightFooter extends StatelessWidget with LaunchMixin {
           ),
           RichText(
             text: TextSpan(
-              text: 'UI inspired by ',
-              style: GoogleFonts.robotoCondensed(
-                color: grey,
-                fontSize: 16,
-              ),
+              text: uiInspiredText,
+              style: GoogleFonts.robotoCondensed(color: grey, fontSize: 16),
               children: [
                 TextSpan(
                   recognizer: TapGestureRecognizer()
-                    ..onTap = () => launchWebsite(websitePath: 'https://kettanaito.com'),
-                  text: 'Artem',
+                    ..onTap = () => launchWebsite(websitePath: inspiredWebsitePath),
+                  text: artemNameText,
                   style: GoogleFonts.robotoCondensed(
                     decoration: TextDecoration.underline,
                     color: black,
@@ -73,10 +71,7 @@ class CopyrightFooter extends StatelessWidget with LaunchMixin {
                 ),
                 TextSpan(
                   text: '.',
-                  style: GoogleFonts.robotoCondensed(
-                    color: grey,
-                    fontSize: 16,
-                  ),
+                  style: GoogleFonts.robotoCondensed(color: grey, fontSize: 16),
                 ),
               ],
             ),
