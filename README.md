@@ -1,11 +1,5 @@
 # alperefesahin_dev
 
-delete build and run this:
-flutter clean && flutter pub get && flutter build web --web-renderer canvaskit --release --no-tree-shake-icons && flutter run -d chrome --web-renderer canvaskit
-
-
-
-
 ## Getting Started
 
 This project is a starting point for a Flutter application.
