@@ -1,38 +1,54 @@
 import 'package:alperefesahin_dev/core/constants/colors.dart';
 import 'package:alperefesahin_dev/core/design_system/custom_text.dart';
+import 'package:alperefesahin_dev/core/mixins/launch_mixin.dart';
+import 'package:alperefesahin_dev/presentation/home/widgets/open_source/ui_model/featured_project_actions_model.dart';
+import 'package:alperefesahin_dev/presentation/home/widgets/open_source/ui_model/featured_project_content_model.dart';
+import 'package:alperefesahin_dev/presentation/home/widgets/open_source/ui_model/featured_project_image_model.dart';
+import 'package:alperefesahin_dev/presentation/home/widgets/open_source/ui_model/featured_project_model.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class FeaturedProjectContainer extends StatelessWidget {
-  const FeaturedProjectContainer({
-    super.key,
-    required this.isMobile,
-    required this.isSponsored,
-    required this.gradientColors,
-    required this.shadowColor,
-    required this.imagePath,
-    required this.title,
-    required this.description,
-    required this.textColor,
-    required this.onPressed,
-  });
+  const FeaturedProjectContainer({super.key, required this.featuredProjectModel});
 
-  final bool isMobile;
-  final bool isSponsored;
-  final List<Color> gradientColors;
-  final Color shadowColor;
-  final Color textColor;
-  final String imagePath;
-  final String title;
-  final String description;
-  final VoidCallback onPressed;
+  final FeaturedProjectModel featuredProjectModel;
 
   @override
   Widget build(BuildContext context) {
+    final bool isMobile = featuredProjectModel.isMobile;
+    final bool isSponsored = featuredProjectModel.isSponsored;
+
+    final String imagePath = featuredProjectModel.imagePath;
+    final String websitePath = featuredProjectModel.websitePath;
+    final String title = featuredProjectModel.title;
+    final String description = featuredProjectModel.description;
+
+    final List<Color> gradientColors = featuredProjectModel.gradientColors;
+    final Color shadowColor = featuredProjectModel.shadowColor;
+    final Color textColor = featuredProjectModel.textColor;
+
+    final double? containerWidth = isMobile ? null : 375;
+    final double containerHeight = isMobile ? 325 : 285;
+
+    final FeaturedProjectImageModel featuredProjectImageModel = FeaturedProjectImageModel(
+      isMobile: isMobile,
+      imagePath: imagePath,
+      shadowColor: shadowColor,
+    );
+
+    final FeaturedProjectContentModel featuredProjectContentModel = FeaturedProjectContentModel(
+      isMobile: isMobile,
+      title: title,
+      description: description,
+      textColor: textColor,
+      isSponsored: isSponsored,
+      websitePath: websitePath,
+    );
+
     return Container(
-      width: isMobile ? null : 375,
-      height: isMobile ? 325 : 285,
+      width: containerWidth,
+      height: containerHeight,
       padding: EdgeInsets.all(isMobile ? 48 : 36),
       margin: const EdgeInsets.only(bottom: 48),
       decoration: BoxDecoration(
@@ -45,39 +61,26 @@ class FeaturedProjectContainer extends StatelessWidget {
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
+        spacing: 24,
         children: [
-          _ProjectImage(
-            isMobile: isMobile,
-            imagePath: imagePath,
-            shadowColor: shadowColor,
-          ),
-          const SizedBox(width: 24),
-          _ProjectContent(
-            isMobile: isMobile,
-            title: title,
-            description: description,
-            textColor: textColor,
-            isSponsored: isSponsored,
-            onPressed: onPressed,
-          ),
+          _FeaturedProjectImage(featuredProjectImageModel: featuredProjectImageModel),
+          _FeaturedProjectContent(featuredProjectContentModel: featuredProjectContentModel),
         ],
       ),
     );
   }
 }
 
-class _ProjectImage extends StatelessWidget {
-  const _ProjectImage({
-    required this.imagePath,
-    required this.shadowColor,
-    required this.isMobile,
-  });
+class _FeaturedProjectImage extends StatelessWidget {
+  final FeaturedProjectImageModel featuredProjectImageModel;
 
-  final String imagePath;
-  final Color shadowColor;
-  final bool isMobile;
+  const _FeaturedProjectImage({required this.featuredProjectImageModel});
+
   @override
   Widget build(BuildContext context) {
+    final bool isMobile = featuredProjectImageModel.isMobile;
+    final String imagePath = featuredProjectImageModel.imagePath;
+    final Color shadowColor = featuredProjectImageModel.shadowColor;
     final double imageSize = isMobile ? 50 : 36;
 
     return Container(
@@ -104,25 +107,28 @@ class _ProjectImage extends StatelessWidget {
   }
 }
 
-class _ProjectContent extends StatelessWidget {
-  const _ProjectContent({
-    required this.title,
-    required this.description,
-    required this.textColor,
-    required this.isSponsored,
-    required this.onPressed,
-    required this.isMobile,
-  });
+class _FeaturedProjectContent extends StatelessWidget {
+  const _FeaturedProjectContent({required this.featuredProjectContentModel});
 
-  final String title;
-  final String description;
-  final Color textColor;
-  final bool isSponsored;
-  final bool isMobile;
-  final VoidCallback onPressed;
+  final FeaturedProjectContentModel featuredProjectContentModel;
 
   @override
   Widget build(BuildContext context) {
+    final String title = featuredProjectContentModel.title;
+    final String description = featuredProjectContentModel.description;
+    final String websitePath = featuredProjectContentModel.websitePath;
+
+    final bool isMobile = featuredProjectContentModel.isMobile;
+    final bool isSponsored = featuredProjectContentModel.isSponsored;
+
+    final Color textColor = featuredProjectContentModel.textColor;
+
+    final FeaturedProjectActionsModel featuredProjectActionsModel = FeaturedProjectActionsModel(
+      isMobile: isMobile,
+      isSponsored: isSponsored,
+      websitePath: websitePath,
+    );
+
     return Expanded(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -144,35 +150,31 @@ class _ProjectContent extends StatelessWidget {
               fontSize: isMobile ? 20 : 16,
             ),
           ),
-          _ProjectActions(
-            isMobile: isMobile,
-            isSponsored: isSponsored,
-            onPressed: onPressed,
-          ),
+          _FeaturedProjectActions(featuredProjectActionsModel: featuredProjectActionsModel),
         ],
       ),
     );
   }
 }
 
-class _ProjectActions extends StatelessWidget {
-  const _ProjectActions({
-    required this.isSponsored,
-    required this.onPressed,
-    required this.isMobile,
-  });
+class _FeaturedProjectActions extends StatelessWidget with LaunchMixin {
+  const _FeaturedProjectActions({required this.featuredProjectActionsModel});
 
-  final bool isMobile;
-  final bool isSponsored;
-  final VoidCallback onPressed;
+  final FeaturedProjectActionsModel featuredProjectActionsModel;
 
   @override
   Widget build(BuildContext context) {
+    final bool isMobile = featuredProjectActionsModel.isMobile;
+    final bool isSponsored = featuredProjectActionsModel.isSponsored;
+
+    final String websitePath = featuredProjectActionsModel.websitePath;
+    const String sponsorText = "Sponsored by GetStream!";
+
     return Wrap(
       crossAxisAlignment: WrapCrossAlignment.center,
       children: [
         IconButton(
-          onPressed: onPressed,
+          onPressed: () => launchWebsite(websitePath: websitePath),
           style: IconButton.styleFrom(
             backgroundColor: black,
             padding: EdgeInsets.symmetric(horizontal: isMobile ? 32 : 16),
@@ -201,7 +203,7 @@ class _ProjectActions extends StatelessWidget {
         if (isSponsored) const SizedBox(width: 12),
         if (isSponsored)
           Text(
-            "Sponsored by GetStream!",
+            sponsorText,
             style: GoogleFonts.robotoCondensed(
               fontSize: isMobile ? 20 : 16,
               decoration: TextDecoration.underline,
