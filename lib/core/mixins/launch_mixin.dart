@@ -27,7 +27,7 @@ mixin LaunchMixin {
       );
 
       if (!await launchUrl(emailLaunchUri)) {
-        throw Exception('Could not launch email to: $emailAddress');
+        developer.log('Could not launch email to: $emailAddress');
       }
     } catch (e) {
       developer.log('Error launching email: $e');
