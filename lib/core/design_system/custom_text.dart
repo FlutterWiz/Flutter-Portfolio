@@ -5,11 +5,11 @@ import 'package:google_fonts/google_fonts.dart';
 class CustomText extends StatelessWidget {
   const CustomText({
     super.key,
-    required this.text,
     this.height = 1.6,
     this.color = black,
     this.fontWeight = FontWeight.w500,
     this.fontSize = 20,
+    required this.text,
   });
 
   final String text;
@@ -23,11 +23,7 @@ class CustomText extends StatelessWidget {
     return Text(
       text,
       style: GoogleFonts.robotoCondensed(
-        color: color,
-        fontWeight: fontWeight,
-        fontSize: fontSize,
-        height: height,
-      ),
+          color: color, fontWeight: fontWeight, fontSize: fontSize, height: height),
     );
   }
 }

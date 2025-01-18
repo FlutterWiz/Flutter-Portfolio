@@ -16,12 +16,8 @@ class PersonalStoryBlock extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const double fontSize = 32;
-    const double fontHeight = 1.2;
-    const double spacing = 24;
-    const FontWeight fontWeight = FontWeight.w800;
 
-    const List<double> gradientStops = [0.7, 1.0];
+    
     final Decoration? boxDecoration = hasGradient
         ? BoxDecoration(
             borderRadius: BorderRadius.circular(16),
@@ -29,23 +25,24 @@ class PersonalStoryBlock extends StatelessWidget {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [transitionWhite, white],
-              stops: gradientStops,
+              stops: [0.7, 1.0],
             ),
           )
         : null;
+
 
     return Container(
       padding: hasGradient ? const EdgeInsets.all(32) : EdgeInsets.zero,
       decoration: boxDecoration,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        spacing: spacing,
+        spacing: 24,
         children: [
           CustomText(
             text: title,
-            fontSize: fontSize,
-            fontWeight: fontWeight,
-            height: fontHeight,
+            fontSize: 32,
+            fontWeight: FontWeight.w800,
+            height: 1.2,
             color: black,
           ),
           CustomText(text: description, color: blackWithOpacity87),

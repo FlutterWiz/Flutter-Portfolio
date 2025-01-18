@@ -35,23 +35,6 @@ class HomePage extends StatelessWidget with LaunchMixin {
     const String emailBody = "Hello, I would like to get in touch with you.";
     const String miniAppBarImagePath = "assets/efe.jpg";
 
-    const String howItStartedTitle = "How it started";
-    const String howItStartedDescription =
-        '''I was born in 2001 in Turkey and discovered my passion for software engineering at the age of 14. My first attempt was creating a forum called "forumtim.com" using Simple Machines Forum (SMF). Though it didn't succeed, I didn't give up. 
-
-When I started university in the Mathematics department, I dedicated myself to improving in software engineering. I began my journey with Python, like many others, and later transitioned to web development, which led to an internship at Jotform. In 2020, I discovered Flutter, a rising framework at the time, and decided to specialize as a Flutter developer. 
-
-Since then, I've worked with several companies, written Medium articles, recorded YouTube videos, and created open-source projects to contribute to the developer community.''';
-
-    const howIsItGoingTitle = "How is it going";
-    const howIsItGoingDescription =
-        """I am a Flutter Developer with extensive experience building intuitive and efficient mobile apps using clean coding practices.
-
-Over the years, I have collaborated with various companies to deliver high-quality Flutter applications tailored to their needs. I'm eager to take on challenging projects that push the boundaries of mobile app development.
-
-In my free time, I enjoy creating open-source projects, recording video tutorials via YouTube, and sharing insights through Medium articles.
-""";
-
     return Scaffold(
       backgroundColor: white,
       appBar: AppBar(
@@ -111,13 +94,7 @@ In my free time, I enjoy creating open-source projects, recording video tutorial
                 constraints: const BoxConstraints(maxWidth: maxScreenWidth),
                 child: Column(
                   children: [
-                    AboutSection(
-                      isMobile: isMobile,
-                      howIsItGoingDescription: howIsItGoingDescription,
-                      howIsItGoingTitle: howIsItGoingTitle,
-                      howItStartedDescription: howItStartedDescription,
-                      howItStartedTitle: howItStartedTitle,
-                    ),
+                    AboutSection(isMobile: isMobile),
                     WritingSection(isMobile: isMobile),
                     OpenSourceSection(isMobile: isMobile),
                     YoutubeSection(isMobile: isMobile),
