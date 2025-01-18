@@ -1,72 +1,53 @@
 import 'package:alperefesahin_dev/core/constants/colors.dart';
 import 'package:alperefesahin_dev/core/design_system/custom_text.dart';
+import 'package:alperefesahin_dev/core/mixins/launch_mixin.dart';
+import 'package:alperefesahin_dev/presentation/home/widgets/youtube/ui_model/youtube_video_card_model.dart';
 import 'package:flutter/material.dart';
 
-class YoutubeVideoCard extends StatelessWidget {
-  final String title;
-  final String date;
-  final String description;
-  final VoidCallback onWatch;
-  final bool isSmallCard;
-  final bool isMobile;
+class YoutubeVideoCard extends StatelessWidget with LaunchMixin {
+  const YoutubeVideoCard({super.key, required this.youtubeVideoCardModel});
 
-  const YoutubeVideoCard({
-    super.key,
-    required this.title,
-    required this.date,
-    required this.description,
-    required this.onWatch,
-    this.isSmallCard = false,
-    this.isMobile = false,
-  });
+  final YoutubeVideoCardModel youtubeVideoCardModel;
 
   @override
   Widget build(BuildContext context) {
+    final String title = youtubeVideoCardModel.title;
+    final String date = youtubeVideoCardModel.date;
+    final String description = youtubeVideoCardModel.description;
+    final String videoUrl = youtubeVideoCardModel.videoUrl;
+    const String watchText = "Watch";
+    const String youtubePodcastImagePath = "assets/youtube_podcast.jpg";
+
+    const double youtubePodcastImageHeight = 400;
+
+    final bool isSmallCard = youtubeVideoCardModel.isSmallCard;
+
     if (isSmallCard) {
       return SizedBox(
         width: double.infinity,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomText(
-              text: title,
-              fontWeight: FontWeight.w800,
-            ),
-            CustomText(
-              text: date,
-              color: grey,
-              fontSize: 16,
-            ),
+            CustomText(text: title, fontWeight: FontWeight.w800),
+            CustomText(text: date, color: grey, fontSize: 16),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16),
-              child: CustomText(
-                text: description,
-                fontSize: 20,
-              ),
+              child: CustomText(text: description, fontSize: 20),
             ),
             TextButton(
-              onPressed: onWatch,
+              onPressed: () => launchWebsite(websitePath: videoUrl),
               style: TextButton.styleFrom(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical: 8,
-                ),
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 backgroundColor: lightBlue,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
               ),
               child: const Row(
                 mainAxisSize: MainAxisSize.min,
+                spacing: 4,
                 children: [
-                  Icon(
-                    Icons.play_circle_outline,
-                    color: black,
-                    size: 20,
-                  ),
-                  SizedBox(width: 4),
+                  Icon(Icons.play_circle_outline, color: black, size: 20),
                   CustomText(
-                    text: 'Watch',
+                    text: watchText,
                     color: black,
                     fontWeight: FontWeight.w800,
                     fontSize: 14,
@@ -83,7 +64,7 @@ class YoutubeVideoCard extends StatelessWidget {
       highlightColor: transparent,
       splashColor: transparent,
       hoverColor: transparent,
-      onTap: onWatch,
+      onTap: () => launchWebsite(websitePath: videoUrl),
       child: Container(
         decoration: BoxDecoration(
           color: lightBlue,
@@ -100,40 +81,31 @@ class YoutubeVideoCard extends StatelessWidget {
               child: Stack(
                 children: [
                   Image.asset(
-                    'assets/youtube_podcast.jpg',
+                    youtubePodcastImagePath,
+                    height: youtubePodcastImageHeight,
                     width: double.infinity,
-                    height: 400,
                     fit: BoxFit.cover,
                   ),
                   Container(
                     width: double.infinity,
-                    height: 400,
-                    decoration: BoxDecoration(
-                      color: black.withOpacity(0.5),
-                    ),
+                    height: youtubePodcastImageHeight,
+                    decoration: BoxDecoration(color: black.withValues(alpha: 0.5)),
                   ),
                   Positioned.fill(
                     child: Center(
                       child: Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 16,
-                          vertical: 8,
-                        ),
+                        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                         decoration: BoxDecoration(
                           color: white,
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: const Row(
                           mainAxisSize: MainAxisSize.min,
+                          spacing: 4,
                           children: [
-                            Icon(
-                              Icons.play_circle_outline,
-                              color: black,
-                              size: 20,
-                            ),
-                            SizedBox(width: 4),
+                            Icon(Icons.play_circle_outline, color: black, size: 20),
                             CustomText(
-                              text: 'Watch',
+                              text: watchText,
                               color: black,
                               fontWeight: FontWeight.w800,
                               fontSize: 14,
@@ -151,17 +123,9 @@ class YoutubeVideoCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CustomText(
-                    text: title,
-                    fontSize: 24,
-                    fontWeight: FontWeight.w800,
-                  ),
+                  CustomText(text: title, fontSize: 24, fontWeight: FontWeight.w800),
                   const SizedBox(height: 8),
-                  CustomText(
-                    text: date,
-                    color: grey,
-                    fontSize: 18,
-                  ),
+                  CustomText(text: date, color: grey, fontSize: 18),
                   const SizedBox(height: 12),
                   CustomText(text: description),
                 ],
