@@ -2,8 +2,10 @@ import 'package:alperefesahin_dev/core/constants/colors.dart';
 import 'package:alperefesahin_dev/core/design_system/custom_button.dart';
 import 'package:alperefesahin_dev/core/design_system/custom_divider.dart';
 import 'package:alperefesahin_dev/core/design_system/custom_text.dart';
+import 'package:alperefesahin_dev/core/enums/medium_category_enums.dart';
 import 'package:alperefesahin_dev/core/mixins/launch_mixin.dart';
 import 'package:alperefesahin_dev/presentation/home/widgets/writing/medium_card.dart';
+import 'package:alperefesahin_dev/presentation/home/widgets/writing/ui_model/medium_card_model.dart';
 import 'package:flutter/material.dart';
 
 class WritingSection extends StatelessWidget with LaunchMixin {
@@ -13,20 +15,51 @@ class WritingSection extends StatelessWidget with LaunchMixin {
 
   @override
   Widget build(BuildContext context) {
-    const writingTitle = 'Writing';
-    const writingTitleDescription =
-        'On Medium, I share my journey as a Cross-Platform App developer, tackling topics like state management, architecture, and challenges. In addition to writing for my personal profile, I contribute to well-known publications like CodeX and Towards Dev, helping others through my experiences and insights.';
+    const String writingTitle = 'Writing';
+    const String writingTitleDescription =
+        'On Medium, I share my journey as a Flutter developer, tackling topics like state management, architecture, and challenges. In addition to writing for my personal profile, I contribute to well-known publications like CodeX and Towards Dev, helping others through my experiences and insights.';
+    const String seeMoreArticlesText = "See more articles";
+
+    final double? descriptionBoxWidth = isMobile ? null : 560;
+
+    final List<MediumCardModel> mediumCardModelList = [
+      MediumCardModel(
+        imagePath: "assets/medium1.jpg",
+        category: MediumCategoryEnum.perspective.categoryName,
+        date: "Nov 1, 2024",
+        title: "LeetCode Challenge",
+        websitePath:
+            'https://medium.com/@alperefesahin/45-days-of-leetcode-what-did-i-learn-from-that-challenge-1024deab5636',
+      ),
+      MediumCardModel(
+        imagePath: "assets/medium2.jpg",
+        category: MediumCategoryEnum.engineering.categoryName,
+        date: "Jun 18, 2022",
+        title: "Riverpod Usage",
+        websitePath:
+            'https://medium.com/codex/riverpod-statenotifier-freezed-ddd-in-flutter-fetching-data-from-the-api-ba232c7d1144',
+      ),
+      MediumCardModel(
+        imagePath: "assets/medium3.jpg",
+        category: MediumCategoryEnum.engineering.categoryName,
+        date: "Oct 14, 2021",
+        title: "BLoC Pattern",
+        websitePath:
+            'https://medium.com/@alperefesahin/bloc-pattern-for-login-bloc-login-in-flutter-551fd05beb99',
+      ),
+    ];
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const CustomText(
           text: writingTitle,
-          height: 1.2,
+          height: 1.1,
           fontWeight: FontWeight.w800,
           fontSize: 32,
         ),
         Container(
-          width: isMobile ? null : 560,
+          width: descriptionBoxWidth,
           padding: const EdgeInsets.only(top: 16, bottom: 60),
           child: const CustomText(
             text: writingTitleDescription,
@@ -39,79 +72,21 @@ class WritingSection extends StatelessWidget with LaunchMixin {
             spacing: 12,
             alignment: WrapAlignment.spaceBetween,
             children: [
-              MediumCard(
-                isMobile: isMobile,
-                imageWidget: const ArticleImage(
-                  assetPath: "assets/medium1.jpg",
-                ),
-                category: "PERSPECTIVE",
-                date: "Nov 1, 2024 ",
-                title: "LeetCode Challenge",
-                onTap: () => launchWebsite(
-                  websitePath:
-                      'https://medium.com/@alperefesahin/45-days-of-leetcode-what-did-i-learn-from-that-challenge-1024deab5636',
-                ),
-              ),
+              MediumCard(isMobile: isMobile, mediumCardModel: mediumCardModelList[0]),
               const SizedBox(height: 48),
-              MediumCard(
-                onTap: () => launchWebsite(
-                  websitePath:
-                      'https://medium.com/codex/riverpod-statenotifier-freezed-ddd-in-flutter-fetching-data-from-the-api-ba232c7d1144',
-                ),
-                isMobile: isMobile,
-                imageWidget: const ArticleImage(
-                  assetPath: "assets/medium2.jpg",
-                ),
-                category: "ENGINEERING",
-                date: "Jun 18, 2022",
-                title: 'Riverpod Usage',
-              ),
+              MediumCard(isMobile: isMobile, mediumCardModel: mediumCardModelList[1]),
               const SizedBox(height: 60),
-              MediumCard(
-                onTap: () => launchWebsite(
-                  websitePath:
-                      'https://medium.com/@alperefesahin/bloc-pattern-for-login-bloc-login-in-flutter-551fd05beb99',
-                ),
-                isMobile: isMobile,
-                imageWidget: const ArticleImage(
-                  assetPath: "assets/medium3.jpg",
-                ),
-                category: "ENGINEERING",
-                date: "Oct 14, 2021",
-                title: "BLoC Pattern",
-              ),
+              MediumCard(isMobile: isMobile, mediumCardModel: mediumCardModelList[2]),
             ],
           ),
         ),
         const SizedBox(height: 36),
         CustomButton(
-          text: "See more articles",
+          text: seeMoreArticlesText,
           onPressed: () => launchWebsite(websitePath: 'https://medium.com/@alperefesahin/'),
         ),
         const CustomDivider(),
       ],
-    );
-  }
-}
-
-class ArticleImage extends StatelessWidget {
-  final String assetPath;
-
-  const ArticleImage({
-    super.key,
-    required this.assetPath,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-        image: DecorationImage(
-          image: AssetImage(assetPath),
-          fit: BoxFit.cover,
-        ),
-      ),
     );
   }
 }
