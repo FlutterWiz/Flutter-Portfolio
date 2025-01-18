@@ -17,7 +17,7 @@ class PersonalStoryBlock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const double fontSize = 32;
-    const double fontHeight = 1.1;
+    const double fontHeight = 1.2;
     const double spacing = 24;
     const FontWeight fontWeight = FontWeight.w800;
 

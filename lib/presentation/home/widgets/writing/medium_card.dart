@@ -69,7 +69,7 @@ class MediumCard extends StatelessWidget with LaunchMixin {
                 text: mediumCardModel.title,
                 fontSize: 24,
                 fontWeight: FontWeight.w800,
-                height: 1.1,
+                height: 1.2,
                 color: black,
               ),
             ),
