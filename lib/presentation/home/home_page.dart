@@ -27,7 +27,7 @@ class HomePage extends StatelessWidget with LaunchMixin {
     const double scrolledUnderElevation = 0.5;
     const double miniAppBarImageSquareSize = 48;
 
-    final Color shadowColor = grey.withValues(alpha: 0.0);
+    final Color shadowColor = grey.withValues(alpha: 0);
     const Color inkWellPropsColor = transparent;
 
     const String emailAddress = "contact@alperefesahin.dev";
