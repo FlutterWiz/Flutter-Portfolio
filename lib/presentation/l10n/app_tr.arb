@@ -1,4 +1,7 @@
 {
   "perspective": "PERSPEKTİF",
-  "engineering": "MÜHENDİSLİK"
+  "engineering": "MÜHENDİSLİK",
+  "emailAddress": "contact@alperefesahin.dev",
+  "emailSubject": "İletişim",
+  "emailBody": "Merhaba, sizinle iletişim kurmak istiyorum."
 }

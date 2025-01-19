@@ -1,4 +1,7 @@
 {
   "perspective": "PERSPECTIVE",
-  "engineering": "ENGINEERING"
+  "engineering": "ENGINEERING",
+  "emailAddress": "contact@alperefesahin.dev",
+  "emailSubject": "Contact",
+  "emailBody": "Hello, I would like to get in touch with you."
 }

@@ -25,7 +25,7 @@ class WritingSection extends StatelessWidget with LaunchMixin {
     final List<MediumCardModel> mediumCardModelList = [
       MediumCardModel(
         imagePath: "assets/medium1.jpg",
-        category: AppLocalizations.of(context)!.perspective,
+        category: AppLocalizations.of(context)?.perspective ?? "",
         date: "Nov 1, 2024",
         title: "LeetCode Challenge",
         websitePath:
@@ -33,7 +33,7 @@ class WritingSection extends StatelessWidget with LaunchMixin {
       ),
       MediumCardModel(
         imagePath: "assets/medium2.jpg",
-        category: AppLocalizations.of(context)!.engineering,
+        category: AppLocalizations.of(context)?.engineering ?? "",
         date: "Jun 18, 2022",
         title: "Riverpod Usage",
         websitePath:
@@ -41,7 +41,7 @@ class WritingSection extends StatelessWidget with LaunchMixin {
       ),
       MediumCardModel(
         imagePath: "assets/medium3.jpg",
-        category: AppLocalizations.of(context)!.engineering,
+        category: AppLocalizations.of(context)?.engineering ?? "",
         date: "Oct 14, 2021",
         title: "BLoC Pattern",
         websitePath:
