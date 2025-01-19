@@ -40,5 +40,19 @@
   "dateJun": "Jun 18, 2022",
   "riverpodTitle": "Riverpod Usage",
   "dateOct": "Oct 14, 2021",
-  "blocTitle": "BLoC Pattern"
+  "blocTitle": "BLoC Pattern",
+  "pastVideos": "PAST VIDEOS",
+  "watch": "Watch",
+  "youtubeTitle": "YouTube",
+  "youtubeDescription": "I share my experiences and insights on Flutter development, focusing on state management, clean architecture, and open-source projects. My videos also cover practical coding challenges and tips, providing a deeper look into the development process.",
+  "visitYoutubeChannelText": "Visit YouTube Channel",
+  "flutterSohbetleriTitle": "Flutter Sohbetleri - TR Podcast",
+  "dateMarch": "March 12, 2023",
+  "flutterSohbetleriDescription": "Chatting about the journeys of Flutter devs in Turkey—starting with me, in this first episode!",
+  "socialChatTitle": "Flutter Social Chat Tutorial",
+  "dateJan": "Jan 23, 2023",
+  "socialChatDescription": "Learn to build a Flutter social chat app step by step in this tutorial series!",
+  "dialingoTitle": "Dialingo Translation App Tutorial",
+  "dateJul": "Jul 4, 2024",
+  "dialingoDescription": "AI Implementation with Gemini and Flutter"
 }

@@ -40,5 +40,20 @@
   "dateJun": "18 Haz, 2022",
   "riverpodTitle": "Riverpod Kullanımı",
   "dateOct": "14 Ek, 2021",
-  "blocTitle": "BLoC Yapısı"
+  "blocTitle": "BLoC Yapısı",
+  "pastVideos": "GEÇMİŞTEKİ VİDEOLAR",
+  "watch": "İzle",
+  "youtubeTitle": "YouTube",
+  "youtubeDescription": "Flutter geliştirme üzerine deneyimlerimi ve görüşlerimi paylaşıyorum; state management, mimari ve açık kaynaklı projeler üzerine odaklanıyorum. Videolarım ayrıca pratik kodlama zorluklarını ve ipuçlarını ele alarak geliştirme sürecine daha derin bir bakış sunuyor.",
+  "visitYoutubeChannelText": "YouTube Kanalını Ziyaret Et",
+  "flutterSohbetleriTitle": "Flutter Sohbetleri - TR Podcast",
+  "dateMarch": "12 Mart, 2023",
+  "flutterSohbetleriDescription": "Türkiye'deki Flutter geliştiricilerinin yolculuklarını sohbet ederek keşfetmek—ilk bölümde benden başlıyoruz!",
+  "socialChatTitle": "Flutter Social Chat Eğitimi",
+  "dateJan": "23 Ocak, 2023",
+  "socialChatDescription": "Bu eğitim serisinde adım adım bir Flutter sosyal sohbet uygulaması nasıl yapılır öğrenin!",
+  "dialingoTitle": "Dialingo Translation App Eğitimi",
+  "dateJul": "4 Temmuz, 2024",
+  "dialingoDescription": "Gemini ve Flutter ile AI Uygulaması"
+
 }
