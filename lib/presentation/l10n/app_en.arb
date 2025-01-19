@@ -31,5 +31,14 @@
   "sponsorStream": "Sponsored by GetStream!",
   "stayInTouch": "Stay in touch",
   "stayInTouchSubText": "Don't miss out on my latest posts and projects! Hit me up on Twitter to stay connected, ask questions, or just chat about anything!",
-  "followMe": "Follow me"
+  "followMe": "Follow me",
+  "seeMoreArticles": "See more articles",
+  "writingTitle": "Writing",
+  "writingTitleDescription": "On Medium, I share my journey as a Flutter developer, tackling topics like state management, architecture, and challenges. In addition to writing for my personal profile, I contribute to well-known publications like CodeX and Towards Dev, helping others through my experiences and insights.",
+  "dateNov": "Nov 1, 2024",
+  "leetcodeTitle": "LeetCode Challenge",
+  "dateJun": "Jun 18, 2022",
+  "riverpodTitle": "Riverpod Usage",
+  "dateOct": "Oct 14, 2021",
+  "blocTitle": "BLoC Pattern"
 }

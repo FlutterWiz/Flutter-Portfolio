@@ -15,56 +15,58 @@ class WritingSection extends StatelessWidget with LaunchMixin {
 
   @override
   Widget build(BuildContext context) {
-    const String writingTitle = 'Writing';
-    const String writingTitleDescription =
-        'On Medium, I share my journey as a Flutter developer, tackling topics like state management, architecture, and challenges. In addition to writing for my personal profile, I contribute to well-known publications like CodeX and Towards Dev, helping others through my experiences and insights.';
-    const String seeMoreArticlesText = "See more articles";
+    final String writingTitle = AppLocalizations.of(context)?.writingTitle ?? "";
+    final String writingTitleDescription = AppLocalizations.of(context)?.writingTitleDescription ?? "";
+    final String seeMoreArticlesText = AppLocalizations.of(context)?.seeMoreArticles ?? "";
+    final String dateNov = AppLocalizations.of(context)?.dateNov ?? "";
+    final String dateJun = AppLocalizations.of(context)?.dateJun ?? "";
+    final String dateOct = AppLocalizations.of(context)?.dateOct ?? "";
+    final String leetcodeTitle = AppLocalizations.of(context)?.leetcodeTitle ?? "";
+    final String riverpodTitle = AppLocalizations.of(context)?.riverpodTitle ?? "";
+    final String blocTitle = AppLocalizations.of(context)?.blocTitle ?? "";
+    final String perspectiveCategory = AppLocalizations.of(context)?.perspective ?? "";
+    final String engineeringCategory = AppLocalizations.of(context)?.engineering ?? "";
 
-    final double? descriptionBoxWidth = isMobile ? null : 560;
+    const String blocArticleUrl =
+        "https://medium.com/@alperefesahin/bloc-pattern-for-login-bloc-login-in-flutter-551fd05beb99";
+    const String riverpodArticleUrl =
+        "https://medium.com/codex/riverpod-statenotifier-freezed-ddd-in-flutter-fetching-data-from-the-api-ba232c7d1144";
+    const String leetcodeChallengeArticleUrl =
+        "https://medium.com/@alperefesahin/45-days-of-leetcode-what-did-i-learn-from-that-challenge-1024deab5636";
+    const String mediumWebsiteUrl = "https://medium.com/@alperefesahin/";
 
     final List<MediumCardModel> mediumCardModelList = [
       MediumCardModel(
         imagePath: "assets/medium1.jpg",
-        category: AppLocalizations.of(context)?.perspective ?? "",
-        date: "Nov 1, 2024",
-        title: "LeetCode Challenge",
-        websitePath:
-            'https://medium.com/@alperefesahin/45-days-of-leetcode-what-did-i-learn-from-that-challenge-1024deab5636',
+        category: perspectiveCategory,
+        date: dateNov,
+        title: leetcodeTitle,
+        websitePath: leetcodeChallengeArticleUrl,
       ),
       MediumCardModel(
         imagePath: "assets/medium2.jpg",
-        category: AppLocalizations.of(context)?.engineering ?? "",
-        date: "Jun 18, 2022",
-        title: "Riverpod Usage",
-        websitePath:
-            'https://medium.com/codex/riverpod-statenotifier-freezed-ddd-in-flutter-fetching-data-from-the-api-ba232c7d1144',
+        category: engineeringCategory,
+        date: dateJun,
+        title: riverpodTitle,
+        websitePath: riverpodArticleUrl,
       ),
       MediumCardModel(
         imagePath: "assets/medium3.jpg",
-        category: AppLocalizations.of(context)?.engineering ?? "",
-        date: "Oct 14, 2021",
-        title: "BLoC Pattern",
-        websitePath:
-            'https://medium.com/@alperefesahin/bloc-pattern-for-login-bloc-login-in-flutter-551fd05beb99',
+        category: engineeringCategory,
+        date: dateOct,
+        title: blocTitle,
+        websitePath: blocArticleUrl,
       ),
     ];
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const CustomText(
-          text: writingTitle,
-          height: 1.2,
-          fontWeight: FontWeight.w800,
-          fontSize: 32,
-        ),
+        CustomText(text: writingTitle, height: 1.2, fontWeight: FontWeight.w800, fontSize: 32),
         Container(
-          width: descriptionBoxWidth,
+          width: isMobile ? null : 560,
           padding: const EdgeInsets.only(top: 16, bottom: 60),
-          child: const CustomText(
-            text: writingTitleDescription,
-            color: blackWithOpacity87,
-          ),
+          child: CustomText(text: writingTitleDescription, color: blackWithOpacity87),
         ),
         SizedBox(
           width: double.infinity,
@@ -81,10 +83,7 @@ class WritingSection extends StatelessWidget with LaunchMixin {
           ),
         ),
         const SizedBox(height: 36),
-        CustomButton(
-          text: seeMoreArticlesText,
-          onPressed: () => launchWebsite(websitePath: 'https://medium.com/@alperefesahin/'),
-        ),
+        CustomButton(text: seeMoreArticlesText, onPressed: () => launchWebsite(websitePath: mediumWebsiteUrl)),
         const CustomDivider(),
       ],
     );

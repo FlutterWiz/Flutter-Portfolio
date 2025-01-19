@@ -31,7 +31,14 @@
   "sponsorStream": "GetStream tarafından Sponsorluk!",
   "stayInTouch": "Benimle bağlantıda kal",
   "stayInTouchSubText": "En son gönderilerimi ve projelerimi kaçırmayın! Bağlantıda kalmak, sorular sormak veya herhangi bir konuda sohbet etmek için bana X platformundan ulaşabilirsiniz!",
-  "followMe": "Takip et"
-
-  
+  "followMe": "Takip et",
+  "seeMoreArticles": "Daha fazla makale görüntüle",
+  "writingTitle": "Makaleler",
+  "writingTitleDescription": "Medium'da, Flutter geliştiricisi olarak yolculuğumu paylaşıyorum; state management, mimari ve zorluklar gibi konuları ele alıyorum. Kişisel profilim için yazmanın yanı sıra, CodeX ve Towards Dev gibi tanınmış yayınlara da katkıda bulunarak deneyimlerim ve görüşlerimle başkalarına yardımcı oluyorum.",
+  "dateNov": "1 Kas, 2024",
+  "leetcodeTitle": "LeetCode Mücadelesi",
+  "dateJun": "18 Haz, 2022",
+  "riverpodTitle": "Riverpod Kullanımı",
+  "dateOct": "14 Ek, 2021",
+  "blocTitle": "BLoC Yapısı"
 }

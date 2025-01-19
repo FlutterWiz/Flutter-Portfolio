@@ -14,26 +14,20 @@ class MediumCard extends StatelessWidget with LaunchMixin {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
 
-    final double? cardWidth = isMobile ? null : size.width / 4.8;
-    const double cardHeight = 412;
-
-    final double? imageWidth = isMobile ? null : 300;
-    const double imageHeight = 300;
-
     return InkWell(
       highlightColor: transparent,
       splashColor: transparent,
       hoverColor: transparent,
       onTap: () => launchWebsite(websitePath: mediumCardModel.websitePath),
       child: SizedBox(
-        width: cardWidth,
-        height: cardHeight,
+        width: isMobile ? null : size.width / 4.8,
+        height: 412,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              width: imageWidth,
-              height: imageHeight,
+              width: isMobile ? null : 300,
+              height: 300,
               child: Center(child: _ArticleImage(assetPath: mediumCardModel.imagePath)),
             ),
             const SizedBox(height: 24),
@@ -49,10 +43,7 @@ class MediumCard extends StatelessWidget with LaunchMixin {
                 Container(
                   width: 4,
                   height: 4,
-                  decoration: const BoxDecoration(
-                    color: blackWithOpacity87,
-                    shape: BoxShape.circle,
-                  ),
+                  decoration: const BoxDecoration(color: blackWithOpacity87, shape: BoxShape.circle),
                 ),
                 CustomText(
                   text: mediumCardModel.date,
