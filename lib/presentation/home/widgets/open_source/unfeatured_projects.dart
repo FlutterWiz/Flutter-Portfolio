@@ -1,6 +1,7 @@
 import 'package:alperefesahin_dev/presentation/home/widgets/open_source/ui_model/unfeatured_project_model.dart';
 import 'package:alperefesahin_dev/presentation/home/widgets/open_source/unfeatured_project_container.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class UnfeaturedProjects extends StatelessWidget {
   const UnfeaturedProjects({super.key, required this.isMobile});
@@ -9,26 +10,38 @@ class UnfeaturedProjects extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final String phoneAuthTitle = AppLocalizations.of(context)?.phoneAuthTitle ?? "";
+    final String phoneAuthDescription = AppLocalizations.of(context)?.phoneAuthDescription ?? "";
+    final String socialDatingTitle = AppLocalizations.of(context)?.socialDatingTitle ?? "";
+    final String socialDatingDescription =
+        AppLocalizations.of(context)?.socialDatingDescription ?? "";
+    final String textToImageGeneratorTitle =
+        AppLocalizations.of(context)?.textToImageGeneratorTitle ?? "";
+    final String textToImageGeneratorDescription =
+        AppLocalizations.of(context)?.textToImageGeneratorDescription ?? "";
+    final String dddTitle = AppLocalizations.of(context)?.dddTitle ?? "";
+    final String dddDescription = AppLocalizations.of(context)?.dddDescription ?? "";
+
     final List<UnfeaturedProjectModel> unfeaturedProjectModels = [
       UnfeaturedProjectModel(
         isMobile: isMobile,
-        title: "Phone Auth Cubit",
-        description: "Cross-platform SMS authentication app using Cubit state management.",
+        title: phoneAuthTitle,
+        description: phoneAuthDescription,
       ),
       UnfeaturedProjectModel(
         isMobile: isMobile,
-        title: "Social Dating App with Riverpod & DDD",
-        description: "Social dating app with Riverpod, Freezed, and DDD principles.",
+        title: socialDatingTitle,
+        description: socialDatingDescription,
       ),
       UnfeaturedProjectModel(
         isMobile: isMobile,
-        title: "Text-to-Image Generator",
-        description: "Generate images from text prompts using an advanced AI model.",
+        title: textToImageGeneratorTitle,
+        description: textToImageGeneratorDescription,
       ),
       UnfeaturedProjectModel(
         isMobile: isMobile,
-        title: "Flutter Firebase DDD with BLoC",
-        description: "Updated DDD series app with Firebase integration and BLoC state.",
+        title: dddTitle,
+        description: dddDescription,
       ),
     ];
 

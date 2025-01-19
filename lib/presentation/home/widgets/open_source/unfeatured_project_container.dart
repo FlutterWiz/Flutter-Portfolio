@@ -17,12 +17,9 @@ class UnfeaturedProjectContainer extends StatelessWidget {
 
     final Size size = MediaQuery.of(context).size;
 
-    final double containerWidth = isMobile ? double.infinity : size.width / 6;
-    const double containerHeight = 300;
-
     return Container(
-      width: containerWidth,
-      height: containerHeight,
+      width: isMobile ? double.infinity : size.width / 6,
+      height: 300,
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),

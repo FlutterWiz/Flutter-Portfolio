@@ -11,5 +11,22 @@
   "hi": "Hi! ",
   "myNameIs": "My name is",
   "alperefe": "Alper Efe ",
-  "swe": "and I am a\nsoftware engineer."
+  "swe": "and I am a\nsoftware engineer.",
+  "phoneAuthTitle": "Phone Auth Cubit",
+  "phoneAuthDescription": "Cross-platform SMS authentication app using Cubit state management.",
+  "socialDatingTitle": "Social Dating App with Riverpod & DDD",
+  "socialDatingDescription": "Social dating app with Riverpod, Freezed, and DDD principles.",
+  "textToImageGeneratorTitle": "Text-to-Image Generator",
+  "textToImageGeneratorDescription": "Generate images from text prompts using an advanced AI model.",
+  "dddTitle": "Flutter Firebase DDD with BLoC",
+  "dddDescription": "Updated DDD series app with Firebase integration and BLoC state.",
+  "openSourceTitle": "Open Source",
+  "openSourceDescription": "Open source is a fundamental part of my engineering journey. It's how I learn, grow, and contribute back to the community. I feel wonderful to have influenced others with my projects. Feel free to explore some of them on my GitHub!",
+  "viewMoreOnGithubText": "View more on GitHub",
+  "flutterSocialChatTitle": "Flutter Social Chat",
+  "flutterSocialChatDescription": "Hybrid, Functional, and Designed Chat App: Flutter Social Chat.",
+  "flutterPersonalWebsiteTitle": "Flutter Personal Website",
+  "flutterPersonalWebsiteDescription": "This Website is an open source project too.",
+  "github": "GitHub",
+  "sponsorStream": "Sponsored by GetStream!"
 }

@@ -11,6 +11,23 @@
   "hi": "Merhaba! ",
   "myNameIs": "İsmim",
   "alperefe": "Alper Efe ",
-  "swe": "ve ben bir\nyazılım mühendisiyim."
-
+  "swe": "ve ben bir\nyazılım mühendisiyim.",
+  "phoneAuthTitle": "Phone Auth Cubit",
+  "phoneAuthDescription": "Cubit state managementi kullanarak yapılan multiplatform SMS auth uygulaması.",
+  "socialDatingTitle": "Social Dating App with Riverpod & DDD",
+  "socialDatingDescription": "Riverpod, Freezed, ve DDD prensiplerini kullanarak yapılan bir uygulama.",
+  "textToImageGeneratorTitle": "Text-to-Image Generator",
+  "textToImageGeneratorDescription": "Yazı promptları kullanarak yapay zeka modelleri ile resimler üreten bir tool.",
+  "dddTitle": "Flutter Firebase DDD with BLoC",
+  "dddDescription": "Firebase integrasyonu ve BLoC kullanarak güncellenmiş DDD serisinin uygulaması.",
+  "openSourceTitle": "Açık Kaynak",
+  "openSourceDescription": "Açık kaynak, mühendislik yolculuğumun temel bir parçasıdır. Bu, öğrenme, büyüme ve topluluğa katkıda bulunma yolumdur. Projelerimle başkalarını etkilemiş olmaktan büyük mutluluk duyuyorum. Onlardan bazılarını GitHub'ımda keşfetmekten çekinmeyin!",
+  "viewMoreOnGithubText": "GitHub'da daha fazlasını görüntüleyin",
+  "flutterSocialChatTitle": "Flutter Social Chat",
+  "flutterSocialChatDescription": "Hibrit, Fonksiyonel, ve Tasarlanmış Chat Uygulaması: Flutter Social Chat",
+  "flutterPersonalWebsiteTitle": "Flutter Personal Website",
+  "flutterPersonalWebsiteDescription": "Bu websitesinin kendisi de açık kaynaklı bir proje.",
+  "github": "GitHub",
+  "sponsorStream": "GetStream tarafından Sponsorluk!"
+  
 }
