@@ -2,11 +2,11 @@ import 'package:alperefesahin_dev/core/constants/colors.dart';
 import 'package:alperefesahin_dev/core/design_system/custom_button.dart';
 import 'package:alperefesahin_dev/core/design_system/custom_divider.dart';
 import 'package:alperefesahin_dev/core/design_system/custom_text.dart';
-import 'package:alperefesahin_dev/core/enums/medium_category_enums.dart';
 import 'package:alperefesahin_dev/core/mixins/launch_mixin.dart';
 import 'package:alperefesahin_dev/presentation/home/widgets/writing/medium_card.dart';
 import 'package:alperefesahin_dev/presentation/home/widgets/writing/ui_model/medium_card_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class WritingSection extends StatelessWidget with LaunchMixin {
   const WritingSection({super.key, required this.isMobile});
@@ -25,7 +25,7 @@ class WritingSection extends StatelessWidget with LaunchMixin {
     final List<MediumCardModel> mediumCardModelList = [
       MediumCardModel(
         imagePath: "assets/medium1.jpg",
-        category: MediumCategoryEnum.perspective.categoryName,
+        category: AppLocalizations.of(context)!.perspective,
         date: "Nov 1, 2024",
         title: "LeetCode Challenge",
         websitePath:
@@ -33,7 +33,7 @@ class WritingSection extends StatelessWidget with LaunchMixin {
       ),
       MediumCardModel(
         imagePath: "assets/medium2.jpg",
-        category: MediumCategoryEnum.engineering.categoryName,
+        category: AppLocalizations.of(context)!.engineering,
         date: "Jun 18, 2022",
         title: "Riverpod Usage",
         websitePath:
@@ -41,7 +41,7 @@ class WritingSection extends StatelessWidget with LaunchMixin {
       ),
       MediumCardModel(
         imagePath: "assets/medium3.jpg",
-        category: MediumCategoryEnum.engineering.categoryName,
+        category: AppLocalizations.of(context)!.engineering,
         date: "Oct 14, 2021",
         title: "BLoC Pattern",
         websitePath:
