@@ -2,53 +2,39 @@ import 'package:alperefesahin_dev/core/constants/colors.dart';
 import 'package:alperefesahin_dev/core/design_system/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class GreetingsText extends StatelessWidget {
   const GreetingsText({super.key});
 
   @override
   Widget build(BuildContext context) {
-    const double fontSize = 52;
-    const double fontHeight = 1.2;
-    const FontWeight fontWeight = FontWeight.w800;
+    final String hiText = AppLocalizations.of(context)?.hi ?? "";
+    final String myNameIsText = AppLocalizations.of(context)?.myNameIs ?? "";
+    final String nameText = AppLocalizations.of(context)?.alperefe ?? "";
+    final String sweText = AppLocalizations.of(context)?.swe ?? "";
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Row(
+        Row(
           children: [
             _BlackTextBold(
-              text: 'Hi! ',
-              fontHeight: fontHeight,
-              fontWeight: fontWeight,
-              fontSize: fontSize,
-            ),
+                text: hiText, fontHeight: 1.2, fontWeight: FontWeight.w800, fontSize: 52),
             _BlackTextBold(
-              text: 'My name is',
-              fontHeight: fontHeight,
-              fontWeight: fontWeight,
-              fontSize: fontSize,
-            ),
+                text: myNameIsText, fontHeight: 1.2, fontWeight: FontWeight.w800, fontSize: 52),
           ],
         ),
         RichText(
           text: TextSpan(
-            text: 'Alper Efe ',
+            text: nameText,
             style: GoogleFonts.robotoCondensed(
-              color: customOrange,
-              fontWeight: fontWeight,
-              fontSize: fontSize,
-              height: fontHeight,
-            ),
+                color: customOrange, fontWeight: FontWeight.w800, fontSize: 52, height: 1.2),
             children: [
               TextSpan(
-                text: 'and I am a\nsoftware engineer.',
+                text: sweText,
                 style: GoogleFonts.robotoCondensed(
-                  fontWeight: fontWeight,
-                  color: black,
-                  fontSize: fontSize,
-                  height: fontHeight,
-                ),
+                    fontWeight: FontWeight.w800, color: black, fontSize: 52, height: 1.2),
               ),
             ],
           ),

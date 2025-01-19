@@ -3,6 +3,7 @@ import 'package:alperefesahin_dev/core/design_system/custom_text.dart';
 import 'package:alperefesahin_dev/core/mixins/launch_mixin.dart';
 import 'package:alperefesahin_dev/presentation/home/widgets/youtube/ui_model/youtube_video_card_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class YoutubeVideoCard extends StatelessWidget with LaunchMixin {
   const YoutubeVideoCard({super.key, required this.youtubeVideoCardModel});
@@ -15,10 +16,8 @@ class YoutubeVideoCard extends StatelessWidget with LaunchMixin {
     final String date = youtubeVideoCardModel.date;
     final String description = youtubeVideoCardModel.description;
     final String videoUrl = youtubeVideoCardModel.videoUrl;
-    const String watchText = "Watch";
+    final String watchText = AppLocalizations.of(context)?.watch ?? "";
     const String youtubePodcastImagePath = "assets/youtube_podcast.jpg";
-
-    const double youtubePodcastImageHeight = 400;
 
     final bool isSmallCard = youtubeVideoCardModel.isSmallCard;
 
@@ -41,17 +40,12 @@ class YoutubeVideoCard extends StatelessWidget with LaunchMixin {
                 backgroundColor: lightBlue,
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
               ),
-              child: const Row(
+              child: Row(
                 mainAxisSize: MainAxisSize.min,
                 spacing: 4,
                 children: [
-                  Icon(Icons.play_circle_outline, color: black, size: 20),
-                  CustomText(
-                    text: watchText,
-                    color: black,
-                    fontWeight: FontWeight.w800,
-                    fontSize: 14,
-                  ),
+                  const Icon(Icons.play_circle_outline, color: black, size: 20),
+                  CustomText(text: watchText, color: black, fontWeight: FontWeight.w800, fontSize: 14),
                 ],
               ),
             ),
@@ -74,21 +68,13 @@ class YoutubeVideoCard extends StatelessWidget with LaunchMixin {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ClipRRect(
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(16),
-                topRight: Radius.circular(16),
-              ),
+              borderRadius: const BorderRadius.only(topLeft: Radius.circular(16), topRight: Radius.circular(16)),
               child: Stack(
                 children: [
-                  Image.asset(
-                    youtubePodcastImagePath,
-                    height: youtubePodcastImageHeight,
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
+                  Image.asset(youtubePodcastImagePath, height: 400, width: double.infinity, fit: BoxFit.cover),
                   Container(
                     width: double.infinity,
-                    height: youtubePodcastImageHeight,
+                    height: 400,
                     decoration: BoxDecoration(color: black.withValues(alpha: 0.5)),
                   ),
                   Positioned.fill(
@@ -99,17 +85,12 @@ class YoutubeVideoCard extends StatelessWidget with LaunchMixin {
                           color: white,
                           borderRadius: BorderRadius.circular(20),
                         ),
-                        child: const Row(
+                        child: Row(
                           mainAxisSize: MainAxisSize.min,
                           spacing: 4,
                           children: [
-                            Icon(Icons.play_circle_outline, color: black, size: 20),
-                            CustomText(
-                              text: watchText,
-                              color: black,
-                              fontWeight: FontWeight.w800,
-                              fontSize: 14,
-                            ),
+                            const Icon(Icons.play_circle_outline, color: black, size: 20),
+                            CustomText(text: watchText, color: black, fontWeight: FontWeight.w800, fontSize: 14),
                           ],
                         ),
                       ),

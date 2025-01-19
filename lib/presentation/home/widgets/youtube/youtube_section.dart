@@ -5,6 +5,7 @@ import 'package:alperefesahin_dev/core/mixins/launch_mixin.dart';
 import 'package:alperefesahin_dev/presentation/home/widgets/youtube/ui_model/youtube_video_card_model.dart';
 import 'package:alperefesahin_dev/presentation/home/widgets/youtube/youtube_videos.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class YoutubeSection extends StatelessWidget with LaunchMixin {
   const YoutubeSection({super.key, required this.isMobile});
@@ -13,36 +14,44 @@ class YoutubeSection extends StatelessWidget with LaunchMixin {
 
   @override
   Widget build(BuildContext context) {
-    const String youtubeTitle = "YouTube";
-    const String youtubeDescription =
-        "I share my experiences and insights on Flutter development, focusing on state management, clean architecture, and open-source projects. My videos also cover practical coding challenges and tips, providing a deeper look into the development process.";
-    const String visitYoutubeChannelText = "Visit YouTube Channel";
+    final String youtubeTitle = AppLocalizations.of(context)?.youtubeTitle ?? "";
+    final String youtubeDescription = AppLocalizations.of(context)?.youtubeDescription ?? "";
+    final String visitYoutubeChannelText = AppLocalizations.of(context)?.visitYoutubeChannelText ?? "";
+    final String flutterSohbetleriTitle = AppLocalizations.of(context)?.flutterSohbetleriTitle ?? "";
+    final String flutterSohbetleriDescription = AppLocalizations.of(context)?.flutterSohbetleriDescription ?? "";
+    final String socialChatTitle = AppLocalizations.of(context)?.socialChatTitle ?? "";
+    final String socialChatDescription = AppLocalizations.of(context)?.socialChatDescription ?? "";
+    final String dialingoTitle = AppLocalizations.of(context)?.dialingoTitle ?? "";
+    final String dialingoDescription = AppLocalizations.of(context)?.dialingoDescription ?? "";
+    final String dateMarch = AppLocalizations.of(context)?.dateMarch ?? "";
+    final String dateJan = AppLocalizations.of(context)?.dateJan ?? "";
+    final String dateJul = AppLocalizations.of(context)?.dateJul ?? "";
 
-    final double? youtubeDescriptionBoxWidth = isMobile ? null : 560;
+    const flutterSohbetleriUrl = "https://www.youtube.com/watch?v=NGrTJfQfOGA";
+    const socialChatUrl = "https://www.youtube.com/watch?v=r9MtCK33J78&list=PL3PvZdDvJcMIixstKkuvLWQleqJ1VhLrf";
+    const dialingoUrl = "https://www.youtube.com/watch?v=heSqh0koVYE";
+    const youtubeChannelUrl = "https://youtube.com/@alperefesahin/";
 
     final List<YoutubeVideoCardModel> listOfYoutubeVideoCardModel = [
       YoutubeVideoCardModel(
-        title: 'Flutter Sohbetleri - TR Podcast',
-        date: 'March 12, 2023',
-        description:
-            "Chatting about the journeys of Flutter devs in Turkey—starting with me, in this first episode!",
-        videoUrl: "https://www.youtube.com/watch?v=NGrTJfQfOGA",
+        title: flutterSohbetleriTitle,
+        date: dateMarch,
+        description: flutterSohbetleriDescription,
+        videoUrl: flutterSohbetleriUrl,
         isSmallCard: false,
       ),
       YoutubeVideoCardModel(
-        title: "Flutter Social Chat Tutorial",
-        date: "Jan 23, 2023",
-        description:
-            'Learn to build a Flutter social chat app step by step in this tutorial series!',
-        videoUrl:
-            "https://www.youtube.com/watch?v=r9MtCK33J78&list=PL3PvZdDvJcMIixstKkuvLWQleqJ1VhLrf",
+        title: socialChatTitle,
+        date: dateJan,
+        description: socialChatDescription,
+        videoUrl: socialChatUrl,
         isSmallCard: true,
       ),
       YoutubeVideoCardModel(
-        title: "Dialingo Translation App Tutorial",
-        date: 'Jul 4, 2024',
-        description: "AI Implementation with Gemini and Flutter",
-        videoUrl: "https://www.youtube.com/watch?v=heSqh0koVYE",
+        title: dialingoTitle,
+        date: dateJul,
+        description: dialingoDescription,
+        videoUrl: dialingoUrl,
         isSmallCard: true,
       )
     ];
@@ -50,23 +59,15 @@ class YoutubeSection extends StatelessWidget with LaunchMixin {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const CustomText(
-          text: youtubeTitle,
-          fontSize: 32,
-          height: 1.2,
-          fontWeight: FontWeight.w800,
-        ),
+        CustomText(text: youtubeTitle, fontSize: 32, height: 1.2, fontWeight: FontWeight.w800),
         Container(
-          width: youtubeDescriptionBoxWidth,
+          width: isMobile ? null : 560,
           padding: const EdgeInsets.only(top: 16, bottom: 60),
-          child: const CustomText(text: youtubeDescription, color: blackWithOpacity87),
+          child: CustomText(text: youtubeDescription, color: blackWithOpacity87),
         ),
         YoutubeVideos(isMobile: isMobile, listOfYoutubeVideoCardModel: listOfYoutubeVideoCardModel),
         const SizedBox(height: 60),
-        CustomButton(
-          text: visitYoutubeChannelText,
-          onPressed: () => launchWebsite(websitePath: 'https://youtube.com/@alperefesahin/'),
-        ),
+        CustomButton(text: visitYoutubeChannelText, onPressed: () => launchWebsite(websitePath: youtubeChannelUrl)),
       ],
     );
   }

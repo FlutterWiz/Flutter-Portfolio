@@ -1,0 +1,5 @@
+# to generate:
+# flutter gen-l10n --arb-dir lib/presentation/l10n
+arb-dir: lib/presentation/l10n
+template-arb-file: app_en.arb
+output-localization-file: app_localizations.dart

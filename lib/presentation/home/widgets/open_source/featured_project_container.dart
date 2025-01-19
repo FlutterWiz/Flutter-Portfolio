@@ -8,6 +8,7 @@ import 'package:alperefesahin_dev/presentation/home/widgets/open_source/ui_model
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class FeaturedProjectContainer extends StatelessWidget {
   const FeaturedProjectContainer({super.key, required this.featuredProjectModel});
@@ -28,9 +29,6 @@ class FeaturedProjectContainer extends StatelessWidget {
     final Color shadowColor = featuredProjectModel.shadowColor;
     final Color textColor = featuredProjectModel.textColor;
 
-    final double? containerWidth = isMobile ? null : 375;
-    final double containerHeight = isMobile ? 325 : 285;
-
     final FeaturedProjectImageModel featuredProjectImageModel = FeaturedProjectImageModel(
       isMobile: isMobile,
       imagePath: imagePath,
@@ -47,8 +45,8 @@ class FeaturedProjectContainer extends StatelessWidget {
     );
 
     return Container(
-      width: containerWidth,
-      height: containerHeight,
+      width: isMobile ? null : 375,
+      height: isMobile ? 325 : 285,
       padding: EdgeInsets.all(isMobile ? 48 : 36),
       margin: const EdgeInsets.only(bottom: 48),
       decoration: BoxDecoration(
@@ -168,8 +166,8 @@ class _FeaturedProjectActions extends StatelessWidget with LaunchMixin {
     final bool isSponsored = featuredProjectActionsModel.isSponsored;
 
     final String websitePath = featuredProjectActionsModel.websitePath;
-    const String sponsorText = "Sponsored by GetStream!";
-    const String githubText = 'GitHub';
+    final String sponsorText = AppLocalizations.of(context)?.sponsorStream ?? "";
+    final String githubText = AppLocalizations.of(context)?.github ?? "";
 
     return Wrap(
       crossAxisAlignment: WrapCrossAlignment.center,

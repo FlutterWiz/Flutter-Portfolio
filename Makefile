@@ -3,6 +3,7 @@
 run:
 	flutter clean && \
     flutter pub get && \
+	flutter gen-l10n --arb-dir lib/presentation/l10n && \
     flutter build web --web-renderer canvaskit --release --no-tree-shake-icons --no-source-maps && \
     $(MAKE) move_assets && \
     flutter run -d chrome --web-renderer canvaskit
@@ -10,6 +11,7 @@ run:
 release_run:
 	flutter clean && \
     flutter pub get && \
+	flutter gen-l10n --arb-dir lib/presentation/l10n && \
     flutter build web --web-renderer canvaskit --release --no-tree-shake-icons --no-source-maps && \
     $(MAKE) move_assets && \
     python3 -m http.server --directory build/web 8000
