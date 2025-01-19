@@ -30,6 +30,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: any
   flutter_svg: ^2.0.14
   google_fonts: ^6.2.1
   font_awesome_flutter: ^10.8.0
@@ -55,6 +58,7 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  generate: true # for localization
   assets:
     - assets/
     - assets/fonts/
