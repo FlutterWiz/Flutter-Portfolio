@@ -28,5 +28,8 @@
   "flutterPersonalWebsiteTitle": "Flutter Personal Website",
   "flutterPersonalWebsiteDescription": "This Website is an open source project too.",
   "github": "GitHub",
-  "sponsorStream": "Sponsored by GetStream!"
+  "sponsorStream": "Sponsored by GetStream!",
+  "stayInTouch": "Stay in touch",
+  "stayInTouchSubText": "Don't miss out on my latest posts and projects! Hit me up on Twitter to stay connected, ask questions, or just chat about anything!",
+  "followMe": "Follow me"
 }

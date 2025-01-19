@@ -28,6 +28,10 @@
   "flutterPersonalWebsiteTitle": "Flutter Personal Website",
   "flutterPersonalWebsiteDescription": "Bu websitesinin kendisi de açık kaynaklı bir proje.",
   "github": "GitHub",
-  "sponsorStream": "GetStream tarafından Sponsorluk!"
+  "sponsorStream": "GetStream tarafından Sponsorluk!",
+  "stayInTouch": "Benimle bağlantıda kal",
+  "stayInTouchSubText": "En son gönderilerimi ve projelerimi kaçırmayın! Bağlantıda kalmak, sorular sormak veya herhangi bir konuda sohbet etmek için bana X platformundan ulaşabilirsiniz!",
+  "followMe": "Takip et"
+
   
 }

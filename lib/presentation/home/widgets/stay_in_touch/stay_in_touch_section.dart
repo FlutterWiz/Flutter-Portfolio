@@ -3,6 +3,7 @@ import 'package:alperefesahin_dev/core/design_system/custom_text.dart';
 import 'package:alperefesahin_dev/core/mixins/launch_mixin.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class StayInTouchSection extends StatelessWidget with LaunchMixin {
   final bool isMobile;
@@ -11,10 +12,9 @@ class StayInTouchSection extends StatelessWidget with LaunchMixin {
 
   @override
   Widget build(BuildContext context) {
-    const String stayInTouchText = "Stay in touch";
-    const String stayInTouchSubText =
-        "Don't miss out on my latest posts and projects! Hit me up on Twitter to stay connected, ask questions, or just chat about anything!";
-    const String followMeText = "Follow me";
+    final String stayInTouchText = AppLocalizations.of(context)?.stayInTouch ?? "";
+    final String stayInTouchSubText = AppLocalizations.of(context)?.stayInTouchSubText ?? "";
+    final String followMeText = AppLocalizations.of(context)?.followMe ?? "";
     const String xWebsitePath = "https://x.com/alperefesahin";
 
     return Container(
@@ -25,9 +25,9 @@ class StayInTouchSection extends StatelessWidget with LaunchMixin {
           ? Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const CustomText(text: stayInTouchText, fontSize: 32, fontWeight: FontWeight.w800),
+                CustomText(text: stayInTouchText, fontSize: 32, fontWeight: FontWeight.w800),
                 const SizedBox(height: 12),
-                const CustomText(text: stayInTouchSubText, fontSize: 20, color: blackWithOpacity87),
+                CustomText(text: stayInTouchSubText, fontSize: 20, color: blackWithOpacity87),
                 const SizedBox(height: 24),
                 SizedBox(
                   width: double.infinity,
@@ -38,11 +38,11 @@ class StayInTouchSection extends StatelessWidget with LaunchMixin {
                       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
                     ),
-                    child: const Row(
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       spacing: 8,
                       children: [
-                        FaIcon(FontAwesomeIcons.xTwitter, size: 18, color: white),
+                        const FaIcon(FontAwesomeIcons.xTwitter, size: 18, color: white),
                         CustomText(text: followMeText, color: white),
                       ],
                     ),
@@ -53,14 +53,14 @@ class StayInTouchSection extends StatelessWidget with LaunchMixin {
           : Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Expanded(
+                Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       CustomText(text: stayInTouchText, fontSize: 32, fontWeight: FontWeight.w800),
-                      SizedBox(height: 12),
+                      const SizedBox(height: 12),
                       CustomText(text: stayInTouchSubText, fontSize: 20, color: blackWithOpacity87),
-                      SizedBox(height: 24),
+                      const SizedBox(height: 24),
                     ],
                   ),
                 ),
@@ -74,11 +74,11 @@ class StayInTouchSection extends StatelessWidget with LaunchMixin {
                       borderRadius: BorderRadius.circular(24),
                     ),
                   ),
-                  child: const Row(
+                  child: Row(
                     mainAxisSize: MainAxisSize.min,
                     spacing: 8,
                     children: [
-                      FaIcon(FontAwesomeIcons.xTwitter, size: 18, color: white),
+                      const FaIcon(FontAwesomeIcons.xTwitter, size: 18, color: white),
                       CustomText(text: followMeText, color: white),
                     ],
                   ),
