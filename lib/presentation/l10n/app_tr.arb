@@ -3,5 +3,14 @@
   "engineering": "MÜHENDİSLİK",
   "emailAddress": "contact@alperefesahin.dev",
   "emailSubject": "İletişim",
-  "emailBody": "Merhaba, sizinle iletişim kurmak istiyorum."
+  "emailBody": "Merhaba, sizinle iletişim kurmak istiyorum.",
+  "howItStartedTitle": "Nasıl başladı",
+  "howItStartedDescription": "2001 yılında Türkiye'de doğdum ve 14 yaşında yazılım mühendisliğine olan tutkumun farkına vardım. İlk girişimim, Simple Machines Forum (SMF) kullanarak 'forumtim.com' adında bir forum oluşturmaktı. Başarılı olmasa da pes etmedim.\n\nÜniversitede Matematik bölümüne başladığımda, yazılım mühendisliğinde kendimi geliştirmeye adadım. Birçok kişi gibi ben de Python ile başladım ve ardından web geliştirmeye geçtim. Bu süreç, Jotform'da bir staj yapmama yol açtı. 2020 yılında, o dönem yükselişte olan Flutter ile tanıştım ve Flutter geliştiricisi olarak uzmanlaşmaya karar verdim.\n\nO zamandan beri birçok şirketle çalıştım, Medium makaleleri yazdım, YouTube videoları kaydettim ve yazılım geliştirici topluluğuna katkıda bulunmak için açık kaynak projeler oluşturdum.",
+  "howIsItGoingTitle": "Nasıl gidiyor",
+  "howIsItGoingDescription": "Temiz kodlama uygulamalarıyla sezgisel ve verimli mobil uygulamalar geliştirme konusunda geniş deneyime sahip bir Flutter geliştiricisiyim.\n\nYıllar boyunca, çeşitli şirketlerle işbirliği yaparak ihtiyaçlarına göre uyarlanmış yüksek kaliteli Flutter uygulamaları teslim ettim. Mobil uygulama geliştirmede sınırları zorlayan zorlu projelere katılmaya istekliyim.\n\nBoş zamanlarımda açık kaynak projeler oluşturmaktan, YouTube üzerinden video eğitimleri kaydetmekten ve Medium makaleleri aracılığıyla içgörülerimi paylaşmaktan keyif alıyorum.",
+  "hi": "Merhaba! ",
+  "myNameIs": "İsmim",
+  "alperefe": "Alper Efe ",
+  "swe": "ve ben bir\nyazılım mühendisiyim."
+
 }
