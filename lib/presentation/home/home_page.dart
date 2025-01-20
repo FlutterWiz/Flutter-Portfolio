@@ -14,12 +14,15 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomePage extends StatelessWidget with LaunchMixin {
-  const HomePage({super.key});
+  const HomePage({super.key, required this.onTapLanguageButton});
+
+  final VoidCallback onTapLanguageButton;
 
   @override
   Widget build(BuildContext context) {
     const double maxScreenWidth = 1280;
     final double screenWidth = MediaQuery.of(context).size.width;
+
     final bool isMobile = screenWidth < 1020;
 
     final String emailAddress = AppLocalizations.of(context)?.emailAddress ?? '';
@@ -43,11 +46,18 @@ class HomePage extends StatelessWidget with LaunchMixin {
               highlightColor: transparent,
               splashColor: transparent,
               hoverColor: transparent,
-              onTap: () => launchEmail(
-                emailAddress: emailAddress,
-                emailSubject: emailSubject,
-                emailBody: emailBody,
-              ),
+              onTap: onTapLanguageButton,
+              child: CircleAvatar(radius: 24, backgroundImage: AssetImage(miniAppBarImagePath)),
+            ),
+          ),
+          const SizedBox(width: 8),
+          Padding(
+            padding: const EdgeInsets.only(right: 20),
+            child: InkWell(
+              highlightColor: transparent,
+              splashColor: transparent,
+              hoverColor: transparent,
+              onTap: () => launchEmail(emailAddress: emailAddress, emailSubject: emailSubject, emailBody: emailBody),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 spacing: 8,
