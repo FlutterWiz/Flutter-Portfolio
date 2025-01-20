@@ -1,4 +1,5 @@
 import 'package:alperefesahin_dev/core/constants/colors.dart';
+import 'package:alperefesahin_dev/presentation/gen/assets.gen.dart';
 import 'package:alperefesahin_dev/presentation/home/widgets/open_source/featured_project_container.dart';
 import 'package:alperefesahin_dev/presentation/home/widgets/open_source/ui_model/featured_project_model.dart';
 import 'package:flutter/material.dart';
@@ -14,10 +15,14 @@ class FeaturedProjects extends StatelessWidget {
     const String streamProjectUrl = 'https://github.com/alperefesahin/flutter_social_chat';
     const String websiteProjectUrl = 'https://github.com/alperefesahin/alperefesahin_dev';
 
-    final flutterSocialChatTitle = AppLocalizations.of(context)?.flutterSocialChatTitle ?? '';
-    final flutterSocialChatDescription = AppLocalizations.of(context)?.flutterSocialChatDescription ?? '';
-    final flutterPersonalWebsiteTitle = AppLocalizations.of(context)?.flutterPersonalWebsiteTitle ?? '';
-    final flutterPersonalWebsiteDescription = AppLocalizations.of(context)?.flutterPersonalWebsiteDescription ?? '';
+    final String flutterSocialChatTitle = AppLocalizations.of(context)?.flutterSocialChatTitle ?? '';
+    final String flutterSocialChatDescription = AppLocalizations.of(context)?.flutterSocialChatDescription ?? '';
+    final String flutterPersonalWebsiteTitle = AppLocalizations.of(context)?.flutterPersonalWebsiteTitle ?? '';
+    final String flutterPersonalWebsiteDescription =
+        AppLocalizations.of(context)?.flutterPersonalWebsiteDescription ?? '';
+
+    final String streamAssets = Assets.stream.path;
+    final String websiteIconAssets = Assets.websiteIcon.path;
 
     final List<FeaturedProjectModel> featuredProjects = [
       FeaturedProjectModel(
@@ -25,7 +30,7 @@ class FeaturedProjects extends StatelessWidget {
         isMobile: isMobile,
         gradientColors: const [streamLightBlue, white],
         shadowColor: streamDarkBlue,
-        imagePath: 'assets/stream.jpg',
+        imagePath: streamAssets,
         title: flutterSocialChatTitle,
         description: flutterSocialChatDescription,
         textColor: streamDarkBlueText,
@@ -37,7 +42,7 @@ class FeaturedProjects extends StatelessWidget {
         isSponsored: false,
         gradientColors: const [websiteLightOrange, white],
         shadowColor: websiteDarkOrange,
-        imagePath: 'assets/website_icon.jpg',
+        imagePath: websiteIconAssets,
         title: flutterPersonalWebsiteTitle,
         description: flutterPersonalWebsiteDescription,
         textColor: websiteDarkOrangeText,

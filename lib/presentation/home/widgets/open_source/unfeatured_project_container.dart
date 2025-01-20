@@ -33,17 +33,8 @@ class UnfeaturedProjectContainer extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         spacing: 16,
         children: [
-          CustomText(
-            text: title,
-            fontSize: isMobile ? 24 : 20,
-            height: 1.2,
-            fontWeight: FontWeight.w800,
-          ),
-          CustomText(
-            text: description,
-            fontSize: isMobile ? 20 : 16,
-            color: blackWithOpacity87,
-          ),
+          CustomText(text: title, fontSize: isMobile ? 24 : 20, height: 1.2, fontWeight: FontWeight.w800),
+          CustomText(text: description, fontSize: isMobile ? 20 : 16, color: blackWithOpacity87),
         ],
       ),
     );
