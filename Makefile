@@ -27,3 +27,6 @@ move_assets:
 	mv build/web/assets/assets/fonts build/web/assets/ || true
 	# Remove the now-empty build/web/assets/assets directory
 	rmdir build/web/assets/assets || true
+
+build_runner:
+	dart run build_runner build --delete-conflicting-outputs

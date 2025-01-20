@@ -3,6 +3,7 @@ import 'package:alperefesahin_dev/core/design_system/custom_button.dart';
 import 'package:alperefesahin_dev/core/design_system/custom_divider.dart';
 import 'package:alperefesahin_dev/core/design_system/custom_text.dart';
 import 'package:alperefesahin_dev/core/mixins/launch_mixin.dart';
+import 'package:alperefesahin_dev/presentation/gen/assets.gen.dart';
 import 'package:alperefesahin_dev/presentation/home/widgets/writing/medium_card.dart';
 import 'package:alperefesahin_dev/presentation/home/widgets/writing/ui_model/medium_card_model.dart';
 import 'package:flutter/material.dart';
@@ -35,23 +36,27 @@ class WritingSection extends StatelessWidget with LaunchMixin {
         'https://medium.com/@alperefesahin/45-days-of-leetcode-what-did-i-learn-from-that-challenge-1024deab5636';
     const String mediumWebsiteUrl = 'https://medium.com/@alperefesahin/';
 
+    final String mediumOneAssets = Assets.medium1.path;
+    final String mediumTwoAssets = Assets.medium2.path;
+    final String mediumThreeAssets = Assets.medium3.path;
+
     final List<MediumCardModel> mediumCardModelList = [
       MediumCardModel(
-        imagePath: 'assets/medium1.jpg',
+        imagePath: mediumOneAssets,
         category: perspectiveCategory,
         date: dateNov,
         title: leetcodeTitle,
         websitePath: leetcodeChallengeArticleUrl,
       ),
       MediumCardModel(
-        imagePath: 'assets/medium2.jpg',
+        imagePath: mediumTwoAssets,
         category: engineeringCategory,
         date: dateJun,
         title: riverpodTitle,
         websitePath: riverpodArticleUrl,
       ),
       MediumCardModel(
-        imagePath: 'assets/medium3.jpg',
+        imagePath: mediumThreeAssets,
         category: engineeringCategory,
         date: dateOct,
         title: blocTitle,

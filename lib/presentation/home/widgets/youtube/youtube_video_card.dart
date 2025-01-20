@@ -1,6 +1,7 @@
 import 'package:alperefesahin_dev/core/constants/colors.dart';
 import 'package:alperefesahin_dev/core/design_system/custom_text.dart';
 import 'package:alperefesahin_dev/core/mixins/launch_mixin.dart';
+import 'package:alperefesahin_dev/presentation/gen/assets.gen.dart';
 import 'package:alperefesahin_dev/presentation/home/widgets/youtube/ui_model/youtube_video_card_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -17,7 +18,7 @@ class YoutubeVideoCard extends StatelessWidget with LaunchMixin {
     final String description = youtubeVideoCardModel.description;
     final String videoUrl = youtubeVideoCardModel.videoUrl;
     final String watchText = AppLocalizations.of(context)?.watch ?? '';
-    const String youtubePodcastImagePath = 'assets/youtube_podcast.jpg';
+    final String youtubePodcastImageAssets = Assets.youtubePodcast.path;
 
     final bool isSmallCard = youtubeVideoCardModel.isSmallCard;
 
@@ -71,7 +72,7 @@ class YoutubeVideoCard extends StatelessWidget with LaunchMixin {
               borderRadius: const BorderRadius.only(topLeft: Radius.circular(16), topRight: Radius.circular(16)),
               child: Stack(
                 children: [
-                  Image.asset(youtubePodcastImagePath, height: 400, width: double.infinity, fit: BoxFit.cover),
+                  Image.asset(youtubePodcastImageAssets, height: 400, width: double.infinity, fit: BoxFit.cover),
                   Container(
                     width: double.infinity,
                     height: 400,

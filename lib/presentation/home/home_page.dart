@@ -3,6 +3,7 @@ import 'package:alperefesahin_dev/core/design_system/custom_divider.dart';
 import 'package:alperefesahin_dev/core/design_system/custom_text.dart';
 import 'package:alperefesahin_dev/core/design_system/footer/footer_section.dart';
 import 'package:alperefesahin_dev/core/mixins/launch_mixin.dart';
+import 'package:alperefesahin_dev/presentation/gen/assets.gen.dart';
 import 'package:alperefesahin_dev/presentation/home/widgets/about/about_section.dart';
 import 'package:alperefesahin_dev/presentation/home/widgets/open_source/open_source_section.dart';
 import 'package:alperefesahin_dev/presentation/home/widgets/youtube/youtube_section.dart';
@@ -24,7 +25,7 @@ class HomePage extends StatelessWidget with LaunchMixin {
     final String emailAddress = AppLocalizations.of(context)?.emailAddress ?? '';
     final String emailSubject = AppLocalizations.of(context)?.emailSubject ?? '';
     final String emailBody = AppLocalizations.of(context)?.emailBody ?? '';
-    const String miniAppBarImagePath = 'assets/efe.jpg';
+    final String miniAppBarImagePath = Assets.efe.path;
 
     return Scaffold(
       backgroundColor: white,
@@ -66,7 +67,7 @@ class HomePage extends StatelessWidget with LaunchMixin {
             decoration: BoxDecoration(
               color: black,
               borderRadius: BorderRadius.circular(8),
-              image: const DecorationImage(
+              image: DecorationImage(
                 image: AssetImage(miniAppBarImagePath),
                 filterQuality: FilterQuality.high,
                 fit: BoxFit.fill,
