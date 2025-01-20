@@ -18,7 +18,7 @@ class YoutubeVideos extends StatelessWidget with LaunchMixin {
 
   @override
   Widget build(BuildContext context) {
-    final String pastVideosText = AppLocalizations.of(context)?.pastVideos ?? "";
+    final String pastVideosText = AppLocalizations.of(context)?.pastVideos ?? '';
 
     return isMobile
         ? Column(
@@ -35,12 +35,10 @@ class YoutubeVideos extends StatelessWidget with LaunchMixin {
             ],
           )
         : Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Expanded(flex: 2, child: YoutubeVideoCard(youtubeVideoCardModel: listOfYoutubeVideoCardModel[0])),
               const SizedBox(width: 48),
               Expanded(
-                flex: 1,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

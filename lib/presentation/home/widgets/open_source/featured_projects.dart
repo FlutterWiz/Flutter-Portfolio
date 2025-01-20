@@ -11,16 +11,13 @@ class FeaturedProjects extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const String streamProjectUrl = "https://github.com/alperefesahin/flutter_social_chat";
-    const String websiteProjectUrl = "https://github.com/alperefesahin/alperefesahin_dev";
+    const String streamProjectUrl = 'https://github.com/alperefesahin/flutter_social_chat';
+    const String websiteProjectUrl = 'https://github.com/alperefesahin/alperefesahin_dev';
 
-    final flutterSocialChatTitle = AppLocalizations.of(context)?.flutterSocialChatTitle ?? "";
-    final flutterSocialChatDescription =
-        AppLocalizations.of(context)?.flutterSocialChatDescription ?? "";
-    final flutterPersonalWebsiteTitle =
-        AppLocalizations.of(context)?.flutterPersonalWebsiteTitle ?? "";
-    final flutterPersonalWebsiteDescription =
-        AppLocalizations.of(context)?.flutterPersonalWebsiteDescription ?? "";
+    final flutterSocialChatTitle = AppLocalizations.of(context)?.flutterSocialChatTitle ?? '';
+    final flutterSocialChatDescription = AppLocalizations.of(context)?.flutterSocialChatDescription ?? '';
+    final flutterPersonalWebsiteTitle = AppLocalizations.of(context)?.flutterPersonalWebsiteTitle ?? '';
+    final flutterPersonalWebsiteDescription = AppLocalizations.of(context)?.flutterPersonalWebsiteDescription ?? '';
 
     final List<FeaturedProjectModel> featuredProjects = [
       FeaturedProjectModel(
@@ -28,7 +25,7 @@ class FeaturedProjects extends StatelessWidget {
         isMobile: isMobile,
         gradientColors: const [streamLightBlue, white],
         shadowColor: streamDarkBlue,
-        imagePath: "assets/stream.jpg",
+        imagePath: 'assets/stream.jpg',
         title: flutterSocialChatTitle,
         description: flutterSocialChatDescription,
         textColor: streamDarkBlueText,
@@ -40,17 +37,16 @@ class FeaturedProjects extends StatelessWidget {
         isSponsored: false,
         gradientColors: const [websiteLightOrange, white],
         shadowColor: websiteDarkOrange,
-        imagePath: "assets/website_icon.jpg",
+        imagePath: 'assets/website_icon.jpg',
         title: flutterPersonalWebsiteTitle,
         description: flutterPersonalWebsiteDescription,
         textColor: websiteDarkOrangeText,
-      )
+      ),
     ];
 
     return SizedBox(
       width: double.infinity,
       child: Wrap(
-        spacing: 0,
         alignment: WrapAlignment.spaceAround,
         children: [
           FeaturedProjectContainer(featuredProjectModel: featuredProjects[0]),

@@ -4,8 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 mixin LaunchMixin {
   String? _encodeQueryParameters(Map<String, String> params) {
     return params.entries
-        .map((MapEntry<String, String> e) =>
-            '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+        .map((MapEntry<String, String> e) => '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
         .join('&');
   }
 
@@ -37,8 +36,7 @@ mixin LaunchMixin {
   Future<void> launchWebsite({required websitePath}) async {
     try {
       final Uri url = Uri.parse(websitePath);
-      final bool launched =
-          await launchUrl(url, mode: LaunchMode.externalApplication, webOnlyWindowName: '_blank');
+      final bool launched = await launchUrl(url, mode: LaunchMode.externalApplication, webOnlyWindowName: '_blank');
 
       if (!launched) {
         developer.log('Could not launch website: $websitePath');

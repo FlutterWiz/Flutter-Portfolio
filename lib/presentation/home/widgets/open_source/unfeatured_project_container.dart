@@ -43,7 +43,6 @@ class UnfeaturedProjectContainer extends StatelessWidget {
             text: description,
             fontSize: isMobile ? 20 : 16,
             color: blackWithOpacity87,
-            height: 1.6,
           ),
         ],
       ),

@@ -21,10 +21,10 @@ class HomePage extends StatelessWidget with LaunchMixin {
     final double screenWidth = MediaQuery.of(context).size.width;
     final bool isMobile = screenWidth < 1020;
 
-    final String emailAddress = AppLocalizations.of(context)?.emailAddress ?? "";
-    final String emailSubject = AppLocalizations.of(context)?.emailSubject ?? "";
-    final String emailBody = AppLocalizations.of(context)?.emailBody ?? "";
-    const String miniAppBarImagePath = "assets/efe.jpg";
+    final String emailAddress = AppLocalizations.of(context)?.emailAddress ?? '';
+    final String emailSubject = AppLocalizations.of(context)?.emailSubject ?? '';
+    final String emailBody = AppLocalizations.of(context)?.emailBody ?? '';
+    const String miniAppBarImagePath = 'assets/efe.jpg';
 
     return Scaffold(
       backgroundColor: white,
@@ -48,7 +48,6 @@ class HomePage extends StatelessWidget with LaunchMixin {
                 emailBody: emailBody,
               ),
               child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 spacing: 8,
                 children: [
@@ -105,7 +104,7 @@ class HomePage extends StatelessWidget with LaunchMixin {
                   ),
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),

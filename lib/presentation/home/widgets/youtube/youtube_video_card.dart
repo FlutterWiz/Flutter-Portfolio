@@ -16,8 +16,8 @@ class YoutubeVideoCard extends StatelessWidget with LaunchMixin {
     final String date = youtubeVideoCardModel.date;
     final String description = youtubeVideoCardModel.description;
     final String videoUrl = youtubeVideoCardModel.videoUrl;
-    final String watchText = AppLocalizations.of(context)?.watch ?? "";
-    const String youtubePodcastImagePath = "assets/youtube_podcast.jpg";
+    final String watchText = AppLocalizations.of(context)?.watch ?? '';
+    const String youtubePodcastImagePath = 'assets/youtube_podcast.jpg';
 
     final bool isSmallCard = youtubeVideoCardModel.isSmallCard;
 
@@ -31,7 +31,7 @@ class YoutubeVideoCard extends StatelessWidget with LaunchMixin {
             CustomText(text: date, color: grey, fontSize: 16),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16),
-              child: CustomText(text: description, fontSize: 20),
+              child: CustomText(text: description),
             ),
             TextButton(
               onPressed: () => launchWebsite(websitePath: videoUrl),
@@ -45,7 +45,7 @@ class YoutubeVideoCard extends StatelessWidget with LaunchMixin {
                 spacing: 4,
                 children: [
                   const Icon(Icons.play_circle_outline, color: black, size: 20),
-                  CustomText(text: watchText, color: black, fontWeight: FontWeight.w800, fontSize: 14),
+                  CustomText(text: watchText, fontWeight: FontWeight.w800, fontSize: 14),
                 ],
               ),
             ),
@@ -90,7 +90,7 @@ class YoutubeVideoCard extends StatelessWidget with LaunchMixin {
                           spacing: 4,
                           children: [
                             const Icon(Icons.play_circle_outline, color: black, size: 20),
-                            CustomText(text: watchText, color: black, fontWeight: FontWeight.w800, fontSize: 14),
+                            CustomText(text: watchText, fontWeight: FontWeight.w800, fontSize: 14),
                           ],
                         ),
                       ),

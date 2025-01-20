@@ -38,7 +38,6 @@ class MediumCard extends StatelessWidget with LaunchMixin {
                   text: mediumCardModel.category,
                   color: blackWithOpacity87,
                   fontSize: 16,
-                  fontWeight: FontWeight.w500,
                 ),
                 Container(
                   width: 4,
@@ -49,7 +48,6 @@ class MediumCard extends StatelessWidget with LaunchMixin {
                   text: mediumCardModel.date,
                   color: blackWithOpacity87,
                   fontSize: 16,
-                  fontWeight: FontWeight.w500,
                 ),
               ],
             ),
@@ -61,7 +59,6 @@ class MediumCard extends StatelessWidget with LaunchMixin {
                 fontSize: 24,
                 fontWeight: FontWeight.w800,
                 height: 1.2,
-                color: black,
               ),
             ),
           ],

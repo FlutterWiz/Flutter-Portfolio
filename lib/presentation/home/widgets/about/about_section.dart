@@ -12,13 +12,11 @@ class AboutSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String howItStartedTitle = AppLocalizations.of(context)?.howItStartedTitle ?? "";
-    final String howItStartedDescription =
-        AppLocalizations.of(context)?.howItStartedDescription ?? "";
+    final String howItStartedTitle = AppLocalizations.of(context)?.howItStartedTitle ?? '';
+    final String howItStartedDescription = AppLocalizations.of(context)?.howItStartedDescription ?? '';
 
-    final String howIsItGoingTitle = AppLocalizations.of(context)?.howIsItGoingTitle ?? "";
-    final String howIsItGoingDescription =
-        AppLocalizations.of(context)?.howIsItGoingDescription ?? "";
+    final String howIsItGoingTitle = AppLocalizations.of(context)?.howIsItGoingTitle ?? '';
+    final String howIsItGoingDescription = AppLocalizations.of(context)?.howIsItGoingDescription ?? '';
 
     return Column(
       children: [
@@ -42,8 +40,7 @@ class AboutSection extends StatelessWidget {
         if (isMobile) ...[
           PersonalStoryBlock(title: howItStartedTitle, description: howItStartedDescription),
           const SizedBox(height: 80),
-          PersonalStoryBlock(
-              title: howIsItGoingTitle, description: howIsItGoingDescription, hasGradient: true),
+          PersonalStoryBlock(title: howIsItGoingTitle, description: howIsItGoingDescription, hasGradient: true),
         ] else ...[
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -52,8 +49,7 @@ class AboutSection extends StatelessWidget {
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.only(top: 32),
-                  child: PersonalStoryBlock(
-                      title: howItStartedTitle, description: howItStartedDescription),
+                  child: PersonalStoryBlock(title: howItStartedTitle, description: howItStartedDescription),
                 ),
               ),
               Expanded(
