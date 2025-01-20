@@ -14,10 +14,10 @@ class OpenSourceSection extends StatelessWidget with LaunchMixin {
 
   @override
   Widget build(BuildContext context) {
-    final String openSourceTitle = AppLocalizations.of(context)?.openSourceTitle ?? "";
-    final String openSourceDescription = AppLocalizations.of(context)?.openSourceDescription ?? "";
-    final String viewMoreOnGithubText = AppLocalizations.of(context)?.viewMoreOnGithubText ?? "";
-    const String githubWebsiteUrl = "https://github.com/alperefesahin";
+    final String openSourceTitle = AppLocalizations.of(context)?.openSourceTitle ?? '';
+    final String openSourceDescription = AppLocalizations.of(context)?.openSourceDescription ?? '';
+    final String viewMoreOnGithubText = AppLocalizations.of(context)?.viewMoreOnGithubText ?? '';
+    const String githubWebsiteUrl = 'https://github.com/alperefesahin';
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,

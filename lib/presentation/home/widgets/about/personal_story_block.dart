@@ -16,8 +16,6 @@ class PersonalStoryBlock extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    
     final Decoration? boxDecoration = hasGradient
         ? BoxDecoration(
             borderRadius: BorderRadius.circular(16),
@@ -29,7 +27,6 @@ class PersonalStoryBlock extends StatelessWidget {
             ),
           )
         : null;
-
 
     return Container(
       padding: hasGradient ? const EdgeInsets.all(32) : EdgeInsets.zero,
@@ -43,7 +40,6 @@ class PersonalStoryBlock extends StatelessWidget {
             fontSize: 32,
             fontWeight: FontWeight.w800,
             height: 1.2,
-            color: black,
           ),
           CustomText(text: description, color: blackWithOpacity87),
         ],

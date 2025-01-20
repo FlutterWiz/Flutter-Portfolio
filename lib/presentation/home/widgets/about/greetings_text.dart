@@ -9,32 +9,38 @@ class GreetingsText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String hiText = AppLocalizations.of(context)?.hi ?? "";
-    final String myNameIsText = AppLocalizations.of(context)?.myNameIs ?? "";
-    final String nameText = AppLocalizations.of(context)?.alperefe ?? "";
-    final String sweText = AppLocalizations.of(context)?.swe ?? "";
+    final String hiText = AppLocalizations.of(context)?.hi ?? '';
+    final String myNameIsText = AppLocalizations.of(context)?.myNameIs ?? '';
+    final String nameText = AppLocalizations.of(context)?.alperefe ?? '';
+    final String sweText = AppLocalizations.of(context)?.swe ?? '';
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           children: [
-            _BlackTextBold(
-                text: hiText, fontHeight: 1.2, fontWeight: FontWeight.w800, fontSize: 52),
-            _BlackTextBold(
-                text: myNameIsText, fontHeight: 1.2, fontWeight: FontWeight.w800, fontSize: 52),
+            _BlackTextBold(text: hiText, fontHeight: 1.2, fontWeight: FontWeight.w800, fontSize: 52),
+            _BlackTextBold(text: myNameIsText, fontHeight: 1.2, fontWeight: FontWeight.w800, fontSize: 52),
           ],
         ),
         RichText(
           text: TextSpan(
             text: nameText,
             style: GoogleFonts.robotoCondensed(
-                color: customOrange, fontWeight: FontWeight.w800, fontSize: 52, height: 1.2),
+              color: customOrange,
+              fontWeight: FontWeight.w800,
+              fontSize: 52,
+              height: 1.2,
+            ),
             children: [
               TextSpan(
                 text: sweText,
                 style: GoogleFonts.robotoCondensed(
-                    fontWeight: FontWeight.w800, color: black, fontSize: 52, height: 1.2),
+                  fontWeight: FontWeight.w800,
+                  color: black,
+                  fontSize: 52,
+                  height: 1.2,
+                ),
               ),
             ],
           ),

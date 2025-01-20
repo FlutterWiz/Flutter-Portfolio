@@ -10,17 +10,14 @@ class UnfeaturedProjects extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String phoneAuthTitle = AppLocalizations.of(context)?.phoneAuthTitle ?? "";
-    final String phoneAuthDescription = AppLocalizations.of(context)?.phoneAuthDescription ?? "";
-    final String socialDatingTitle = AppLocalizations.of(context)?.socialDatingTitle ?? "";
-    final String socialDatingDescription =
-        AppLocalizations.of(context)?.socialDatingDescription ?? "";
-    final String textToImageGeneratorTitle =
-        AppLocalizations.of(context)?.textToImageGeneratorTitle ?? "";
-    final String textToImageGeneratorDescription =
-        AppLocalizations.of(context)?.textToImageGeneratorDescription ?? "";
-    final String dddTitle = AppLocalizations.of(context)?.dddTitle ?? "";
-    final String dddDescription = AppLocalizations.of(context)?.dddDescription ?? "";
+    final String phoneAuthTitle = AppLocalizations.of(context)?.phoneAuthTitle ?? '';
+    final String phoneAuthDescription = AppLocalizations.of(context)?.phoneAuthDescription ?? '';
+    final String socialDatingTitle = AppLocalizations.of(context)?.socialDatingTitle ?? '';
+    final String socialDatingDescription = AppLocalizations.of(context)?.socialDatingDescription ?? '';
+    final String textToImageGeneratorTitle = AppLocalizations.of(context)?.textToImageGeneratorTitle ?? '';
+    final String textToImageGeneratorDescription = AppLocalizations.of(context)?.textToImageGeneratorDescription ?? '';
+    final String dddTitle = AppLocalizations.of(context)?.dddTitle ?? '';
+    final String dddDescription = AppLocalizations.of(context)?.dddDescription ?? '';
 
     final List<UnfeaturedProjectModel> unfeaturedProjectModels = [
       UnfeaturedProjectModel(

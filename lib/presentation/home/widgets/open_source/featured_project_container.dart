@@ -95,7 +95,6 @@ class _FeaturedProjectImage extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: shadowColor,
-            spreadRadius: 0,
             blurRadius: 15,
             offset: const Offset(0, 5),
           ),
@@ -138,13 +137,10 @@ class _FeaturedProjectContent extends StatelessWidget {
             fontWeight: FontWeight.w800,
           ),
           Padding(
-            padding: isMobile
-                ? const EdgeInsets.only(bottom: 20)
-                : const EdgeInsets.symmetric(vertical: 24),
+            padding: isMobile ? const EdgeInsets.only(bottom: 20) : const EdgeInsets.symmetric(vertical: 24),
             child: CustomText(
               text: description,
               color: textColor,
-              height: 1.6,
               fontSize: isMobile ? 20 : 16,
             ),
           ),
@@ -166,8 +162,8 @@ class _FeaturedProjectActions extends StatelessWidget with LaunchMixin {
     final bool isSponsored = featuredProjectActionsModel.isSponsored;
 
     final String websitePath = featuredProjectActionsModel.websitePath;
-    final String sponsorText = AppLocalizations.of(context)?.sponsorStream ?? "";
-    final String githubText = AppLocalizations.of(context)?.github ?? "";
+    final String sponsorText = AppLocalizations.of(context)?.sponsorStream ?? '';
+    final String githubText = AppLocalizations.of(context)?.github ?? '';
 
     return Wrap(
       crossAxisAlignment: WrapCrossAlignment.center,
@@ -194,7 +190,6 @@ class _FeaturedProjectActions extends StatelessWidget with LaunchMixin {
                 text: githubText,
                 color: white,
                 fontSize: isMobile ? 20 : 16,
-                fontWeight: FontWeight.w500,
               ),
             ],
           ),

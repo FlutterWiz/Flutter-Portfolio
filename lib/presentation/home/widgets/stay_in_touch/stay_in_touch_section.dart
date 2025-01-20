@@ -12,10 +12,10 @@ class StayInTouchSection extends StatelessWidget with LaunchMixin {
 
   @override
   Widget build(BuildContext context) {
-    final String stayInTouchText = AppLocalizations.of(context)?.stayInTouch ?? "";
-    final String stayInTouchSubText = AppLocalizations.of(context)?.stayInTouchSubText ?? "";
-    final String followMeText = AppLocalizations.of(context)?.followMe ?? "";
-    const String xWebsitePath = "https://x.com/alperefesahin";
+    final String stayInTouchText = AppLocalizations.of(context)?.stayInTouch ?? '';
+    final String stayInTouchSubText = AppLocalizations.of(context)?.stayInTouchSubText ?? '';
+    final String followMeText = AppLocalizations.of(context)?.followMe ?? '';
+    const String xWebsitePath = 'https://x.com/alperefesahin';
 
     return Container(
       padding: const EdgeInsets.all(32),
@@ -27,7 +27,7 @@ class StayInTouchSection extends StatelessWidget with LaunchMixin {
               children: [
                 CustomText(text: stayInTouchText, fontSize: 32, fontWeight: FontWeight.w800),
                 const SizedBox(height: 12),
-                CustomText(text: stayInTouchSubText, fontSize: 20, color: blackWithOpacity87),
+                CustomText(text: stayInTouchSubText, color: blackWithOpacity87),
                 const SizedBox(height: 24),
                 SizedBox(
                   width: double.infinity,
@@ -59,7 +59,7 @@ class StayInTouchSection extends StatelessWidget with LaunchMixin {
                     children: [
                       CustomText(text: stayInTouchText, fontSize: 32, fontWeight: FontWeight.w800),
                       const SizedBox(height: 12),
-                      CustomText(text: stayInTouchSubText, fontSize: 20, color: blackWithOpacity87),
+                      CustomText(text: stayInTouchSubText, color: blackWithOpacity87),
                       const SizedBox(height: 24),
                     ],
                   ),

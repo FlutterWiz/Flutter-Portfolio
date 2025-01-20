@@ -10,19 +10,19 @@ class SocialIconsRow extends StatelessWidget {
     return const Row(
       children: [
         _SocialIcons(
-          websitePath: "https://linkedin.com/in/alperefesahin/",
+          websitePath: 'https://linkedin.com/in/alperefesahin/',
           icon: FontAwesomeIcons.linkedin,
         ),
         _SocialIcons(
-          websitePath: "https://youtube.com/@alperefesahin",
+          websitePath: 'https://youtube.com/@alperefesahin',
           icon: FontAwesomeIcons.youtube,
         ),
         _SocialIcons(
-          websitePath: "https://medium.com/@alperefesahin",
+          websitePath: 'https://medium.com/@alperefesahin',
           icon: FontAwesomeIcons.medium,
         ),
         _SocialIcons(
-          websitePath: "https://x.com/alperefesahin",
+          websitePath: 'https://x.com/alperefesahin',
           icon: FontAwesomeIcons.xTwitter,
         ),
       ],

@@ -14,23 +14,23 @@ class YoutubeSection extends StatelessWidget with LaunchMixin {
 
   @override
   Widget build(BuildContext context) {
-    final String youtubeTitle = AppLocalizations.of(context)?.youtubeTitle ?? "";
-    final String youtubeDescription = AppLocalizations.of(context)?.youtubeDescription ?? "";
-    final String visitYoutubeChannelText = AppLocalizations.of(context)?.visitYoutubeChannelText ?? "";
-    final String flutterSohbetleriTitle = AppLocalizations.of(context)?.flutterSohbetleriTitle ?? "";
-    final String flutterSohbetleriDescription = AppLocalizations.of(context)?.flutterSohbetleriDescription ?? "";
-    final String socialChatTitle = AppLocalizations.of(context)?.socialChatTitle ?? "";
-    final String socialChatDescription = AppLocalizations.of(context)?.socialChatDescription ?? "";
-    final String dialingoTitle = AppLocalizations.of(context)?.dialingoTitle ?? "";
-    final String dialingoDescription = AppLocalizations.of(context)?.dialingoDescription ?? "";
-    final String dateMarch = AppLocalizations.of(context)?.dateMarch ?? "";
-    final String dateJan = AppLocalizations.of(context)?.dateJan ?? "";
-    final String dateJul = AppLocalizations.of(context)?.dateJul ?? "";
+    final String youtubeTitle = AppLocalizations.of(context)?.youtubeTitle ?? '';
+    final String youtubeDescription = AppLocalizations.of(context)?.youtubeDescription ?? '';
+    final String visitYoutubeChannelText = AppLocalizations.of(context)?.visitYoutubeChannelText ?? '';
+    final String flutterSohbetleriTitle = AppLocalizations.of(context)?.flutterSohbetleriTitle ?? '';
+    final String flutterSohbetleriDescription = AppLocalizations.of(context)?.flutterSohbetleriDescription ?? '';
+    final String socialChatTitle = AppLocalizations.of(context)?.socialChatTitle ?? '';
+    final String socialChatDescription = AppLocalizations.of(context)?.socialChatDescription ?? '';
+    final String dialingoTitle = AppLocalizations.of(context)?.dialingoTitle ?? '';
+    final String dialingoDescription = AppLocalizations.of(context)?.dialingoDescription ?? '';
+    final String dateMarch = AppLocalizations.of(context)?.dateMarch ?? '';
+    final String dateJan = AppLocalizations.of(context)?.dateJan ?? '';
+    final String dateJul = AppLocalizations.of(context)?.dateJul ?? '';
 
-    const flutterSohbetleriUrl = "https://www.youtube.com/watch?v=NGrTJfQfOGA";
-    const socialChatUrl = "https://www.youtube.com/watch?v=r9MtCK33J78&list=PL3PvZdDvJcMIixstKkuvLWQleqJ1VhLrf";
-    const dialingoUrl = "https://www.youtube.com/watch?v=heSqh0koVYE";
-    const youtubeChannelUrl = "https://youtube.com/@alperefesahin/";
+    const flutterSohbetleriUrl = 'https://www.youtube.com/watch?v=NGrTJfQfOGA';
+    const socialChatUrl = 'https://www.youtube.com/watch?v=r9MtCK33J78&list=PL3PvZdDvJcMIixstKkuvLWQleqJ1VhLrf';
+    const dialingoUrl = 'https://www.youtube.com/watch?v=heSqh0koVYE';
+    const youtubeChannelUrl = 'https://youtube.com/@alperefesahin/';
 
     final List<YoutubeVideoCardModel> listOfYoutubeVideoCardModel = [
       YoutubeVideoCardModel(
@@ -53,7 +53,7 @@ class YoutubeSection extends StatelessWidget with LaunchMixin {
         description: dialingoDescription,
         videoUrl: dialingoUrl,
         isSmallCard: true,
-      )
+      ),
     ];
 
     return Column(

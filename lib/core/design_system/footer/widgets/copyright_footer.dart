@@ -14,14 +14,13 @@ class CopyrightFooter extends StatelessWidget with LaunchMixin {
 
     final double copyrightBoxWidth = size.width / 2;
 
-    final String copyrightText =
-        "© ${DateTime.now().year} Alper Efe Şahin\nMade with Love and Flutter";
-    const String contentDistributedText = "All content of this website is distributed under the ";
-    const String licenseText = "CC BY-NC license";
-    const String uiInspiredText = "UI inspired by ";
-    const String artemNameText = "Artem";
-    const String licenseWebsitePath = "https://creativecommons.org/licenses/by-nc/4.0/deed.en";
-    const String inspiredWebsitePath = "https://kettanaito.com";
+    final String copyrightText = '© ${DateTime.now().year} Alper Efe Şahin\nMade with Love and Flutter';
+    const String contentDistributedText = 'All content of this website is distributed under the ';
+    const String licenseText = 'CC BY-NC license';
+    const String uiInspiredText = 'UI inspired by ';
+    const String artemNameText = 'Artem';
+    const String licenseWebsitePath = 'https://creativecommons.org/licenses/by-nc/4.0/deed.en';
+    const String inspiredWebsitePath = 'https://kettanaito.com';
 
     return SizedBox(
       width: copyrightBoxWidth,
@@ -35,8 +34,7 @@ class CopyrightFooter extends StatelessWidget with LaunchMixin {
               style: GoogleFonts.robotoCondensed(color: grey, fontSize: 16),
               children: [
                 TextSpan(
-                  recognizer: TapGestureRecognizer()
-                    ..onTap = () => launchWebsite(websitePath: licenseWebsitePath),
+                  recognizer: TapGestureRecognizer()..onTap = () => launchWebsite(websitePath: licenseWebsitePath),
                   text: licenseText,
                   style: GoogleFonts.robotoCondensed(
                     decoration: TextDecoration.underline,
@@ -60,8 +58,7 @@ class CopyrightFooter extends StatelessWidget with LaunchMixin {
               style: GoogleFonts.robotoCondensed(color: grey, fontSize: 16),
               children: [
                 TextSpan(
-                  recognizer: TapGestureRecognizer()
-                    ..onTap = () => launchWebsite(websitePath: inspiredWebsitePath),
+                  recognizer: TapGestureRecognizer()..onTap = () => launchWebsite(websitePath: inspiredWebsitePath),
                   text: artemNameText,
                   style: GoogleFonts.robotoCondensed(
                     decoration: TextDecoration.underline,
