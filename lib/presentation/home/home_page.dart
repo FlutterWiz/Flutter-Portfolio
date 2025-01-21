@@ -10,7 +10,6 @@ import 'package:alperefesahin_dev/presentation/home/widgets/youtube/youtube_sect
 import 'package:alperefesahin_dev/presentation/home/widgets/writing/writing_section.dart';
 import 'package:alperefesahin_dev/presentation/home/widgets/stay_in_touch/stay_in_touch_section.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -36,7 +35,6 @@ class HomePage extends StatelessWidget with LaunchMixin {
     return Scaffold(
       backgroundColor: white,
       appBar: AppBar(
-        systemOverlayStyle: const SystemUiOverlayStyle(statusBarColor: appBarBackgroundColor),
         leadingWidth: isMobile ? 70 : 170,
         toolbarHeight: 80,
         elevation: 0.5,
