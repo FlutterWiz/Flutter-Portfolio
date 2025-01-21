@@ -33,14 +33,25 @@ class Assets {
   static const AssetGenImage medium2 = AssetGenImage('assets/medium2.jpg');
   static const AssetGenImage medium3 = AssetGenImage('assets/medium3.jpg');
   static const AssetGenImage stream = AssetGenImage('assets/stream.jpg');
+  static const AssetGenImage trFlag = AssetGenImage('assets/tr_flag.jpg');
+  static const AssetGenImage ukFlag = AssetGenImage('assets/uk_flag.jpg');
   static const AssetGenImage websiteIcon =
       AssetGenImage('assets/website_icon.jpg');
   static const AssetGenImage youtubePodcast =
       AssetGenImage('assets/youtube_podcast.jpg');
 
   /// List of all assets
-  static List<AssetGenImage> get values =>
-      [efe, medium1, medium2, medium3, stream, websiteIcon, youtubePodcast];
+  static List<AssetGenImage> get values => [
+        efe,
+        medium1,
+        medium2,
+        medium3,
+        stream,
+        trFlag,
+        ukFlag,
+        websiteIcon,
+        youtubePodcast
+      ];
 }
 
 class AssetGenImage {
