@@ -10,7 +10,7 @@ class AppWidget extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final Locale appLocale = ref.watch(homeViewModelProvider).locale;
+    final Locale appLanguage = ref.watch(homeViewModelProvider).language;
 
     return MaterialApp(
       title: 'alperefesahin',
@@ -21,7 +21,7 @@ class AppWidget extends ConsumerWidget {
           ref.read(homeViewModelProvider.notifier).switchLanguage();
         },
       ),
-      locale: appLocale,
+      locale: appLanguage,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
     );
