@@ -14,9 +14,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomePage extends StatelessWidget with LaunchMixin {
-  const HomePage({super.key, required this.onTapLanguageButton});
+  const HomePage({super.key, required this.onTapLanguageButton, required this.isAppLanguageEnglish});
 
   final VoidCallback onTapLanguageButton;
+  final bool isAppLanguageEnglish;
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +30,7 @@ class HomePage extends StatelessWidget with LaunchMixin {
     final String emailSubject = AppLocalizations.of(context)?.emailSubject ?? '';
     final String emailBody = AppLocalizations.of(context)?.emailBody ?? '';
     final String miniAppBarImagePath = Assets.efe.path;
+    final String appLanguageImagePath = isAppLanguageEnglish ? Assets.ukFlag.path : Assets.trFlag.path;
 
     return Scaffold(
       backgroundColor: white,
@@ -41,18 +43,29 @@ class HomePage extends StatelessWidget with LaunchMixin {
         backgroundColor: appBarBackgroundColor,
         actions: [
           Padding(
-            padding: const EdgeInsets.only(right: 20),
+            padding: const EdgeInsets.only(right: 8),
             child: InkWell(
               highlightColor: transparent,
               splashColor: transparent,
               hoverColor: transparent,
               onTap: onTapLanguageButton,
-              child: CircleAvatar(radius: 24, backgroundImage: AssetImage(miniAppBarImagePath)),
+              child: Container(
+                width: 24,
+                height: 24,
+                decoration: BoxDecoration(
+                  color: transparent,
+                  image: DecorationImage(
+                    image: AssetImage(appLanguageImagePath),
+                    filterQuality: FilterQuality.high,
+                    fit: BoxFit.fill,
+                  ),
+                ),
+              ),
             ),
           ),
-          const SizedBox(width: 8),
+          const Padding(padding: EdgeInsets.symmetric(vertical: 24), child: VerticalDivider()),
           Padding(
-            padding: const EdgeInsets.only(right: 20),
+            padding: const EdgeInsets.only(left: 8, right: 20),
             child: InkWell(
               highlightColor: transparent,
               splashColor: transparent,

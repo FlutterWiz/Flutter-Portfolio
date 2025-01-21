@@ -11,12 +11,16 @@ class AppWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final Locale appLanguage = ref.watch(homeViewModelProvider).language;
+    final Locale englishLanguage = const Locale('en');
+    
+    final bool isAppLanguageEnglish = appLanguage == englishLanguage;
 
     return MaterialApp(
       title: 'alperefesahin',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(useMaterial3: true, colorScheme: ColorScheme.fromSeed(seedColor: blue)),
       home: HomePage(
+        isAppLanguageEnglish: isAppLanguageEnglish,
         onTapLanguageButton: () {
           ref.read(homeViewModelProvider.notifier).switchLanguage();
         },
