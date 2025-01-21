@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:alperefesahin_dev/domain/adapter/locale_adapter.dart';
 import 'package:hive_ce_flutter/hive_flutter.dart';
 
@@ -15,6 +17,9 @@ class LocalDatabase implements ILocalDatabase {
     await Hive.initFlutter();
 
     registerAdapter(0, LocaleAdapter());
+
+    final String settingsBoxName = 'settings';
+    await openHiveBox<Locale>(settingsBoxName);
   }
 
   @override
