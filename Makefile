@@ -1,13 +1,4 @@
-# to run: make run
-
-run:
-	flutter clean && \
-    flutter pub get && \
-	flutter gen-l10n --arb-dir lib/presentation/l10n && \
-	dart run build_runner build --delete-conflicting-outputs && \
-    flutter build web --web-renderer canvaskit --release --no-tree-shake-icons --no-source-maps && \
-    $(MAKE) move_assets && \
-    flutter run -d chrome --web-renderer canvaskit
+# release run: make release_run
 
 release_run:
 	flutter clean && \
