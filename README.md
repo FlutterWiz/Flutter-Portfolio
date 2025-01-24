@@ -4,6 +4,12 @@ The repository contains the source code for my personal website as an open-sourc
 
 All content is licensed under the CC BY-NC License. You are free to use, modify, and share the project for non-commercial purposes, as long as you provide appropriate credit and comply with the terms of the license.
 
+YouTube Tutorial: https://www.youtube.com/watch?v=Bq68qLqRkzM
+
+Medium Article: https://medium.com/@alperefesahin/flutter-portfolio-building-a-modern-and-open-source-web-application-e23b2aa41b6c
+
+<img width="750" alt="Image" src="https://github.com/user-attachments/assets/a646f212-cd6a-432e-8b1f-7a2b7ea0be74" />
+
 ## Live
 
 https://alperefesahin.dev
