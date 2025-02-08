@@ -15,7 +15,7 @@ class StayInTouchSection extends StatelessWidget with LaunchMixin {
     final String stayInTouchText = AppLocalizations.of(context)?.stayInTouch ?? '';
     final String stayInTouchSubText = AppLocalizations.of(context)?.stayInTouchSubText ?? '';
     final String followMeText = AppLocalizations.of(context)?.followMe ?? '';
-    const String xWebsitePath = 'https://x.com/alperefesahin';
+    const String xWebsitePath = 'https://x.com/FlutterWiz';
 
     return Container(
       padding: const EdgeInsets.all(32),

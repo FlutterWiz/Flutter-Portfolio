@@ -30,7 +30,7 @@ class YoutubeSection extends StatelessWidget with LaunchMixin {
     const flutterSohbetleriUrl = 'https://www.youtube.com/watch?v=NGrTJfQfOGA';
     const socialChatUrl = 'https://www.youtube.com/watch?v=r9MtCK33J78&list=PL3PvZdDvJcMIixstKkuvLWQleqJ1VhLrf';
     const dialingoUrl = 'https://www.youtube.com/watch?v=heSqh0koVYE';
-    const youtubeChannelUrl = 'https://youtube.com/@alperefesahin/';
+    const youtubeChannelUrl = 'https://youtube.com/@FlutterWiz/';
 
     final List<YoutubeVideoCardModel> listOfYoutubeVideoCardModel = [
       YoutubeVideoCardModel(

@@ -12,8 +12,8 @@ class FeaturedProjects extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const String streamProjectUrl = 'https://github.com/alperefesahin/flutter_social_chat';
-    const String websiteProjectUrl = 'https://github.com/alperefesahin/alperefesahin_dev';
+    const String streamProjectUrl = 'https://github.com/FlutterWiz/flutter_social_chat';
+    const String websiteProjectUrl = 'https://github.com/FlutterWiz/alperefesahin_dev';
 
     final String flutterSocialChatTitle = AppLocalizations.of(context)?.flutterSocialChatTitle ?? '';
     final String flutterSocialChatDescription = AppLocalizations.of(context)?.flutterSocialChatDescription ?? '';

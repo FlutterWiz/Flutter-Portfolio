@@ -29,12 +29,12 @@ class WritingSection extends StatelessWidget with LaunchMixin {
     final String engineeringCategory = AppLocalizations.of(context)?.engineering ?? '';
 
     const String blocArticleUrl =
-        'https://medium.com/@alperefesahin/bloc-pattern-for-login-bloc-login-in-flutter-551fd05beb99';
+        'https://medium.com/@FlutterWiz/bloc-pattern-for-login-bloc-login-in-flutter-551fd05beb99';
     const String riverpodArticleUrl =
         'https://medium.com/codex/riverpod-statenotifier-freezed-ddd-in-flutter-fetching-data-from-the-api-ba232c7d1144';
     const String leetcodeChallengeArticleUrl =
-        'https://medium.com/@alperefesahin/45-days-of-leetcode-what-did-i-learn-from-that-challenge-1024deab5636';
-    const String mediumWebsiteUrl = 'https://medium.com/@alperefesahin/';
+        'https://medium.com/@FlutterWiz/45-days-of-leetcode-what-did-i-learn-from-that-challenge-1024deab5636';
+    const String mediumWebsiteUrl = 'https://medium.com/@FlutterWiz/';
 
     final String mediumOneAssets = Assets.medium1.path;
     final String mediumTwoAssets = Assets.medium2.path;

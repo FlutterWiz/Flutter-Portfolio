@@ -6,7 +6,7 @@ All content is licensed under the CC BY-NC License. You are free to use, modify,
 
 YouTube Tutorial: https://www.youtube.com/watch?v=Bq68qLqRkzM
 
-Medium Article: https://medium.com/@alperefesahin/flutter-portfolio-building-a-modern-and-open-source-web-application-e23b2aa41b6c
+Medium Article: https://medium.com/@FlutterWiz/flutter-portfolio-building-a-modern-and-open-source-web-application-e23b2aa41b6c
 
 <img width="750" alt="Image" src="https://github.com/user-attachments/assets/a646f212-cd6a-432e-8b1f-7a2b7ea0be74" />
 

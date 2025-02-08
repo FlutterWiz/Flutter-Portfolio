@@ -10,9 +10,9 @@ class SocialFooter extends StatelessWidget with LaunchMixin {
   Widget build(BuildContext context) {
     final Map<String, String> socialMap = {
       'LinkedIn': 'https://linkedin.com/in/alperefesahin/',
-      'YouTube': 'https://youtube.com/@alperefesahin/',
-      'Twitter (X)': 'https://x.com/alperefesahin/',
-      'Medium': 'https://medium.com/@alperefesahin/',
+      'YouTube': 'https://youtube.com/@FlutterWiz/',
+      'Twitter (X)': 'https://x.com/FlutterWiz/',
+      'Medium': 'https://medium.com/@FlutterWiz/',
     };
 
     return Column(

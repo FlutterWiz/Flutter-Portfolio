@@ -14,15 +14,15 @@ class SocialIconsRow extends StatelessWidget {
           icon: FontAwesomeIcons.linkedin,
         ),
         _SocialIcons(
-          websitePath: 'https://youtube.com/@alperefesahin',
+          websitePath: 'https://youtube.com/@FlutterWiz',
           icon: FontAwesomeIcons.youtube,
         ),
         _SocialIcons(
-          websitePath: 'https://medium.com/@alperefesahin',
+          websitePath: 'https://medium.com/@FlutterWiz',
           icon: FontAwesomeIcons.medium,
         ),
         _SocialIcons(
-          websitePath: 'https://x.com/alperefesahin',
+          websitePath: 'https://x.com/FlutterWiz',
           icon: FontAwesomeIcons.xTwitter,
         ),
       ],
