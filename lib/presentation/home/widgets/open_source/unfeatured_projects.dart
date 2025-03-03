@@ -10,8 +10,8 @@ class UnfeaturedProjects extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String phoneAuthTitle = AppLocalizations.of(context)?.phoneAuthTitle ?? '';
-    final String phoneAuthDescription = AppLocalizations.of(context)?.phoneAuthDescription ?? '';
+    final String mapMotionFlutterTitle = AppLocalizations.of(context)?.mapMotionFlutterTitle ?? '';
+    final String mapMotionFlutterDescription = AppLocalizations.of(context)?.mapMotionFlutterDescription ?? '';
     final String socialDatingTitle = AppLocalizations.of(context)?.socialDatingTitle ?? '';
     final String socialDatingDescription = AppLocalizations.of(context)?.socialDatingDescription ?? '';
     final String textToImageGeneratorTitle = AppLocalizations.of(context)?.textToImageGeneratorTitle ?? '';
@@ -22,8 +22,8 @@ class UnfeaturedProjects extends StatelessWidget {
     final List<UnfeaturedProjectModel> unfeaturedProjectModels = [
       UnfeaturedProjectModel(
         isMobile: isMobile,
-        title: phoneAuthTitle,
-        description: phoneAuthDescription,
+        title: mapMotionFlutterTitle,
+        description: mapMotionFlutterDescription,
       ),
       UnfeaturedProjectModel(
         isMobile: isMobile,

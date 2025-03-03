@@ -21,15 +21,15 @@ class YoutubeSection extends StatelessWidget with LaunchMixin {
     final String flutterSohbetleriDescription = AppLocalizations.of(context)?.flutterSohbetleriDescription ?? '';
     final String socialChatTitle = AppLocalizations.of(context)?.socialChatTitle ?? '';
     final String socialChatDescription = AppLocalizations.of(context)?.socialChatDescription ?? '';
-    final String dialingoTitle = AppLocalizations.of(context)?.dialingoTitle ?? '';
-    final String dialingoDescription = AppLocalizations.of(context)?.dialingoDescription ?? '';
+    final String flutterMapAppTitle = AppLocalizations.of(context)?.mapAppTitle ?? '';
+    final String flutterMapAppDescription = AppLocalizations.of(context)?.flutterMapAppDescription ?? '';
     final String dateMarch = AppLocalizations.of(context)?.dateMarch ?? '';
     final String dateJan = AppLocalizations.of(context)?.dateJan ?? '';
-    final String dateJul = AppLocalizations.of(context)?.dateJul ?? '';
+    final String dateFebTwelve = AppLocalizations.of(context)?.dateFebTwelve ?? '';
 
     const flutterSohbetleriUrl = 'https://www.youtube.com/watch?v=NGrTJfQfOGA';
     const socialChatUrl = 'https://www.youtube.com/watch?v=r9MtCK33J78&list=PL3PvZdDvJcMIixstKkuvLWQleqJ1VhLrf';
-    const dialingoUrl = 'https://www.youtube.com/watch?v=heSqh0koVYE';
+    const flutterMapAppUrl = 'https://www.youtube.com/watch?v=X8EX7yqoy1A';
     const youtubeChannelUrl = 'https://youtube.com/@FlutterWiz/';
 
     final List<YoutubeVideoCardModel> listOfYoutubeVideoCardModel = [
@@ -41,17 +41,17 @@ class YoutubeSection extends StatelessWidget with LaunchMixin {
         isSmallCard: false,
       ),
       YoutubeVideoCardModel(
+        title: flutterMapAppTitle,
+        date: dateFebTwelve,
+        description: flutterMapAppDescription,
+        videoUrl: flutterMapAppUrl,
+        isSmallCard: true,
+      ),
+      YoutubeVideoCardModel(
         title: socialChatTitle,
         date: dateJan,
         description: socialChatDescription,
         videoUrl: socialChatUrl,
-        isSmallCard: true,
-      ),
-      YoutubeVideoCardModel(
-        title: dialingoTitle,
-        date: dateJul,
-        description: dialingoDescription,
-        videoUrl: dialingoUrl,
         isSmallCard: true,
       ),
     ];

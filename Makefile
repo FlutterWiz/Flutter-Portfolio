@@ -5,7 +5,7 @@ release_run:
     flutter pub get && \
 	flutter gen-l10n --arb-dir lib/presentation/l10n && \
 	dart run build_runner build --delete-conflicting-outputs && \
-    flutter build web --web-renderer canvaskit --release --no-tree-shake-icons --no-source-maps && \
+    flutter build web --release --no-tree-shake-icons --no-source-maps && \
     $(MAKE) move_assets && \
     python3 -m http.server --directory build/web 8000
 

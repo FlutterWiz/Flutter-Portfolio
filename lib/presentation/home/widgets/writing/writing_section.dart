@@ -19,21 +19,20 @@ class WritingSection extends StatelessWidget with LaunchMixin {
     final String writingTitle = AppLocalizations.of(context)?.writingTitle ?? '';
     final String writingTitleDescription = AppLocalizations.of(context)?.writingTitleDescription ?? '';
     final String seeMoreArticlesText = AppLocalizations.of(context)?.seeMoreArticles ?? '';
-    final String dateNov = AppLocalizations.of(context)?.dateNov ?? '';
+    final String dateFeb = AppLocalizations.of(context)?.dateFeb ?? '';
+    final String dateFebSeven = AppLocalizations.of(context)?.dateFebSeven ?? '';
     final String dateJun = AppLocalizations.of(context)?.dateJun ?? '';
-    final String dateOct = AppLocalizations.of(context)?.dateOct ?? '';
-    final String leetcodeTitle = AppLocalizations.of(context)?.leetcodeTitle ?? '';
+    final String mapAppTitle = AppLocalizations.of(context)?.mapAppTitle ?? '';
     final String riverpodTitle = AppLocalizations.of(context)?.riverpodTitle ?? '';
-    final String blocTitle = AppLocalizations.of(context)?.blocTitle ?? '';
-    final String perspectiveCategory = AppLocalizations.of(context)?.perspective ?? '';
+    final String runwaymlTitle = AppLocalizations.of(context)?.runwaymlTitle ?? '';
     final String engineeringCategory = AppLocalizations.of(context)?.engineering ?? '';
 
-    const String blocArticleUrl =
-        'https://medium.com/@FlutterWiz/bloc-pattern-for-login-bloc-login-in-flutter-551fd05beb99';
+    const String runwaymlArticleUrl =
+        'https://medium.com/@FlutterWiz/bringing-runway-to-flutter-introducing-runwayml-flutter-e54d103abff6';
     const String riverpodArticleUrl =
         'https://medium.com/codex/riverpod-statenotifier-freezed-ddd-in-flutter-fetching-data-from-the-api-ba232c7d1144';
-    const String leetcodeChallengeArticleUrl =
-        'https://medium.com/@FlutterWiz/45-days-of-leetcode-what-did-i-learn-from-that-challenge-1024deab5636';
+    const String mapAppArticleUrl =
+        'https://medium.com/codex/building-a-flutter-map-app-mvvm-architecture-state-management-and-real-time-location-tracking-88d1bf8de523';
     const String mediumWebsiteUrl = 'https://medium.com/@FlutterWiz/';
 
     final String mediumOneAssets = Assets.medium1.path;
@@ -43,10 +42,10 @@ class WritingSection extends StatelessWidget with LaunchMixin {
     final List<MediumCardModel> mediumCardModelList = [
       MediumCardModel(
         imagePath: mediumOneAssets,
-        category: perspectiveCategory,
-        date: dateNov,
-        title: leetcodeTitle,
-        websitePath: leetcodeChallengeArticleUrl,
+        category: engineeringCategory,
+        date: dateFeb,
+        title: mapAppTitle,
+        websitePath: mapAppArticleUrl,
       ),
       MediumCardModel(
         imagePath: mediumTwoAssets,
@@ -58,9 +57,9 @@ class WritingSection extends StatelessWidget with LaunchMixin {
       MediumCardModel(
         imagePath: mediumThreeAssets,
         category: engineeringCategory,
-        date: dateOct,
-        title: blocTitle,
-        websitePath: blocArticleUrl,
+        date: dateFebSeven,
+        title: runwaymlTitle,
+        websitePath: runwaymlArticleUrl,
       ),
     ];
 

@@ -20,12 +20,14 @@ class $AssetsFontsGen {
       'assets/fonts/RobotoCondensed-VariableFont_wght.ttf';
 
   /// List of all assets
-  List<String> get values =>
-      [materialIconsRegular, robotoCondensedVariableFontWght];
+  List<String> get values => [
+    materialIconsRegular,
+    robotoCondensedVariableFontWght,
+  ];
 }
 
 class Assets {
-  Assets._();
+  const Assets._();
 
   static const AssetGenImage efe = AssetGenImage('assets/efe.jpg');
   static const $AssetsFontsGen fonts = $AssetsFontsGen();
@@ -35,31 +37,29 @@ class Assets {
   static const AssetGenImage stream = AssetGenImage('assets/stream.jpg');
   static const AssetGenImage trFlag = AssetGenImage('assets/tr_flag.jpg');
   static const AssetGenImage ukFlag = AssetGenImage('assets/uk_flag.jpg');
-  static const AssetGenImage websiteIcon =
-      AssetGenImage('assets/website_icon.jpg');
-  static const AssetGenImage youtubePodcast =
-      AssetGenImage('assets/youtube_podcast.jpg');
+  static const AssetGenImage websiteIcon = AssetGenImage(
+    'assets/website_icon.jpg',
+  );
+  static const AssetGenImage youtubePodcast = AssetGenImage(
+    'assets/youtube_podcast.jpg',
+  );
 
   /// List of all assets
   static List<AssetGenImage> get values => [
-        efe,
-        medium1,
-        medium2,
-        medium3,
-        stream,
-        trFlag,
-        ukFlag,
-        websiteIcon,
-        youtubePodcast
-      ];
+    efe,
+    medium1,
+    medium2,
+    medium3,
+    stream,
+    trFlag,
+    ukFlag,
+    websiteIcon,
+    youtubePodcast,
+  ];
 }
 
 class AssetGenImage {
-  const AssetGenImage(
-    this._assetName, {
-    this.size,
-    this.flavors = const {},
-  });
+  const AssetGenImage(this._assetName, {this.size, this.flavors = const {}});
 
   final String _assetName;
 
@@ -87,7 +87,7 @@ class AssetGenImage {
     bool gaplessPlayback = true,
     bool isAntiAlias = false,
     String? package,
-    FilterQuality filterQuality = FilterQuality.low,
+    FilterQuality filterQuality = FilterQuality.medium,
     int? cacheWidth,
     int? cacheHeight,
   }) {
@@ -119,15 +119,8 @@ class AssetGenImage {
     );
   }
 
-  ImageProvider provider({
-    AssetBundle? bundle,
-    String? package,
-  }) {
-    return AssetImage(
-      _assetName,
-      bundle: bundle,
-      package: package,
-    );
+  ImageProvider provider({AssetBundle? bundle, String? package}) {
+    return AssetImage(_assetName, bundle: bundle, package: package);
   }
 
   String get path => _assetName;

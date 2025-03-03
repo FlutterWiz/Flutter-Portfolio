@@ -14,7 +14,7 @@ class CopyrightFooter extends StatelessWidget with LaunchMixin {
 
     final double copyrightBoxWidth = size.width / 2;
 
-    final String copyrightText = '© ${DateTime.now().year} Alper Efe Şahin\nMade with Love and Flutter';
+    final String copyrightText = '© ${DateTime.now().year} Alper Efe Sahin\nMade with Love and Flutter';
     const String contentDistributedText = 'All content of this website is distributed under the ';
     const String licenseText = 'CC BY-NC license';
     const String uiInspiredText = 'UI inspired by ';
